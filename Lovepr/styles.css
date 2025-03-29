@@ -1,633 +1,325 @@
 /* 全局樣式 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Serif TC', serif;
-}
-
-body {
-    background-color: #fdfaf7; /* 更柔和的米色背景 */
-    color: #333;
-    line-height: 1.6;
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 Q60 0, 70 10 T90 10 Q100 20, 90 30 T70 30 Q60 40, 50 30 T30 30 Q20 20, 30 10 T50 10" fill="none" stroke="%23f0e6e0" stroke-width="1"/></svg>');
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    background-attachment: fixed;
-}
-
-/* 頁首樣式 */
-header {
-    background: linear-gradient(135deg, #e8c4c4, #d3a5a5); /* 柔和的粉紅色漸變 */
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1:before {
-    content: '♡';
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 1.2em;
-    opacity: 0.8;
-}
-
-h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    color: #fff;
-}
-
-/* 班級選擇器樣式 */
-.class-selector {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.class-btn {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.6rem 1.5rem;
-    transition: all 0.2s ease;
-}
-
-.class-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
-.class-btn.active {
-    background-color: white;
-    color: #b68686;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* 主要內容區域樣式 */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.works-container {
-    display: none;
-}
-
-.works-container.active {
-    display: block;
-}
-
-.works-container:before {
-    content: '♡ ∞ ♡';
-    display: block;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #d3b5b5;
-    margin-bottom: 1rem;
-    letter-spacing: 10px;
-    opacity: 0.7;
-}
-
-h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #9e7676;
-    text-align: center;
-    position: relative;
-}
-
-h3:after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-    margin: 0.8rem auto 0;
-}
-
-/* 組別標題樣式 */
-.group-header {
-    background: linear-gradient(135deg, #e8c4c4, #d3a5a5);
-    color: white;
-    padding: 1rem 2rem;
-    margin: 2.5rem 0 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.group-header:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(158, 118, 118, 0.1);
-}
-
-.group-header h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.group-header .group-members {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
-/* 作品網格樣式 */
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-.work-item {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #f0e6e0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-}
-
-.work-item:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, transparent 50%, #f0e6e0 50%);
-    border-radius: 0 0 12px 0;
-}
-
-.work-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(158, 118, 118, 0.1);
-}
-
-.student-name {
-    background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-    color: white;
-    padding: 0.8rem 1rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 比例 */
-    height: 0;
-    overflow: hidden;
-    background-color: #000; /* 黑色背景 */
-    border-bottom: 2px solid #e8c4c4; /* 添加底部邊框 */
-}
-
-.video-container:before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.4;
-    z-index: 10;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0; /* 確保沒有邊框 */
-}
-
-.work-title {
-    padding: 1rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: #9e7676;
-    border-top: 1px solid #f0e6e0;
-}
-
-/* 頁尾樣式 */
-footer {
-    background-color: #9e7676;
-    color: #f8f0f0;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-}
-
-footer:before {
-    content: '♡ ∞ ♡';
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-    color: #f8f0f0;
-    margin-bottom: 1rem;
-    letter-spacing: 10px;
-    opacity: 0.7;
-}
-
-/* 互評區樣式 */
-.feedback-section {
-    padding: 0;
-    border-top: 1px solid #f0e6e0;
-}
-
-.feedback-toggle {
-    width: 100%;
-    background-color: #fdfaf7;
-    border: none;
-    padding: 0.8rem;
-    text-align: center;
-    font-weight: 500;
-    color: #9e7676;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.feedback-toggle:hover {
-    background-color: #f8f0f0;
-}
-
-.feedback-container {
-    display: none;
-    padding: 1rem;
-    background-color: #fdfaf7;
-}
-
-.feedback-container.active {
-    display: block;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.stars {
-    display: flex;
-    margin-left: 0.5rem;
-}
-
-.star {
-    color: #ddd;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.star:hover, .star.active {
-    color: #e8c4c4;
-}
-
-.feedback-text {
-    width: 100%;
-    min-height: 80px;
-    padding: 0.8rem;
-    border: 1px solid #f0e6e0;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    resize: vertical;
-    font-family: inherit;
-    background-color: #fff;
-}
-
-.submit-feedback {
-    background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.6rem 1.2rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-feedback:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(158, 118, 118, 0.1);
-}
-
-.feedback-list {
-    margin-top: 1.5rem;
-    border-top: 1px solid #f0e6e0;
-    padding-top: 1rem;
-}
-
-.feedback-list h5 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #9e7676;
-}
-
-.no-feedback {
-    color: #b68686;
-    font-style: italic;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.feedback-item {
-    background-color: white;
-    border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-    border-left: 3px solid #e8c4c4;
-}
-
-.feedback-item .rating-display {
-    color: #e8c4c4;
-    margin-bottom: 0.5rem;
-}
-
-.feedback-item .comment {
-    margin-bottom: 0.5rem;
-    color: #666;
-}
-
-.feedback-item .date {
-    font-size: 0.8rem;
-    color: #b68686;
-    text-align: right;
-}
-
-/* 回到頂部按鈕樣式 */
-#back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e8c4c4, #d3a5a5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 1000;
-}
-
-#back-to-top.visible {
-    opacity: 0.8;
-}
-
-#back-to-top:hover {
-    background: linear-gradient(135deg, #dbb6b6, #c99797);
-    opacity: 1;
-}
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.2rem;
-    }
-    
-    .class-selector {
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    
-    .works-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #back-to-top {
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 20px;
-    }
-
-    .student-name {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.8rem;
-    }
-}
-
-/* API 相關樣式 */
-.api-demo {
-    padding: 2rem;
-    background-color: #fdfaf7;
-    margin-top: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f0e6e0;
-}
-
-.api-players {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
-    justify-content: center;
-}
-
-.api-players > div {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    margin-bottom: 2rem;
-}
-
-.thumbnail-player {
-    position: relative;
-    width: 480px;
-    height: 270px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    max-width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(158, 118, 118, 0.15);
-    border: 1px solid #f0e6e0;
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 68px;
-    height: 48px;
-    background-color: rgba(158, 118, 118, 0.7);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.play-button::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 0 10px 20px;
-    border-color: transparent transparent transparent #fff;
-}
-
-.thumbnail-player:hover .play-button {
-    background-color: #d3a5a5;
-}
-
-.video-js {
-    width: 100%;
-    height: 270px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(158, 118, 118, 0.15);
-}
-
-iframe {
-    max-width: 100%;
-    border-radius: 8px;
-    border: 1px solid #f0e6e0;
-}
-
-/* 簡化頁面載入動畫 */
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.4s ease-out; /* 簡化過渡效果 */
-}
-
-.fade-in.visible {
-    opacity: 1;
-}
-
-/* 繳交狀況清單樣式 */
-.submission-status {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f0e6e0;
-}
-
-.submission-status h4 {
-    color: #9e7676;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    position: relative;
-}
-
-.submission-status h4:after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-    margin: 0.6rem auto 0;
-}
-
-.status-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.submitted-list, .not-submitted-list {
-    background: #fdfaf7;
-    border-radius: 10px;
-    padding: 1rem;
-    border: 1px solid #f0e6e0;
-}
-
-.submitted-list h5, .not-submitted-list h5 {
-    color: #9e7676;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.student-status {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem;
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
-    border-radius: 8px;
-    background: white;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-}
-
-.student-status.submitted {
-    border-left: 4px solid #9e7676;
-}
-
-.student-status.not-submitted {
-    border-left: 4px solid #d3a5a5;
-    opacity: 0.8;
-}
-
-.student-name {
-    font-weight: 500;
-    color: #333;
-}
-
-.student-group {
-    color: #666;
-    font-size: 0.85rem;
-}
-
-.student-title {
-    color: #9e7676;
-    font-size: 0.85rem;
-}
-
-@media (max-width: 768px) {
-    .status-content {
-        grid-template-columns: 1fr;
-    }
-
-    .student-status {
-        grid-template-columns: 1fr;
-        gap: 0.3rem;
-    }
-} 
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+ }
+ 
+ body {
+     background-color: #f5f5f5;
+     color: #333;
+     line-height: 1.6;
+ }
+ 
+ /* 頁首樣式 */
+ header {
+     background: linear-gradient(135deg, #4568dc, #b06ab3);
+     color: white;
+     text-align: center;
+     padding: 2rem 1rem;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ h1 {
+     font-size: 2.5rem;
+     margin-bottom: 0.5rem;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+ }
+ 
+ h2 {
+     font-size: 1.5rem;
+     font-weight: 300;
+     margin-bottom: 1.5rem;
+ }
+ 
+ /* 班級選擇器樣式 */
+ .class-selector {
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+     margin-top: 1.5rem;
+ }
+ 
+ .class-btn {
+     background-color: rgba(255, 255, 255, 0.2);
+     border: none;
+     border-radius: 30px;
+     color: white;
+     cursor: pointer;
+     font-size: 1rem;
+     font-weight: 600;
+     padding: 0.6rem 1.5rem;
+     transition: all 0.3s ease;
+ }
+ 
+ .class-btn:hover {
+     background-color: rgba(255, 255, 255, 0.3);
+     transform: translateY(-2px);
+ }
+ 
+ .class-btn.active {
+     background-color: white;
+     color: #4568dc;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ /* 主要內容區域樣式 */
+ main {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 2rem 1rem;
+ }
+ 
+ .works-container {
+     display: none;
+ }
+ 
+ .works-container.active {
+     display: block;
+ }
+ 
+ h3 {
+     font-size: 1.8rem;
+     margin-bottom: 1.5rem;
+     color: #4568dc;
+     text-align: center;
+     position: relative;
+ }
+ 
+ h3:after {
+     content: '';
+     display: block;
+     width: 50px;
+     height: 3px;
+     background: linear-gradient(to right, #4568dc, #b06ab3);
+     margin: 0.5rem auto;
+ }
+ 
+ /* 組別標題樣式 */
+ .group-header {
+     background: linear-gradient(135deg, #4568dc, #b06ab3);
+     color: white;
+     padding: 1rem 2rem;
+     margin: 2.5rem 0 1rem 0;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     text-align: center;
+ }
+ 
+ .group-header h4 {
+     font-size: 1.5rem;
+     margin-bottom: 0.5rem;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .group-header .group-members {
+     font-size: 0.95rem;
+     opacity: 0.9;
+ }
+ 
+ /* 作品網格樣式 */
+ .works-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     gap: 2rem;
+     margin-top: 1.5rem;
+ }
+ 
+ .work-item {
+     background-color: white;
+     border-radius: 10px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ .work-item:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+ }
+ 
+ .student-name {
+     background: linear-gradient(to right, #4568dc, #b06ab3);
+     color: white;
+     padding: 0.5rem 1rem;
+     text-align: center;
+     font-weight: 600;
+     font-size: 1.1rem;
+ }
+ 
+ .video-container {
+     position: relative;
+     padding-bottom: 56.25%; /* 16:9 比例 */
+     height: 0;
+     overflow: hidden;
+     background-color: #000; /* 添加黑色背景 */
+ }
+ 
+ .video-container iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     border: 0; /* 確保沒有邊框 */
+ }
+ 
+ .work-title {
+     padding: 1rem;
+     text-align: center;
+     font-weight: 600;
+     font-size: 1.1rem;
+ }
+ 
+ /* 頁尾樣式 */
+ footer {
+     background-color: #333;
+     color: white;
+     text-align: center;
+     padding: 1.5rem;
+     margin-top: 2rem;
+ }
+ 
+ /* 互評區樣式 */
+ .feedback-section {
+     padding: 0;
+     border-top: 1px solid #eee;
+ }
+ 
+ .feedback-toggle {
+     width: 100%;
+     background-color: #f5f5f5;
+     border: none;
+     padding: 0.8rem;
+     text-align: center;
+     font-weight: 600;
+     color: #4568dc;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+ 
+ .feedback-toggle:hover {
+     background-color: #e8e8e8;
+ }
+ 
+ .feedback-container {
+     display: none;
+     padding: 1rem;
+     background-color: #f9f9f9;
+ }
+ 
+ .feedback-container.active {
+     display: block;
+ }
+ 
+ .rating {
+     display: flex;
+     align-items: center;
+     margin-bottom: 1rem;
+ }
+ 
+ .stars {
+     display: flex;
+     margin-left: 0.5rem;
+ }
+ 
+ .star {
+     color: #ccc;
+     font-size: 1.5rem;
+     cursor: pointer;
+     transition: color 0.2s ease;
+ }
+ 
+ .star:hover, .star.active {
+     color: #ffcc00;
+ }
+ 
+ .feedback-text {
+     width: 100%;
+     min-height: 80px;
+     padding: 0.8rem;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     margin-bottom: 1rem;
+     resize: vertical;
+     font-family: inherit;
+ }
+ 
+ .submit-feedback {
+     background: linear-gradient(to right, #4568dc, #b06ab3);
+     color: white;
+     border: none;
+     border-radius: 5px;
+     padding: 0.6rem 1.2rem;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+ 
+ .submit-feedback:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .feedback-list {
+     margin-top: 1.5rem;
+     border-top: 1px solid #ddd;
+     padding-top: 1rem;
+ }
+ 
+ .feedback-list h5 {
+     font-size: 1.1rem;
+     margin-bottom: 1rem;
+     color: #4568dc;
+ }
+ 
+ .no-feedback {
+     color: #888;
+     font-style: italic;
+     text-align: center;
+     padding: 1rem 0;
+ }
+ 
+ .feedback-item {
+     background-color: white;
+     border-radius: 5px;
+     padding: 1rem;
+     margin-bottom: 1rem;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+ }
+ 
+ .feedback-item .rating-display {
+     color: #ffcc00;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .feedback-item .comment {
+     margin-bottom: 0.5rem;
+ }
+ 
+ .feedback-item .date {
+     font-size: 0.8rem;
+     color: #888;
+     text-align: right;
+ }
+ 
+ /* 響應式設計 */
+ @media (max-width: 768px) {
+     h1 {
+         font-size: 2rem;
+     }
+     
+     h2 {
+         font-size: 1.2rem;
+     }
+     
+     .class-selector {
+         flex-direction: column;
+         gap: 0.5rem;
+     }
+     
+     .works-grid {
+         grid-template-columns: 1fr;
+     }
+ } 
