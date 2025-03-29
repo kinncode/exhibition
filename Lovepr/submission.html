@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繳交狀況清單 - 情詩朗讀線上成果展</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加Google字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #fdfaf7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e8c4c4, #d3a5a5);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            color: #9e7676;
+            margin: 0;
+        }
+
+        header h1, header h2 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .submission-status {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .submission-status:hover {
+            transform: translateY(-5px);
+        }
+
+        .submission-status h4 {
+            color: #9e7676;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .submission-status h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #e8c4c4, #d3a5a5);
+            border-radius: 3px;
+        }
+
+        .status-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .submitted-list, .not-submitted-list {
+            background: #fdfaf7;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .submitted-list h5, .not-submitted-list h5 {
+            color: #9e7676;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .submitted-list h5::after, .not-submitted-list h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #e8c4c4, #d3a5a5);
+            border-radius: 2px;
+        }
+
+        .student-status {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.2fr;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 0.8rem;
+            border-radius: 12px;
+            background: white;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .student-status:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-status.submitted {
+            border-left: 4px solid #9e7676;
+        }
+
+        .student-status.not-submitted {
+            border-left: 4px solid #d3a5a5;
+            opacity: 0.9;
+        }
+
+        .student-name {
+            font-weight: 500;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .student-group {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .student-title {
+            color: #9e7676;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .class-selector {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .class-btn {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.8rem 2rem;
+            margin: 0 0.8rem;
+            transition: all 0.3s ease;
+            font-family: 'Noto Serif TC', serif;
+            backdrop-filter: blur(5px);
+        }
+
+        .class-btn:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .class-btn.active {
+            background-color: white;
+            color: #b68686;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .submission-status {
+                padding: 1.5rem;
+                margin: 1rem auto;
+            }
+
+            .status-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .student-status {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 0.8rem;
+            }
+
+            .class-btn {
+                padding: 0.6rem 1.2rem;
+                margin: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* 添加動畫效果 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">情詩朗讀線上成果展</h1>
+        <p class="fade-in" style="color: white; margin-top: 10px;">指導老師：南臺科技大學 / 駱育萱</p>
+        
+        <nav class="class-selector">
+            <button class="class-btn active" data-class="class-a">電子一甲</button>
+            <button class="class-btn" data-class="class-b">電子一乙</button>
+            <button class="class-btn" data-class="class-c">流音一乙</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="class-a" class="submission-status active">
+            <!-- 這裡的內容將由 JavaScript 動態生成 -->
+        </section>
+        
+        <section id="class-b" class="submission-status">
+            <!-- 這裡的內容將由 JavaScript 動態生成 -->
+        </section>
+        
+        <section id="class-c" class="submission-status">
+            <!-- 這裡的內容將由 JavaScript 動態生成 -->
+        </section>
+    </main>
+    
+    <script src="submission.js"></script>
+</body>
+</html> 
