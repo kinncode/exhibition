@@ -382,8 +382,237 @@ const classData = [
         groups: [
             {
                 name: "第一組",
-                members: "組員：",
-                works: []
+                members: "組員：林俊諺、閃莉萍、施奕婕、郭俊驛",
+                works: [
+                    {
+                        studentName: "林俊諺",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "閃莉萍",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "施奕婕",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "郭俊驛",
+                        videoUrl: "",
+                        title: ""
+                    }
+                ]
+            },
+            {
+                name: "第二組",
+                members: "組員：鄭延俊、吳政峰、方柏竣、林相名",
+                works: [
+                    {
+                        studentName: "鄭延俊",
+                        videoUrl: "https://www.youtube.com/embed/UqyTaEJRM9Q",
+                        title: "獨燈"
+                    },
+                    {
+                        studentName: "吳政峰",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "方柏竣",
+                        videoUrl: "https://www.youtube.com/embed/L-CANqas_Qw",
+                        title: "微光航向"
+                    },
+                    {
+                        studentName: "林相名",
+                        videoUrl: "",
+                        title: ""
+                    }
+                ]
+            },
+            {
+                name: "第三組",
+                members: "組員：黃至、吳佐恩、林軒佑、沈俊毅",
+                works: [
+                    {
+                        studentName: "黃至",
+                        videoUrl: "https://www.youtube.com/embed/eVitSl7nFlE",
+                        title: "思君如夢"
+                    },
+                    {
+                        studentName: "吳佐恩",
+                        videoUrl: "https://www.youtube.com/embed/81rOwlLZ7z4",
+                        title: "漸行漸遠的我們"
+                    },
+                    {
+                        studentName: "林軒佑",
+                        videoUrl: "https://www.youtube.com/embed/oVJ4Zdg_SJA",
+                        title: "怕我"
+                    },
+                    {
+                        studentName: "沈俊毅",
+                        videoUrl: "https://www.youtube.com/embed/ZjY3om6oL30",
+                        title: "夢鄉"
+                    }
+                ]
+            },
+            {
+                name: "第四組",
+                members: "組員：吳秉寰、蘇奕揚、黃志賢、林芳賢",
+                works: [
+                    {
+                        studentName: "吳秉寰",
+                        videoUrl: "https://www.youtube.com/embed/kYlGJjbIloY",
+                        title: "寧靜時刻"
+                    },
+                    {
+                        studentName: "蘇奕揚",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "黃志賢",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "林芳賢",
+                        videoUrl: "",
+                        title: ""
+                    }
+                ]
+            },
+            {
+                name: "第五組",
+                members: "組員：潘聖恩、向栩佑、洪宇亮、吳弘毅",
+                works: [
+                    {
+                        studentName: "潘聖恩",
+                        videoUrl: "https://www.youtube.com/embed/Rr6bHooGTSg",
+                        title: "念與祝福交錯"
+                    },
+                    {
+                        studentName: "向栩佑",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "洪宇亮",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "吳弘毅",
+                        videoUrl: "https://www.youtube.com/embed/PFVx0huceDY",
+                        title: "霧中無聲之雨"
+                    }
+                ]
+            },
+            {
+                name: "第六組",
+                members: "組員：蘇筠淇、洪宥蓉、黃綉庭、陳銥玟",
+                works: [
+                    {
+                        studentName: "蘇筠淇",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "洪宥蓉",
+                        videoUrl: "https://www.youtube.com/embed/ubREtgqRj4U",
+                        title: "晨曦未央"
+                    },
+                    {
+                        studentName: "黃綉庭",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "陳銥玟",
+                        videoUrl: "https://www.youtube.com/embed/13pmdGYMob8",
+                        title: "微塵"
+                    }
+                ]
+            },
+            {
+                name: "第七組",
+                members: "組員：盧姵辰、賴詠晞、楊采融、陳奕婷",
+                works: [
+                    {
+                        studentName: "盧姵辰",
+                        videoUrl: "https://www.youtube.com/embed/nrTMjXkwAKw",
+                        title: "夜光"
+                    },
+                    {
+                        studentName: "賴詠晞",
+                        videoUrl: "https://www.youtube.com/embed/88yvJR7QSfU",
+                        title: "撞擊"
+                    },
+                    {
+                        studentName: "楊采融",
+                        videoUrl: "https://www.youtube.com/embed/eHHdr1_0a9E",
+                        title: "遙遠的月光"
+                    },
+                    {
+                        studentName: "陳奕婷",
+                        videoUrl: "https://www.youtube.com/embed/q3xf4beWytg",
+                        title: "邊界之間"
+                    }
+                ]
+            },
+            {
+                name: "第九組",
+                members: "組員：許心奕、林芷沂、邱筠筑、游詩如",
+                works: [
+                    {
+                        studentName: "許心奕",
+                        videoUrl: "https://www.youtube.com/embed/VVucytwLcEI",
+                        title: "故地守望"
+                    },
+                    {
+                        studentName: "林芷沂",
+                        videoUrl: "https://www.youtube.com/embed/fJF1bqNuQ9o",
+                        title: "無法戒掉的你"
+                    },
+                    {
+                        studentName: "邱筠筑",
+                        videoUrl: "https://www.youtube.com/embed/yeMOYyM8A-A",
+                        title: ""
+                    },
+                    {
+                        studentName: "游詩如",
+                        videoUrl: "",
+                        title: ""
+                    }
+                ]
+            },
+            {
+                name: "第十組",
+                members: "組員：洪月瑂、陳慈云、李豐鑫、李均",
+                works: [
+                    {
+                        studentName: "洪月瑂",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "陳慈云",
+                        videoUrl: "https://www.youtube.com/embed/8jbRg5Eo4gY",
+                        title: "風"
+                    },
+                    {
+                        studentName: "李豐鑫",
+                        videoUrl: "",
+                        title: ""
+                    },
+                    {
+                        studentName: "李均",
+                        videoUrl: "",
+                        title: ""
+                    }
+                ]
             }
         ]
     }

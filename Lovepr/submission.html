@@ -11,263 +11,466 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-color: #9e7676;
+            --secondary-color: #d3b5b5;
+            --alert-color: #e4acac;
+            --alert-light: #f9eded;
+            --success-color: #b09090;
+            --success-light: #f6eeee;
+            --bg-light: #fdfaf7;
+            --bg-card: #ffffff;
+            --text-dark: #5d4f4f;
+            --text-muted: #9c8989;
+            --shadow-sm: 0 1px 3px rgba(158, 118, 118, 0.05);
+            --shadow-md: 0 2px 8px rgba(158, 118, 118, 0.08);
+            --shadow-lg: 0 4px 12px rgba(158, 118, 118, 0.12);
+            --border-radius-sm: 6px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.25s ease;
+        }
+
         body {
             font-family: 'Noto Serif TC', serif;
-            background-color: #fdfaf7;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 Q60 0, 70 10 T90 10 Q100 20, 90 30 T70 30 Q60 40, 50 30 T30 30 Q20 20, 30 10 T50 10" fill="none" stroke="%23f0e6e0" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         header {
-            background: linear-gradient(135deg, #e8c4c4, #d3a5a5);
-            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 3rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2.5rem;
-            border-radius: 0 0 20px 20px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
         }
 
-        h1, h2, h3, h4 {
+        /* 添加裝飾元素 */
+        header::before {
+            content: '♡';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        header::after {
+            content: '♡';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        h1, h2, h3, h4, h5 {
             font-weight: 600;
-            color: #9e7676;
+            color: var(--primary-color);
             margin: 0;
+            line-height: 1.3;
         }
 
         header h1, header h2 {
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
-        }
-
-        .submission-status {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 1000px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .submission-status:hover {
-            transform: translateY(-5px);
-        }
-
-        .submission-status h4 {
-            color: #9e7676;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
             position: relative;
-            padding-bottom: 1rem;
+            display: inline-block;
         }
 
-        .submission-status h4::after {
+        header h1::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
-            height: 3px;
-            background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-            border-radius: 3px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-style: italic;
+        }
+
+        .class-selector {
+            margin: 2rem 0 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .class-btn {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.7rem 2rem;
+            transition: all var(--transition-normal);
+            font-family: 'Noto Serif TC', serif;
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .class-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            transition: width 0.3s ease;
+        }
+
+        .class-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .class-btn:hover::before {
+            width: 100%;
+        }
+
+        .class-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid transparent;
+            transform: translateY(-3px);
+            font-weight: 600;
+        }
+
+        .submission-status {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .submission-status.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tab-content-container {
+            position: relative;
+            min-height: 400px;
+            margin-bottom: 3rem;
+        }
+
+        .status-section {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        /* 添加情詩裝飾 */
+        .status-section::before {
+            content: '♡ ∞ ♡';
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            letter-spacing: 10px;
+            opacity: 0.7;
+        }
+
+        .status-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 0.8rem;
+        }
+
+        .status-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
         }
 
         .status-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .submitted-list, .not-submitted-list {
-            background: #fdfaf7;
-            border-radius: 15px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius-md);
             padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
         }
 
-        .submitted-list h5, .not-submitted-list h5 {
-            color: #9e7676;
+        .submitted-list:hover, .not-submitted-list:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .submitted-list {
+            border-top: 3px solid var(--success-color);
+        }
+
+        .not-submitted-list {
+            border-top: 3px solid var(--alert-color);
+        }
+
+        .status-header {
             text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
-            padding-bottom: 0.8rem;
         }
 
-        .submitted-list h5::after, .not-submitted-list h5::after {
+        .status-header::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 2px;
-            background: linear-gradient(to right, #e8c4c4, #d3a5a5);
-            border-radius: 2px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
         }
 
-        .student-status {
+        .submitted-list .status-header h4 {
+            color: var(--success-color);
+            font-size: 1.25rem;
+        }
+
+        .not-submitted-list .status-header h4 {
+            color: var(--alert-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .status-count {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .submitted-list .status-count {
+            background-color: var(--success-light);
+            color: var(--success-color);
+        }
+
+        .not-submitted-list .status-count {
+            background-color: var(--alert-light);
+            color: var(--alert-color);
+        }
+
+        .student-list {
             display: grid;
-            grid-template-columns: 1.2fr 1fr 1.2fr;
+            gap: 0.8rem;
+        }
+
+        .student-item {
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.3rem;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            transition: all var(--transition-fast);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        .submitted-list .student-item:hover {
+            background-color: var(--success-light);
+            padding-left: 1.2rem;
+        }
+
+        .not-submitted-list .student-item:hover {
+            background-color: var(--alert-light);
+            padding-left: 1.2rem;
+        }
+
+        .student-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             gap: 1rem;
-            padding: 1rem;
-            margin-bottom: 0.8rem;
-            border-radius: 12px;
-            background: white;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .student-status:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .student-status.submitted {
-            border-left: 4px solid #9e7676;
-        }
-
-        .student-status.not-submitted {
-            border-left: 4px solid #d3a5a5;
-            opacity: 0.9;
         }
 
         .student-name {
             font-weight: 500;
-            color: #333;
-            display: flex;
-            align-items: center;
+            font-size: 0.95rem;
+            padding: 0;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-family: 'Noto Serif TC', serif;
         }
 
-        .student-group {
-            color: #666;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
+        .student-name::before {
+            content: '•';
+            margin-right: 0.6rem;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+
+        .submitted-list .student-name::before {
+            color: var(--success-color);
+        }
+
+        .not-submitted-list .student-name::before {
+            color: var(--alert-color);
         }
 
         .student-title {
-            color: #9e7676;
+            margin: 0;
             font-size: 0.9rem;
-            display: flex;
-            align-items: center;
+            color: var(--text-muted);
+            font-style: italic;
         }
 
-        .class-selector {
-            margin: 1.5rem 0;
-            text-align: center;
+        .student-group {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background-color: rgba(0,0,0,0.02);
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .class-btn {
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            color: white;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            padding: 0.8rem 2rem;
-            margin: 0 0.8rem;
-            transition: all 0.3s ease;
-            font-family: 'Noto Serif TC', serif;
-            backdrop-filter: blur(5px);
-        }
-
-        .class-btn:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .class-btn.active {
-            background-color: white;
-            color: #b68686;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            header {
-                padding: 1.5rem 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .submission-status {
-                padding: 1.5rem;
-                margin: 1rem auto;
-            }
-
-            .status-content {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .student-status {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-                padding: 0.8rem;
-            }
-
-            .class-btn {
-                padding: 0.6rem 1.2rem;
-                margin: 0.5rem;
-                font-size: 1rem;
-            }
-        }
-
-        /* 添加動畫效果 */
+        /* 動畫效果 */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .class-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .status-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .not-submitted-list {
+                order: -1;
+            }
+            
+            .student-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            
+            .student-group {
+                margin-left: 1.6rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="fade-in">情詩朗讀線上成果展</h1>
-        <p class="fade-in" style="color: white; margin-top: 10px;">指導老師：南臺科技大學 / 駱育萱</p>
-        
-        <nav class="class-selector">
-            <button class="class-btn active" data-class="class-a">電子一甲</button>
-            <button class="class-btn" data-class="class-b">電子一乙</button>
-            <button class="class-btn" data-class="class-c">流音一乙</button>
-        </nav>
+        <div class="container">
+            <h1 class="fade-in">情詩朗讀線上成果展</h1>
+            <p class="fade-in">指導老師：南臺科技大學 / 駱育萱</p>
+            
+            <nav class="class-selector">
+                <button class="class-btn active" data-class="class-a">電子一甲</button>
+                <button class="class-btn" data-class="class-b">電子一乙</button>
+                <button class="class-btn" data-class="class-c">流音一乙</button>
+            </nav>
+        </div>
     </header>
     
-    <main>
-        <section id="class-a" class="submission-status active">
-            <!-- 這裡的內容將由 JavaScript 動態生成 -->
-        </section>
-        
-        <section id="class-b" class="submission-status">
-            <!-- 這裡的內容將由 JavaScript 動態生成 -->
-        </section>
-        
-        <section id="class-c" class="submission-status">
-            <!-- 這裡的內容將由 JavaScript 動態生成 -->
-        </section>
+    <main class="container">
+        <div class="tab-content-container">
+            <section id="class-a" class="submission-status active works-container">
+                <!-- 這裡的內容將由 JavaScript 動態生成 -->
+            </section>
+            
+            <section id="class-b" class="submission-status works-container">
+                <!-- 這裡的內容將由 JavaScript 動態生成 -->
+            </section>
+            
+            <section id="class-c" class="submission-status works-container">
+                <!-- 這裡的內容將由 JavaScript 動態生成 -->
+            </section>
+        </div>
     </main>
     
     <script src="submission.js"></script>
