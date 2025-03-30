@@ -213,7 +213,7 @@ const classData = [
                     },
                     {
                         studentName: "賴昱勛",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/9wtF8pwUKxA",
                         title: ""
                     }
                 ]
