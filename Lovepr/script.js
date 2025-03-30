@@ -20,8 +20,8 @@ const classData = [
                     },
                     {
                         studentName: "李韋廷",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/V5yi0bgo--g",
+                        title: "初見"
                     },
                     {
                         studentName: "黃淯平",
@@ -212,7 +212,7 @@ const classData = [
                     },
                     {
                         studentName: "賴昱勛",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/9wtF8pwUKxA",
                         title: ""
                     }
                 ]
