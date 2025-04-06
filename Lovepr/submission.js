@@ -1,4 +1,3 @@
-// 從原始資料複製 classData
 // 班級、組別和學生作品的資料結構
 const classData = [
     {
@@ -52,8 +51,8 @@ const classData = [
                     },
                     {
                         studentName: "吳佳霓",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/LVvNEYeNtus",
+                        title: "予你"
                     },
                     {
                         studentName: "畢珮柔",
@@ -78,8 +77,8 @@ const classData = [
                     },
                     {
                         studentName: "鍾天悅",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/8o7wqNQAgmM",
+                        title: "緣起如風"
                     },
                     {
                         studentName: "邱秀和",
@@ -234,12 +233,12 @@ const classData = [
                     },
                     {
                         studentName: "黃柏森",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/zN5m93FrRCo",
                         title: ""
                     },
                     {
                         studentName: "洪肇甫",
-                        videoUrl: "https://www.youtube.com/embed/BfUvyX1gMf8?si=mDhPMJZHRpqD0953",
+                        videoUrl: "https://www.youtube.com/embed/T6oONQYY31k",
                         title: ""
                     }
                 ]
@@ -392,6 +391,11 @@ const classData = [
             works: [
               {
                 studentName: "4B330047 許俊翔",
+                videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI",
+                title: ""
+              },
+              {
+                studentName: "4B330058 謝仲傑",
                 videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI",
                 title: ""
               }
@@ -691,8 +695,8 @@ const classData = [
                     },
                     {
                         studentName: "黃志賢",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/_2pbEly1yVE",
+                        title: "寂寞的那心"
                     },
                     {
                         studentName: "林芳賢",
