@@ -82,8 +82,8 @@ const classData = [
                     },
                     {
                         studentName: "邱秀和",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/T3lDIJ3czjg",
+                        title: "〈關於我們〉"
                     }
                 ]
             },
@@ -129,8 +129,8 @@ const classData = [
                     },
                     {
                         studentName: "李承恩",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/dT8wSVenEUs",
+                        title: "燼雪殘香"
                     },
                     {
                         studentName: "林宥駒",
@@ -186,7 +186,7 @@ const classData = [
                     },
                     {
                         studentName: "葉恩助",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/pF6eh_FQpek",
                         title: ""
                     }
                 ]
@@ -202,12 +202,12 @@ const classData = [
                     },
                     {
                         studentName: "黃翊銘",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/XcmGjBWXFeo",
+                        title: "錯過的甜"
                     },
                     {
                         studentName: "李奇叡",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/_Zsywy-hVew",
                         title: ""
                     },
                     {
@@ -238,7 +238,7 @@ const classData = [
                     },
                     {
                         studentName: "洪肇甫",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/BfUvyX1gMf8?si=mDhPMJZHRpqD0953",
                         title: ""
                     }
                 ]
@@ -264,7 +264,7 @@ const classData = [
                     },
                     {
                         studentName: "林毅豪",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/Tvw1IWaWEJg",
                         title: ""
                     }
                 ]
@@ -280,7 +280,7 @@ const classData = [
                     },
                     {
                         studentName: "李子盛",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/FTMcLOa-6YE",
                         title: ""
                     },
                     {
@@ -290,8 +290,8 @@ const classData = [
                     },
                     {
                         studentName: "李安芽",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/Jl05sQi3uC0",
+                        title: "星夜思語 2"
                     }
                 ]
             },
@@ -316,8 +316,8 @@ const classData = [
                     },
                     {
                         studentName: "張雅玟",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/4r0D9RK4aL8",
+                        title: "在你眼中"
                     }
                 ]
             },
@@ -327,8 +327,8 @@ const classData = [
                 works: [
                     {
                         studentName: "潘冠佑",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/KNjK9x5Rk-4",
+                        title: "情深深"
                     },
                     {
                         studentName: "許守豐",
@@ -342,7 +342,7 @@ const classData = [
                     },
                     {
                         studentName: "李孟蒼",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/h5uJvWhIS4c",
                         title: ""
                     }
                 ]
