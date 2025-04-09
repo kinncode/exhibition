@@ -15,7 +15,7 @@ const classData = [
                     },
                     {
                         studentName: "陳冠宇",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/-mGlmr2rcco",
                         title: ""
                     },
                     {
@@ -228,7 +228,7 @@ const classData = [
                     },
                     {
                         studentName: "艾亦偉",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/3yLGGR4DIeU",
                         title: ""
                     },
                     {
@@ -371,228 +371,134 @@ const classData = [
         groups: [
           {
             name: "第一組",
-            members: "組員：",
+            members: "組員：呂旼憲 張家祐 郭哲維 呂嘉慶",
             works: [
-              {
-                studentName: "4B330053 郭哲維",
-                videoUrl: "https://www.youtube.com/embed/zHgVLxBMc14",
-                title: "青春紀念信"
-              },
-              {
-                studentName: "4B330052 張家祐",
-                videoUrl: "https://www.youtube.com/embed/MjOJZJ-Fads",
-                title: "流星的命定"
-              }
+              { studentName: "4B330053 郭哲維", videoUrl: "https://www.youtube.com/embed/zHgVLxBMc14", title: "青春紀念信" },
+              { studentName: "4B330052 張家祐", videoUrl: "https://www.youtube.com/embed/MjOJZJ-Fads", title: "流星的命定" },
+              { studentName: "呂旼憲", videoUrl: "https://www.youtube.com/embed/U2cGkgSo4Mc", title: "你以後，無人以後" },
+              { studentName: "呂嘉慶", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第二組",
-            members: "組員：",
+            members: "組員：許俊翔 謝仲傑 姚品齊 施博允",
             works: [
-              {
-                studentName: "4B330047 許俊翔",
-                videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI",
-                title: ""
-              },
-              {
-                studentName: "4B330058 謝仲傑",
-                videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI",
-                title: ""
-              }
+              { studentName: "4B330047 許俊翔", videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI", title: "" },
+              { studentName: "謝仲傑", videoUrl: "https://www.youtube.com/embed/hFUXBlDwCiI", title: "" },
+              { studentName: "4b330059 姚品齊", videoUrl: "https://www.youtube.com/embed/jTaBYcHrwGQ", title: "" },
+              { studentName: "4B330060 施博允", videoUrl: "https://www.youtube.com/embed/8E64YJwwX4I", title: "" }
             ]
           },
           {
             name: "第三組",
-            members: "組員：",
+            members: "組員：鄭儕蔚 林岑晏 張皓偉 李宥霖 林朝原",
             works: [
-              {
-                studentName: "4B330069 張皓偉",
-                videoUrl: "https://www.youtube.com/embed/OzsJ3hn1ots",
-                title: "盼影"
-              },
-              {
-                studentName: "4B330035 鄭儕蔚",
-                videoUrl: "https://www.youtube.com/embed/u_D1OgpnjoY",
-                title: "暮色微涼"
-              }
+              { studentName: "4B330069 張皓偉", videoUrl: "https://www.youtube.com/embed/OzsJ3hn1ots", title: "盼影" },
+              { studentName: "4B330035 鄭儕蔚", videoUrl: "https://www.youtube.com/embed/u_D1OgpnjoY", title: "暮色微涼" },
+              { studentName: "林岑晏", videoUrl: "", title: "" },
+              { studentName: "李宥霖", videoUrl: "", title: "" },
+              { studentName: "林朝原", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第四組",
-            members: "組員：",
+            members: "組員：李安喆 郭東昇 黃紘慧 邱宗賢",
             works: [
-              {
-                studentName: "4B330101 邱宗賢",
-                videoUrl: "https://www.youtube.com/embed/hgaOrGTI46w",
-                title: "別離前夕"
-              },
-              {
-                studentName: "4B330043 郭東昇",
-                videoUrl: "https://www.youtube.com/embed/n7PUAGpVvJ4",
-                title: "錯落之間"
-              },
-              {
-                studentName: "4B330044 黃紘慧",
-                videoUrl: "https://www.youtube.com/embed/Gj_nr9ov2JU",
-                title: "櫻花下的約定"
-              },
-              {
-                studentName: "4B330041 李安喆",
-                videoUrl: "https://www.youtube.com/embed/vG_lWHnxaak",
-                title: "霓虹下的離歌"
-              }
+              { studentName: "4B330101 邱宗賢", videoUrl: "https://www.youtube.com/embed/hgaOrGTI46w", title: "別離前夕" },
+              { studentName: "4B330043 郭東昇", videoUrl: "https://www.youtube.com/embed/n7PUAGpVvJ4", title: "錯落之間" },
+              { studentName: "4B330044 黃紘慧", videoUrl: "https://www.youtube.com/embed/Gj_nr9ov2JU", title: "櫻花下的約定" },
+              { studentName: "4B330041 李安喆", videoUrl: "https://www.youtube.com/embed/vG_lWHnxaak", title: "霓虹下的離歌" }
             ]
           },
           {
             name: "第五組",
-            members: "組員：",
+            members: "組員：陳思妤 李易勳 黃暐閎 葉冠宇",
             works: [
-              {
-                studentName: "4B330093 黃暐閎",
-                videoUrl: "https://www.youtube.com/embed/Sg5m5GF6Lkw",
-                title: "回憶的痕跡"
-              },
-              {
-                studentName: "4B330033 陳思妤",
-                videoUrl: "https://www.youtube.com/embed/cMOl36welzg",
-                title: "殘影"
-              },
-              {
-                studentName: "4B330034 李易勳",
-                videoUrl: "https://www.youtube.com/embed/OPCAB-lDXls",
-                title: "餘溫"
-              }
+              { studentName: "4B330093 黃暐閎", videoUrl: "https://www.youtube.com/embed/Sg5m5GF6Lkw", title: "回憶的痕跡" },
+              { studentName: "4B330033 陳思妤", videoUrl: "https://www.youtube.com/embed/cMOl36welzg", title: "殘影" },
+              { studentName: "4B330034 李易勳", videoUrl: "https://www.youtube.com/embed/OPCAB-lDXls", title: "餘溫" },
+              { studentName: "4B330096 葉冠宇", videoUrl: "https://www.youtube.com/embed/HQErXhTw39s", title: "靜夜寄語遠方" }
+            ]
+          },
+          {
+            name: "第六組",
+            members: "組員：張恩菘 簡揚凱 羅振嘉 郭倚修 宋翊帆",
+            works: [
+              { studentName: "張恩菘", videoUrl: "", title: "" },
+              { studentName: "簡揚凱", videoUrl: "", title: "" },
+              { studentName: "羅振嘉", videoUrl: "", title: "" },
+              { studentName: "郭倚修", videoUrl: "", title: "" },
+              { studentName: "宋翊帆", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第七組",
-            members: "組員：",
+            members: "組員：吳笠豐 吳祥維 黃政瑋 黃弘靜",
             works: [
-              {
-                studentName: "4B330042 吳祥維",
-                videoUrl: "https://www.youtube.com/embed/m5WT53nQGWM",
-                title: "寂寞"
-              },
-              {
-                studentName: "4B330030 吳笠豐",
-                videoUrl: "https://www.youtube.com/embed/ysJBva85QTw",
-                title: "遺憾的地址"
-              }
+              { studentName: "4B330042 吳祥維", videoUrl: "https://www.youtube.com/embed/m5WT53nQGWM", title: "寂寞" },
+              { studentName: "4B330030 吳笠豐", videoUrl: "https://www.youtube.com/embed/ysJBva85QTw", title: "遺憾的地址" },
+              { studentName: "黃政瑋", videoUrl: "", title: "" },
+              { studentName: "黃弘靜", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第八組",
-            members: "組員：",
+            members: "組員：詹佳穎 簡仕傑 吳宗恩 李昆諺",
             works: [
-              {
-                studentName: "4B330086 簡仕傑",
-                videoUrl: "https://www.youtube.com/embed/xQZ-Bkhaslk",
-                title: "時光的錯落"
-              },
-              {
-                studentName: "4B330054 詹佳穎",
-                videoUrl: "https://www.youtube.com/embed/QU3EIP4VjXU",
-                title: "還沒寫完的故事"
-              }
+              { studentName: "4B330086 簡仕傑", videoUrl: "https://www.youtube.com/embed/xQZ-Bkhaslk", title: "時光的錯落" },
+              { studentName: "4B330054 詹佳穎", videoUrl: "https://www.youtube.com/embed/QU3EIP4VjXU", title: "還沒寫完的故事" },
+              { studentName: "吳宗恩", videoUrl: "", title: "" },
+              { studentName: "李昆諺", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第九組",
-            members: "組員：",
+            members: "組員：黃奕睿 張孟綸 廖崇凱 張鈞凱",
             works: [
-              {
-                studentName: "4B330108 張鈞凱",
-                videoUrl: "https://www.youtube.com/embed/NSY2BnXZFow",
-                title: "浪漫夜晚"
-              },
-              {
-                studentName: "4B330055 廖崇凱",
-                videoUrl: "https://www.youtube.com/embed/Q8ggpMcexyY",
-                title: ""
-              },
-              {
-                studentName: "4B330048 張孟綸",
-                videoUrl: "https://www.youtube.com/embed/jy0DcK55SH0",
-                title: "留在風裡的思念"
-              },
-              {
-                studentName: "4B330040 黃奕睿",
-                videoUrl: "https://www.youtube.com/embed/ZeK7UyehaTg",
-                title: "情歌朗讀"
-              }
+              { studentName: "4B330108 張鈞凱", videoUrl: "https://www.youtube.com/embed/NSY2BnXZFow", title: "浪漫夜晚" },
+              { studentName: "4B330055 廖崇凱", videoUrl: "https://www.youtube.com/embed/Q8ggpMcexyY", title: "" },
+              { studentName: "4B330048 張孟綸", videoUrl: "https://www.youtube.com/embed/jy0DcK55SH0", title: "留在風裡的思念" },
+              { studentName: "4B330040 黃奕睿", videoUrl: "https://www.youtube.com/embed/ZeK7UyehaTg", title: "情歌朗讀" }
             ]
           },
           {
             name: "第十組",
-            members: "組員：",
+            members: "組員：陳品皓 徐浩凱 郭彥承 黃榆証",
             works: [
-              {
-                studentName: "4B330057 徐浩凱",
-                videoUrl: "https://www.youtube.com/embed/j_221_l5rak",
-                title: "遺忘的流浪"
-              },
-              {
-                studentName: "4B330114 黃榆証",
-                videoUrl: "https://www.youtube.com/embed/s0WahbyZTuw",
-                title: "我們都累了"
-              },
-              {
-                studentName: "4B330084 郭彥承",
-                videoUrl: "https://www.youtube.com/embed/N4GQCiPI0Kc",
-                title: "影中故人"
-              },
-              {
-                studentName: "4B330050 陳品皓",
-                videoUrl: "https://www.youtube.com/embed/phNcGoD9Sro",
-                title: "牽手的風景"
-              }
+              { studentName: "4B330057 徐浩凱", videoUrl: "https://www.youtube.com/embed/j_221_l5rak", title: "遺忘的流浪" },
+              { studentName: "4B330114 黃榆証", videoUrl: "https://www.youtube.com/embed/s0WahbyZTuw", title: "我們都累了" },
+              { studentName: "4B330084 郭彥承", videoUrl: "https://www.youtube.com/embed/N4GQCiPI0Kc", title: "影中故人" },
+              { studentName: "4B330050 陳品皓", videoUrl: "https://www.youtube.com/embed/phNcGoD9Sro", title: "牽手的風景" }
             ]
           },
           {
             name: "第十一組",
-            members: "組員：",
+            members: "組員：陽劼睿 利宥伶 許晉翊 葉育綸",
             works: [
-              {
-                studentName: "4B330036 陽劼睿",
-                videoUrl: "https://www.youtube.com/embed/zbSTfwh4JTo",
-                title: "告別"
-              },
-              {
-                studentName: "4B330038 利宥伶",
-                videoUrl: "https://www.youtube.com/embed/xp7YuLE0OG4",
-                title: "風中的悸動"
-              },
-              {
-                studentName: "4B330087 葉育綸",
-                videoUrl: "https://www.youtube.com/embed/SJ-WR1FWyRA",
-                title: ""
-              }
+              { studentName: "4B330036 陽劼睿", videoUrl: "https://www.youtube.com/embed/zbSTfwh4JTo", title: "告別" },
+              { studentName: "4B330038 利宥伶", videoUrl: "https://www.youtube.com/embed/xp7YuLE0OG4", title: "風中的悸動" },
+              { studentName: "4B330087 葉育綸", videoUrl: "https://www.youtube.com/embed/SJ-WR1FWyRA", title: "" },
+              { studentName: "許晉翊", videoUrl: "", title: "" }
             ]
           },
           {
             name: "第十二組",
-            members: "組員：",
+            members: "組員：蘇侑峰 陳泊安 柯宥廷 林俊翰",
             works: [
-              {
-                studentName: "4B330064 林俊翰",
-                videoUrl: "https://www.youtube.com/embed/3huL-lcqtnw",
-                title: ""
-              },
-              {
-                studentName: "4B330063 柯宥廷",
-                videoUrl: "https://www.youtube.com/embed/zvMzShw2jsI",
-                title: ""
-              },
-              {
-                studentName: "4B330031 蘇侑峰",
-                videoUrl: "https://www.youtube.com/embed/e4R4YAOvRtw",
-                title: "深情"
-              },
-              {
-                studentName: "4B330045 陳泊安",
-                videoUrl: "https://www.youtube.com/embed/Zlwn2aVfhYc",
-                title: "月光海誓"
-              }
+              { studentName: "4B330064 林俊翰", videoUrl: "https://www.youtube.com/embed/3huL-lcqtnw", title: "" },
+              { studentName: "4B330063 柯宥廷", videoUrl: "https://www.youtube.com/embed/zvMzShw2jsI", title: "" },
+              { studentName: "4B330031 蘇侑峰", videoUrl: "https://www.youtube.com/embed/e4R4YAOvRtw", title: "深情" },
+              { studentName: "4B330045 陳泊安", videoUrl: "https://www.youtube.com/embed/Zlwn2aVfhYc", title: "月光海誓" }
+            ]
+          },
+          {
+            name: "第十三組",
+            members: "組員：林仲謙 黃柏霖 鄭書堯 黃勁瑋",
+            works: [
+              { studentName: "林仲謙", videoUrl: "", title: "" },
+              { studentName: "黃柏霖", videoUrl: "", title: "" },
+              { studentName: "鄭書堯", videoUrl: "", title: "" },
+              { studentName: "黃勁瑋", videoUrl: "", title: "" }
             ]
           }
         ]
@@ -638,7 +544,7 @@ const classData = [
                     },
                     {
                         studentName: "吳政峰",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/_fp-yiQF_Eg",
                         title: ""
                     },
                     {
@@ -648,7 +554,7 @@ const classData = [
                     },
                     {
                         studentName: "林相名",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/JwFcIkMKa8M",
                         title: ""
                     }
                 ]
@@ -690,8 +596,8 @@ const classData = [
                     },
                     {
                         studentName: "蘇奕揚",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/tzKa9n564Hk",
+                        title: "戀愛的形狀"
                     },
                     {
                         studentName: "黃志賢",
@@ -830,8 +736,8 @@ const classData = [
                     },
                     {
                         studentName: "李均",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/0d3L4Simgkw",
+                        title: "伴"
                     }
                 ]
             }
