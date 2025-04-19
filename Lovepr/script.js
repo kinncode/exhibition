@@ -150,8 +150,8 @@ const classData = [
                     },
                     {
                         studentName: "張繼益",
-                        videoUrl: "",
-                        title: ""
+                        videoUrl: "https://www.youtube.com/embed/6W6TMscDGGc?si=imQmlq7zg5WtonLs",
+                        title: "遇見你的那一刻"
                     },
                     {
                         studentName: "黃昱嘉",
