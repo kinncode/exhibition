@@ -375,7 +375,7 @@ const classData = [
               { studentName: "4B330053 郭哲維", videoUrl: "https://www.youtube.com/embed/zHgVLxBMc14", title: "青春紀念信" },
               { studentName: "4B330052 張家祐", videoUrl: "https://www.youtube.com/embed/MjOJZJ-Fads", title: "流星的命定" },
               { studentName: "呂旼憲", videoUrl: "https://www.youtube.com/embed/U2cGkgSo4Mc", title: "你以後，無人以後" },
-              { studentName: "呂嘉慶", videoUrl: "", title: "" }
+              { studentName: "呂嘉慶", videoUrl: "https://www.youtube.com/embed/E6cAQAgfctM", title: "愛是無聲的詩行" }
             ]
           },
           {
@@ -477,7 +477,7 @@ const classData = [
               { studentName: "4B330036 陽劼睿", videoUrl: "https://www.youtube.com/embed/zbSTfwh4JTo", title: "告別" },
               { studentName: "4B330038 利宥伶", videoUrl: "https://www.youtube.com/embed/xp7YuLE0OG4", title: "風中的悸動" },
               { studentName: "4B330087 葉育綸", videoUrl: "https://www.youtube.com/embed/SJ-WR1FWyRA", title: "" },
-              { studentName: "許晉翊", videoUrl: "", title: "" }
+              { studentName: "許晉翊", videoUrl: "https://www.youtube.com/embed/9mdK-Uk_rQ4", title: "沉默的證詞" }
             ]
           },
           {
@@ -495,8 +495,8 @@ const classData = [
             members: "組員：林仲謙 黃柏霖 鄭書堯 黃勁瑋",
             works: [
               { studentName: "林仲謙", videoUrl: "", title: "" },
-              { studentName: "黃柏霖", videoUrl: "", title: "" },
-              { studentName: "鄭書堯", videoUrl: "", title: "" },
+              { studentName: "黃柏霖", videoUrl: "https://www.youtube.com/embed/iBcdauXuTuI", title: "遇見情詩" },
+              { studentName: "鄭書堯", videoUrl: "https://www.youtube.com/embed/oBZbQFQ6pWc", title: "" },
               { studentName: "黃勁瑋", videoUrl: "", title: "" }
             ]
           }
@@ -709,7 +709,7 @@ const classData = [
                     },
                     {
                         studentName: "游詩如",
-                        videoUrl: "",
+                        videoUrl: "https://www.youtube.com/embed/TQcHbJKtS8M",
                         title: ""
                     }
                 ]
