@@ -1123,7 +1123,7 @@ const classData = [
                         },
                         {
                             "studentName": "4b330058 謝仲傑",
-                            "videoUrl": "https://www.youtube.com/embed/hFUXBlDwCiI",
+                            "videoUrl": "https://www.youtube.com/embed/b6nYPTjPYqE",
                             "title": "",
                             "comments": [ {
                                 "reviewerName": "阮氏茶媚",
