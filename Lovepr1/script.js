@@ -96,6 +96,35 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "咬字清晰",
                             "rating": 5
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得用還不錯 而且字體長得很可愛",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "歌曲可以再選得更好 更配一點",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得他聲音的大小很剛好 但字幕的位子可以改得更好",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "詩的內容看起來還不錯",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音清晰，配樂聲音大小適中",
+                            "rating": 4
                         }]
                     },
                     {
@@ -153,6 +182,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "內容豐富",
                             "rating": 4
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "圖片好夢幻感",
+                            "rating": 5
                         }]
                     },
                     {
@@ -176,7 +210,31 @@ const classData = [
                         studentName: "吳佳霓",
                         videoUrl: "https://www.youtube.com/embed/LVvNEYeNtus",
                         title: "予你",
-                        comments: []
+                        comments: [
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為第二句的碎碎的應該可以改成別的句子",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "人的聲音跟音樂的搭配很剛好 音樂不會太大聲字幕的位子也很ok",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "我喜歡這個詩的內容 願我是風 願我是月的部分感覺很棒 然後聽起來比較柔",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "口齒清晰，配樂大小適中",
+                            "rating": 4
+                        }]
                     },
                     {
                         studentName: "畢珮柔",
@@ -240,7 +298,36 @@ const classData = [
                         studentName: "鍾天悅",
                         videoUrl: "https://www.youtube.com/embed/8o7wqNQAgmM",
                         title: "緣起如風",
-                        comments: []
+                        comments: [{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "這個是上字幕的版本 能讓我每句話都跟到不會像是一次全部字都出來的 就像速讀想一次看完",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為字幕可以直接全部打出來 這樣看的話要看很快",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字幕是簡體字 人的聲音ok但沒有配音",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "這個生成的圖片看起來很有意境 在月光下靜靜思念的部分",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "字幕隨著聲音改變，可以方便知道現在是哪一句",
+                            "rating": 3
+                        }]
                     },
                     {
                         studentName: "邱秀和",
@@ -265,7 +352,7 @@ const classData = [
                             "rating": 4
                         },
                         {
-                            "reviewerName": "匿名",
+                            "reviewerName": "黃翊銘",
                             "reviewerClass": "流音一乙",
                             "content": "圖文搭配很好看",
                             "rating": 5
@@ -344,25 +431,8 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "圖片背景做得很漂亮 聲音可以再大聲一點",
                             "rating": 4
-                        },
-                        {
-                            "reviewerName": "楊采融",
-                            "reviewerClass": "流音一乙",
-                            "content": "有點雜音",
-                            "rating": 5
-                        },
-                        {
-                            "reviewerName": "吳政峰",
-                            "reviewerClass": "流音一乙",
-                            "content": "喔整個影片感覺很不錯夢幻",
-                            "rating": 4
-                        },
-                        {
-                            "reviewerName": "盧姵辰",
-                            "reviewerClass": "流音一乙",
-                            "content": "速度剛剛好 很讚！",
-                            "rating": 4
-                        }]
+                        }
+                        ]
                     },
                     {
                         studentName: "陳柏仁",
@@ -430,6 +500,35 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "圖片跟文字很有意境",
                             "rating": 4
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我喜歡他的背景圖片蠟燭很有氣氛",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得詩可以再白話一點 這樣的話比較難懂",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字幕跟背景都好看但沒有音樂",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "很有古風的感覺 那個畫面跟詩句 然後聲音很適合這個",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "背景圖有特色，字體顏色清晰",
+                            "rating": 2
                         }]
                     },
                     {
@@ -469,6 +568,35 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "咬字清楚",
                             "rating": 4
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得他的內容還不錯 很有感觸",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為字跟字太密 而且字體有點解",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字體太單調了也沒有音樂",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "一句有我勝過永久 我覺得這句的感覺很不錯",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "畫面清晰，方便觀眾閱讀",
+                            "rating": 3
                         }]
                     },
                     {
@@ -486,6 +614,23 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "有思念的感覺",
                             "rating": 5
+                        },{
+                            "reviewerName": "楊采融",
+                            "reviewerClass": "流音一乙",
+                            "content": "有點雜音",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "吳政峰",
+                            "reviewerClass": "流音一乙",
+                            "content": "喔整個影片感覺很不錯夢幻",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "盧姵辰",
+                            "reviewerClass": "流音一乙",
+                            "content": "速度剛剛好 很讚！",
+                            "rating": 4
                         }]
                     },
                     {
@@ -553,7 +698,7 @@ const classData = [
                         videoUrl: "https://www.youtube.com/embed/XcmGjBWXFeo",
                         title: "錯過的甜",
                         comments: [    {
-                            "reviewerName": "未知",
+                            "reviewerName": "張孟綸",
                             "reviewerClass": "電子一乙",
                             "content": "聲音清楚 有背景音樂",
                             "rating": 5
@@ -598,7 +743,7 @@ const classData = [
                             "content": "咬字清晰",
                             "rating": 5
                         }, {
-                            "reviewerName": "未知",
+                            "reviewerName": "廖崇凱",
                             "reviewerClass": "電子一乙",
                             "content": "咬字清晰",
                             "rating": 4
@@ -694,7 +839,24 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "詞很好",
                             "rating": 3
-                        }]
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "這張圖片很好看 生成的海很真實 字也排版的很好看",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為句子可以整句列一起 不用分兩行",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字體太單調 沒有音樂",
+                            "rating": 3
+                        },]
                     },
                     {
                         studentName: "張文碩",
@@ -711,6 +873,17 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "語速適中，整體感覺聲情並茂",
                             "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "請詩朗誦的速度感覺起來還可以",
+                            "rating": 3
+                        },{
+                            "reviewerName": "蘇侑峰",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺背景可以再修改一下",
+                            "rating": 4
                         }]
                     },
                     {
@@ -718,11 +891,30 @@ const classData = [
                         videoUrl: "https://www.youtube.com/embed/-5rVFxB8Xd0",
                         title: "",
                         comments:[
-                            {
-                            "reviewerName": "蘇侑峰",
-                            "reviewerClass": "電子一乙",
-                            "content": "感覺背景可以再修改一下",
-                            "rating": 4
+                            
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為中間那段如果不是拿來跟偶像比 而是跟月亮的話會更詩情畫意",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "配音的部分太隨便了也沒有音樂",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "陽光照不到你的光輝 即便雨來 我的心不會動搖 這句話我覺得還不錯",
+                            "rating": 1
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "詩詞寫得不錯，氣很足，豐富感情",
+                            "rating": 2
                         }]
                     },
                     {
@@ -740,7 +932,18 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "我覺得念得很好 ",
                             "rating": 4
-                        }]
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音清晰，排版整潔乾淨",
+                            "rating": 4
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得內文還不錯 看了很感動 但是字跟圖擋在一起",
+                            "rating": 3
+                        },]
                     }
                 ]
             },
@@ -755,13 +958,13 @@ const classData = [
                         comments: [                      {
                             "reviewerName": "陳泊安",
                             "reviewerClass": "電子一乙",
-                            "content": "歌詞生動",
+                            "content": "歌詞生動，我感覺比其他作品好得多",
                             "rating": 4
                         },
                         {
                             "reviewerName": "蘇侑峰",
                             "reviewerClass": "電子一乙",
-                            "content": "很棒",
+                            "content": "圖片復古風很好看",
                             "rating": 5
                         },
                         {
@@ -773,13 +976,7 @@ const classData = [
                         {
                             "reviewerName": "蘇侑峰",
                             "reviewerClass": "電子一乙",
-                            "content": "很棒",
-                            "rating": 5
-                        },
-                        {
-                            "reviewerName": "蘇侑峰",
-                            "reviewerClass": "電子一乙",
-                            "content": "很棒",
+                            "content": "聲音與圖片很好看",
                             "rating": 5
                         }]
                     },
@@ -792,7 +989,36 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "語速再慢一點會更好",
                             "rating": 2
-                        },]
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "內文看了很有感觸 覺得很不錯",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "字太小 而且背景圖被拉扁了 如果可以改進會更好",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音不太搭也沒有音樂字太小",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "名字落在身上 如晨曦吻人間 我喜歡這種句子",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "背景圖好看，很有藝術氣息",
+                            "rating": 3
+                        }]
                     },
                     {
                         studentName: "鄧宇智",
@@ -803,6 +1029,35 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "詩寫的很好讓人很好懂",
                             "rating": 5
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得他的排版很好看 我喜歡",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得背景可以改成深色 字體改成白色 這樣會更清楚",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "唸詩的部分是好聽但沒有音樂",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "這篇很有一見鍾情的感覺",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音清晰，排版乾淨整潔",
+                            "rating": 3
                         }]
                     },
                     {
@@ -813,6 +1068,35 @@ const classData = [
                             "reviewerName": "黃至",
                             "reviewerClass": "流音一乙",
                             "content": "圖片上也有字幕，有點影響閱讀。可以加背景音樂會更好",
+                            "rating": 3
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "他用了兩種字體很不錯 而且有兩種不同的感覺",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "施奕婕",
+                            "reviewerClass": "流音一乙",
+                            "content": "我認為字太大而且太密 也有可能是字體的關係",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字體不太搭 沒有音樂",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "這篇詩的感覺很不錯 很有古詩的那種味道",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "怕讀者看不清楚，還打了一次清楚的在旁邊",
                             "rating": 3
                         }]
                     }
@@ -829,11 +1113,11 @@ const classData = [
                         comments: [{
                             "reviewerName": "蘇侑峰",
                             "reviewerClass": "電子一乙",
-                            "content": "很棒",
+                            "content": "很棒的情詩作品",
                             "rating": 5
                         },
                         {
-                            "reviewerName": "未知",
+                            "reviewerName": "黃志賢",
                             "reviewerClass": "電子一乙",
                             "content": "還不錯 咬字清楚",
                             "rating": 3
@@ -841,7 +1125,7 @@ const classData = [
                         {
                             "reviewerName": "柯宥廷",
                             "reviewerClass": "電子一乙",
-                            "content": "很好",
+                            "content": "很好的!給100分，雖然文字有點看不見",
                             "rating": 5
                         }]
                     },
@@ -849,24 +1133,7 @@ const classData = [
                         studentName: "劉曜誠",
                         videoUrl: "https://www.youtube.com/embed/nxsDGKfI3uQ",
                         title: "遇見你",
-                        comments: [{
-                            "reviewerName": "陳泊安",
-                            "reviewerClass": "電子一乙",
-                            "content": "講述的很好",
-                            "rating": 4
-                        },
-                        {
-                            "reviewerName": "蘇侑峰",
-                            "reviewerClass": "電子一乙",
-                            "content": "很不錯",
-                            "rating": 5
-                        },
-                        {
-                            "reviewerName": "未知",
-                            "reviewerClass": "電子一乙",
-                            "content": "圖片好看 聲音好聽",
-                            "rating": 3
-                        },
+                        comments: [
                         {
                             "reviewerName": "柯宥廷",
                             "reviewerClass": "電子一乙",
@@ -876,13 +1143,7 @@ const classData = [
                         {
                             "reviewerName": "蘇侑峰",
                             "reviewerClass": "電子一乙",
-                            "content": "很好",
-                            "rating": 5
-                        },
-                        {
-                            "reviewerName": "蘇侑峰",
-                            "reviewerClass": "電子一乙",
-                            "content": "很好",
+                            "content": "情詩寫得不錯",
                             "rating": 5
                         },
                         {
@@ -915,11 +1176,6 @@ const classData = [
                         videoUrl: "https://www.youtube.com/embed/4r0D9RK4aL8",
                         title: "在你眼中",
                         comments: [{
-                            "reviewerName": "陳泊安",
-                            "reviewerClass": "電子一乙",
-                            "content": "歌詞很有意境",
-                            "rating": 4
-                        },{
                             "reviewerName": "蘇侑峰",
                             "reviewerClass": "電子一乙",
                             "content": "歌詞很有意境",
@@ -929,6 +1185,17 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "收音太好所以可以放點背景音樂去蓋掉。",
                             "rating": 4
+                        },{
+                            "reviewerName": "陳泊安",
+                            "reviewerClass": "電子一乙",
+                            "content": "講述的很好",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "蘇侑峰",
+                            "reviewerClass": "電子一乙",
+                            "content": "很不錯",
+                            "rating": 5
                         }]
                     }
                 ]
@@ -941,11 +1208,30 @@ const classData = [
                         studentName: "潘冠佑",
                         videoUrl: "https://www.youtube.com/embed/KNjK9x5Rk-4",
                         title: "情深深",
-                        comments: [                      {
-                            "reviewerName": "游詩如",
+                        comments: [
+                        {
+                            "reviewerName": "施奕婕",
                             "reviewerClass": "流音一乙",
-                            "content": "很好",
-                            "rating": 5
+                            "content": "我覺得可以改個字體會更好",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "沒有音樂 字體不太搭",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "整體的詩蠻有情深的感覺",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "李均",
+                            "reviewerClass": "流音一乙",
+                            "content": "怕讀者看不清楚，還打了一次清楚的在旁邊",
+                            "rating": 3
                         }]
                     },
                     {
@@ -973,6 +1259,17 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "背景音沒有蓋過他的聲音",
                             "rating": 4
+                        }, 
+                        {
+                            "reviewerName": "游詩如",
+                            "reviewerClass": "流音一乙",
+                            "content": "很好",
+                            "rating": 5
+                        },{
+                            "reviewerName": "郭俊驛",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得看了很不錯很有感觸",
+                            "rating": 3
                         }]
                     }
                 ]
@@ -1017,7 +1314,7 @@ const classData = [
                                 {
                                     "reviewerName": "李韋廷",
                                     "reviewerClass": "電子一甲",
-                                    "content": "很棒",
+                                    "content": "圖好好看的欸",
                                     "rating": 5
                                 },
                                 {
@@ -1029,13 +1326,13 @@ const classData = [
                                 {
                                     "reviewerName": "黃吉隆",
                                     "reviewerClass": "電子一甲",
-                                    "content": "無",
+                                    "content": "其實內容與圖片滿好的",
                                     "rating": 5
                                 },
                                 {
                                     "reviewerName": "張文碩",
                                     "reviewerClass": "電子一甲",
-                                    "content": "很棒",
+                                    "content": "這張圖也太頂",
                                     "rating": 5
                                 },{
                                     "reviewerName": "沈俊毅",
@@ -1058,13 +1355,13 @@ const classData = [
                             {
                                 "reviewerName": "李韋廷",
                                 "reviewerClass": "電子一甲",
-                                "content": "很棒",
+                                "content": "背景圖蠻特別的",
                                 "rating": 5
                             },
                             {
                                 "reviewerName": "黃淯平",
                                 "reviewerClass": "電子一甲",
-                                "content": "很棒！",
+                                "content": "文字排版很不錯",
                                 "rating": 4
                             }]
                         },
@@ -1077,7 +1374,25 @@ const classData = [
                                 "reviewerClass": "電子一甲",
                                 "content": "很棒！不錯",
                                 "rating": 4
-                            }]
+                            },
+                            {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "講話速度可以再快一點其他都很好",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "比例可以更好 文字要分開",
+                                "rating": 5
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "語調不會太快也不會太慢，能聽得清楚他在講什麼",
+                                "rating": 4
+                            },]
                         },
                         {
                             "studentName": "4b330110 呂嘉慶",
@@ -1087,6 +1402,24 @@ const classData = [
                                 "reviewerName": "黃淯平",
                                 "reviewerClass": "電子一甲",
                                 "content": "整體來看算很好",
+                                "rating": 4
+                            },
+                            {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "讓人很有遇到愛情的感覺",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "都很好 沒有什麼大問題 ",
+                                "rating": 5
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "圖片跟文字沒有重疊 知道他在寫什麼",
                                 "rating": 4
                             }]
                         }
@@ -1148,6 +1481,24 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "唸的很好，不會太急",
                                     "rating": 4
+                                }, 
+                                {
+                                    "reviewerName": "洪肇甫",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "不知道怎麼評價但做得很不錯",
+                                    "rating": 3
+                                }, 
+                                {
+                                    "reviewerName": "李安芽",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "比例可以更好 圖片跟文字分開 ",
+                                    "rating": 4
+                                },
+                                {  
+                                    "reviewerName": "張雅玟",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "他做得很好 無論是語速還是圖片都相當完美",
+                                    "rating": 5
                                 }
                             ]
                         },
@@ -1168,7 +1519,7 @@ const classData = [
                                 "rating": 5
                             },
                             {
-                                "reviewerName": "陳怡晴",
+                                "reviewerName": "邱秀和",
                                 "reviewerClass": "電子一甲",
                                 "content": "詩的內容寫得很好",
                                 "rating": 3
@@ -1198,10 +1549,10 @@ const classData = [
                                     "rating": 3
                                 },
                                 {
-                                    "reviewerName": "未知",
-                                    "reviewerClass": "電子一甲",
-                                    "content": "聲音大聲清晰，排版清楚",
-                                    "rating": 4
+                                    "reviewerName": "潘聖恩",
+                                    "reviewerClass": "流音一乙",
+                                    "content": "聲音大 咬字 讚",
+                                    "rating": 3
                                 }
                             ]
                         },
@@ -1222,7 +1573,7 @@ const classData = [
                                 "rating": 3
                             },
                             {
-                                "reviewerName": "未知",
+                                "reviewerName": "陳柏仁",
                                 "reviewerClass": "電子一甲",
                                 "content": "聲音清晰，字清楚",
                                 "rating": 4
@@ -1232,12 +1583,7 @@ const classData = [
                                 "content": "很棒",
                                 "rating": 5
                             },
-                            {
-                                "reviewerName": "潘聖恩",
-                                "reviewerClass": "流音一乙",
-                                "content": "聲音大 咬字 讚",
-                                "rating": 3
-                            }]
+                            ]
                         },
                         {
                             "studentName": "林岑晏",
@@ -1411,6 +1757,24 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "念得很好 字正腔圓",
                                     "rating": 4
+                                },
+                                {
+                                    "reviewerName": "洪肇甫",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "做得很不錯，但文字可能要改要改",
+                                    "rating": 3
+                                }, 
+                                {
+                                    "reviewerName": "李安芽",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "圖片感覺有點小 但整體可以 ",
+                                    "rating": 5
+                                },
+                                {  
+                                    "reviewerName": "張雅玟",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "他說得很好無論是語調還是語速都表現得很優秀",
+                                    "rating": 5
                                 }
                             ]
                         },
@@ -1542,6 +1906,24 @@ const classData = [
                                 "reviewerClass": "流音一乙",
                                 "content": "說得很好，聲音很符合這首詩",
                                 "rating": 3
+                            },
+                            {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "文字可以改位置，文字把圖片擋住",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "圖片跟文字要分開會更好看 ",
+                                "rating": 3
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "選的這張圖片蠻好的，符合主題",
+                                "rating": 4
                             }]
                         },
                         {
@@ -1553,6 +1935,24 @@ const classData = [
                                 "reviewerClass": "流音一乙",
                                 "content": "背景跟詩詞的搭配很好",
                                 "rating": 4
+                            },
+                            {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "不知道怎麼評價但做得很不錯",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "圖片跟文字要分開會更好看 ",
+                                "rating": 3
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "選的的這個詩寫得不錯，符合主題",
+                                "rating": 3
                             }]
                         },
                         {
@@ -1578,12 +1978,6 @@ const classData = [
                             "videoUrl": "https://www.youtube.com/embed/NSY2BnXZFow",
                             "title": "浪漫夜晚",
                             "comments": [
-                                {
-                                    "reviewerName": "黃翊銘",
-                                    "reviewerClass": "電子一甲",
-                                    "content": "圖片很夢幻",
-                                    "rating": 4
-                                },
                                 {
                                     "reviewerName": "黃翊銘",
                                     "reviewerClass": "電子一甲",
@@ -1656,7 +2050,7 @@ const classData = [
                                 "rating": 4
                             },
                             {
-                                "reviewerName": "匿名",
+                                "reviewerName": "謝駿彬",
                                 "reviewerClass": "電子一甲",
                                 "content": "有配樂很好但聲音可以在大聲點！",
                                 "rating": 3
@@ -1672,12 +2066,7 @@ const classData = [
                             "studentName": "4B330040 黃奕睿",
                             "videoUrl": "https://www.youtube.com/embed/ZeK7UyehaTg",
                             "title": "情歌朗讀",
-                            "comments": [                        {
-                                "reviewerName": "黃翊銘",
-                                "reviewerClass": "電子一甲",
-                                "content": "為什麼字會閃",
-                                "rating": 2
-                            },
+                            "comments": [
                             {
                                 "reviewerName": "黃翊銘",
                                 "reviewerClass": "電子一甲",
@@ -1697,7 +2086,7 @@ const classData = [
                                 "rating": 4
                             },
                             {
-                                "reviewerName": "未知",
+                                "reviewerName": "黃柏森",
                                 "reviewerClass": "電子一甲",
                                 "content": "不錯但速度有點快",
                                 "rating": 5
@@ -1725,6 +2114,24 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "停頓跟語調控制得很好，讓人聽得很舒服",
                                     "rating": 5
+                                },
+                                {
+                                    "reviewerName": "洪肇甫",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "不知道怎麼評價因為沒什麼感覺但做得很不錯",
+                                    "rating": 3
+                                }, 
+                                {
+                                    "reviewerName": "李安芽",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "文字跟圖片分開會更好看 文字排版感覺可以更好一點 ",
+                                    "rating": 3
+                                },
+                                {  
+                                    "reviewerName": "張雅玟",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "選的圖片有跟詩句對應到，只是文字的排版可能可以再好一點",
+                                    "rating": 4
                                 }
                             ]
                         },
@@ -1738,7 +2145,26 @@ const classData = [
                                 "reviewerClass": "電子一甲",
                                 "content": "講的很大聲，聽得很清楚",
                                 "rating": 5
-                            }]
+                            },
+                            {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "不知道怎麼評價但做得很不錯",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "圖片上的文字要刪除會更好",
+                                "rating": 4
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "詩跟圖片都選的很好，只是圖片的文字可以去除會更好",
+                                "rating": 4
+                            },
+                        ]
                         },
                         {
                             "studentName": "4B330084 郭彥承",
@@ -1810,13 +2236,13 @@ const classData = [
                             "comments": [ {
                                 "reviewerName": "鄭延俊",
                                 "reviewerClass": "流音一乙",
-                                "content": "很棒",
+                                "content": "很棒的內容",
                                 "rating": 5
                             },
                             {
                                 "reviewerName": "林相名",
                                 "reviewerClass": "流音一乙",
-                                "content": "很棒",
+                                "content": "文字與圖片很搭配感覺不錯",
                                 "rating": 4
                             }]
                         },
@@ -1863,7 +2289,7 @@ const classData = [
                             {
                                 "reviewerName": "林相名",
                                 "reviewerClass": "流音一乙",
-                                "content": "很棒",
+                                "content": "這圖很好欸生成指令很會寫的",
                                 "rating": 4
                             }]
                         }
@@ -1978,21 +2404,45 @@ const classData = [
                             "videoUrl": "https://www.youtube.com/embed/iBcdauXuTuI",
                             "title": "遇見情詩",
                             "comments": [               
-                            {
-                            "reviewerName": "黃柏霖",
-                            "reviewerClass": "電子一乙",
-                            "content": "內容不錯，音量剛剛好",
-                            "rating": 5
+                           {
+                            "reviewerName": "洪肇甫",
+                            "reviewerClass": "電子一甲",
+                            "content": "不知道怎麼評價但做得很不錯",
+                            "rating": 3
+                        }, 
+                        {
+                            "reviewerName": "李安芽",
+                            "reviewerClass": "電子一甲",
+                            "content": "整體看起來都可以接受但是文字的排版還可以更好",
+                            "rating": 4
+                        },
+                        {  
+                            "reviewerName": "張雅玟",
+                            "reviewerClass": "電子一甲",
+                            "content": "能聽清楚他在說什麼，很好",
+                            "rating": 4
                         }]
                         },
                         {
                             "studentName": "鄭書堯",
                             "videoUrl": "https://www.youtube.com/embed/oBZbQFQ6pWc",
                             "title": "",
-                            "comments": [      {
-                                "reviewerName": "陽劼睿",
-                                "reviewerClass": "電子一乙",
-                                "content": "他生成出來的文章很有趣",
+                            "comments": [     {
+                                "reviewerName": "洪肇甫",
+                                "reviewerClass": "電子一甲",
+                                "content": "生成出來的文章很有趣",
+                                "rating": 3
+                            }, 
+                            {
+                                "reviewerName": "李安芽",
+                                "reviewerClass": "電子一甲",
+                                "content": "文字排版可以更好 整體看起來可行",
+                                "rating": 4
+                            },
+                            {  
+                                "reviewerName": "張雅玟",
+                                "reviewerClass": "電子一甲",
+                                "content": "聽得懂他在說什麼不會太快或太慢",
                                 "rating": 5
                             }]
                         },
@@ -2044,10 +2494,25 @@ const classData = [
                         studentName: "鄭延俊",
                         videoUrl: "https://www.youtube.com/embed/UqyTaEJRM9Q",
                         title: "獨燈",
-                        comments: [                      {
+                        comments: [ {
                             "reviewerName": "陽劼睿",
                             "reviewerClass": "電子一乙",
                             "content": "他生成出來的文章很有趣精妙 值得細細品味",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "聲音大聲 背景音樂也不錯聽",
+                            "rating": 3
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂很跟主題很合適",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂太大聲蓋過說話聲",
                             "rating": 5
                         }]
                     },
@@ -2059,6 +2524,21 @@ const classData = [
                             "reviewerName": "葉育綸",
                             "reviewerClass": "電子一乙",
                             "content": "很有意境",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "聲音宏亮 但感覺可以唸慢一點",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景跟音樂及語調都很適配",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "講話聲音能大聲點就完美了",
                             "rating": 5
                         }]
                     },
@@ -2191,6 +2671,21 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "背景圖顯得突出",
                             "rating": 4
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "很棒 沒什麼需要特別感變的",
+                            "rating": 5
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂很特別背景也是",
+                            "rating": 3
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂有點不符合詩",
+                            "rating": 5
                         }]
                     }
                 ]
@@ -2208,6 +2703,21 @@ const classData = [
                             "reviewerClass": "電子一甲",
                             "content": "還不錯",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺有點亂 但還不錯沒什麼問題",
+                            "rating": 3
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "語句通順背景圖片很符合",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "影片和詩都處理的非常好",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2218,6 +2728,22 @@ const classData = [
                             "reviewerName": "劉曜誠",
                             "reviewerClass": "電子一甲",
                             "content": "讚",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "沒什麼特別需要感變的問題",
+                            "rating": 3
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "句子容易理解背景符合",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "影片和詩都處理的非常好",
                             "rating": 5
                         }]
                     },
@@ -2265,7 +2791,7 @@ const classData = [
                             "rating": 4
                         },
                         {
-                            "reviewerName": "匿名",
+                            "reviewerName": "馬克帆",
                             "reviewerClass": "電子一甲",
                             "content": "背景音樂襯托景象，排版清晰",
                             "rating": 4
@@ -2352,7 +2878,7 @@ const classData = [
                             "rating": 4
                         },
                         {
-                            "reviewerName": "匿名",
+                            "reviewerName": "龔建霖",
                             "reviewerClass": "電子一甲",
                             "content": "聲音清晰，背景音樂搭配得很好，圖片也與內容相符。",
                             "rating": 4
@@ -2387,12 +2913,6 @@ const classData = [
                             "rating": 4
                         },
                         {
-                            "reviewerName": "陳怡晴",
-                            "reviewerClass": "電子一甲",
-                            "content": "詩選的很好，講得很有感情",
-                            "rating": 4
-                        },
-                        {
                             "reviewerName": "張文碩",
                             "reviewerClass": "電子一甲",
                             "content": "很棒",
@@ -2409,12 +2929,6 @@ const classData = [
                             "reviewerClass": "電子一甲",
                             "content": "內容很豐富，圖片也選得很好",
                             "rating": 4
-                        },
-                        {
-                            "reviewerName": "未知",
-                            "reviewerClass": "電子一甲",
-                            "content": "語音清晰，圖片與內容相符，背景音樂搭配得宜，整體表現非常好。",
-                            "rating": 5
                         }]
                     },
                     {
@@ -2427,8 +2941,7 @@ const classData = [
                                 "reviewerClass": "電子一甲",
                                 "content": "詩的內容很精彩 用車禍慘烈的狀況來形容轟轟烈烈的愛情。",
                                 "rating": 5
-                            },
-                             {
+                            },{
                             "reviewerName": "鄭書堯",
                             "reviewerClass": "電子一乙",
                             "content": "不管如何 都不要活在過去 應該向前",
@@ -2443,6 +2956,21 @@ const classData = [
                             "reviewerName": "鄭書堯",
                             "reviewerClass": "電子一乙",
                             "content": "兩個人有心會越來越好",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "聲音大聲 背景音樂也不錯",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "語句通順，背景與句子符合",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "影片和詩都處理的非常好",
                             "rating": 5
                         }]
                     },
@@ -2479,6 +3007,22 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "有配樂，聲音清晰沒被音樂蓋過。",
                             "rating": 5
+                        },
+                        {
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "聲音宏亮 念的也不錯",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂和句子及背景都剛剛好",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2490,6 +3034,21 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "有配樂，聲音清晰沒被音樂蓋過。",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "念的很好 沒什麼問題",
+                            "rating": 5
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景音樂和句子及背景都不錯",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2500,6 +3059,21 @@ const classData = [
                             "reviewerName": "陳冠宇",
                             "reviewerClass": "電子一甲",
                             "content": "這也說的很好",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "音樂好聽 聲音大聲 有趣",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "音樂特別語句通順背景符合",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
                             "rating": 5
                         }]
                     },
@@ -2540,6 +3114,21 @@ const classData = [
                             "reviewerClass": "電子一甲",
                             "content": "配樂小聲一點",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺有點短 但還不錯",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "簡單易懂背景符合語句音樂好聽",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2551,11 +3140,26 @@ const classData = [
                         studentName: "李均",
                         videoUrl: "https://www.youtube.com/embed/0d3L4Simgkw",
                         title: "伴",
-                        comments: [                      {
+                        comments: [{
                             "reviewerName": "龔建霖",
                             "reviewerClass": "電子一甲",
                             "content": "背景音樂配這首很搭",
                             "rating": 3
+                        },{
+                            "reviewerName": "黃奕睿",
+                            "reviewerClass": "電子一乙",
+                            "content": "不知道為什麼是反的 但還可以",
+                            "rating": 4
+                        },{
+                            "reviewerName": "詹佳穎",
+                            "reviewerClass": "電子一乙",
+                            "content": "背景符合語句音樂好聽",
+                            "rating": 5
+                        },{
+                            "reviewerName": "簡揚凱",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
+                            "rating": 5
                         }]
                     }
                 ]
