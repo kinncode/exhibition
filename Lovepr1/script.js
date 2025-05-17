@@ -1,6 +1,3 @@
-// 班級、組別和學生作品的資料結構
-// 從原始資料複製 classData
-// 班級、組別和學生作品的資料結構
 const classData = [
     {
         id: "class-a",
@@ -125,6 +122,23 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "聲音清晰，配樂聲音大小適中",
                             "rating": 4
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得有讓我回到初戀的感覺",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "音樂選得很深奧，讓人很有感觸",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "蘇筠淇",
+                            "reviewerClass": "流音一乙",
+                            "content": "往很多個方向去延伸，描述的方式很有自己的節奏",
+                            "rating": 3
                         }]
                     },
                     {
@@ -292,6 +306,17 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "語調很好",
                             "rating": 4
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "很有相思感，把想念一個人都說了出來",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "在最後結束讓我聯想到[對你愛不完]ss",
+                            "rating": 5
                         }]
                     },
                     {
@@ -466,6 +491,17 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "講的不錯",
                             "rating": 5
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "背景的水墨畫跟詩句呼應，我覺得有被帶進去",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "背景跟文字很搭，有古風感",
+                            "rating": 5
                         }]
                     },
                     {
@@ -489,7 +525,13 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "字體跟照片都很搭",
                             "rating": 5
-                        }]
+                        },
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字幕跟背景都好看但沒有音樂",
+                            "rating": 4
+                        },]
                     },
                     {
                         studentName: "李承恩",
@@ -512,23 +554,18 @@ const classData = [
                             "content": "我覺得詩可以再白話一點 這樣的話比較難懂",
                             "rating": 2
                         },
-                        {
-                            "reviewerName": "閃莉萍",
-                            "reviewerClass": "流音一乙",
-                            "content": "字幕跟背景都好看但沒有音樂",
-                            "rating": 4
-                        },
-                        {
-                            "reviewerName": "洪宇亮",
-                            "reviewerClass": "流音一乙",
-                            "content": "很有古風的感覺 那個畫面跟詩句 然後聲音很適合這個",
-                            "rating": 4
-                        },
+
                         {
                             "reviewerName": "李均",
                             "reviewerClass": "流音一乙",
                             "content": "背景圖有特色，字體顏色清晰",
                             "rating": 2
+                        },
+                        {
+                            "reviewerName": "蘇筠淇",
+                            "reviewerClass": "流音一乙",
+                            "content": "最後一句有孤身一人於寂靜的天地回眸之感",
+                            "rating": 3
                         }]
                     },
                     {
@@ -557,6 +594,18 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "咬字清楚",
                             "rating": 4
+                        }, 
+                        {
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "字體太單調了也沒有音樂",
+                            "rating": 3
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "我覺得內容的感覺很不錯",
+                            "rating": 5
                         }]
                     },
                     {
@@ -581,22 +630,22 @@ const classData = [
                             "rating": 2
                         },
                         {
-                            "reviewerName": "閃莉萍",
-                            "reviewerClass": "流音一乙",
-                            "content": "字體太單調了也沒有音樂",
-                            "rating": 3
-                        },
-                        {
-                            "reviewerName": "洪宇亮",
-                            "reviewerClass": "流音一乙",
-                            "content": "一句有我勝過永久 我覺得這句的感覺很不錯",
-                            "rating": 2
-                        },
-                        {
                             "reviewerName": "李均",
                             "reviewerClass": "流音一乙",
                             "content": "畫面清晰，方便觀眾閱讀",
                             "rating": 3
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "把一個人初遇一個人的酸甜苦辣都寫了出來",
+                            "rating": 4
+                        },
+                        
+                        {
+                            "reviewerName": "蘇筠淇",
+                            "reviewerClass": "流音一乙",
+                            "content": "一些描寫很特別，令人注目",
+                            "rating": 5
                         }]
                     },
                     {
@@ -770,6 +819,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "音量很大 語氣很順暢",
                             "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "聲音可以很好聽!文字顏色感覺可以調整，整體上很好",
+                            "rating": 5
                         }]
                     },
                     {
@@ -786,6 +840,11 @@ const classData = [
                             "reviewerName": "陳品皓",
                             "reviewerClass": "電子一乙",
                             "content": "音量很大 咬字清晰",
+                            "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "照片不錯欸，但是影片是直的可以再調整",
                             "rating": 5
                         }]
                     },
@@ -804,6 +863,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "這首詩讓我感覺到共鳴",
                             "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "圖片生成很特別!我會認為是真人在畫的!文字有點大可以調整",
+                            "rating": 5
                         }]
                     },
                     {
@@ -821,7 +885,18 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "音量較小 內容及語氣很好",
                             "rating": 4
-                        }]
+                        },{
+                            "reviewerName": "閃莉萍",
+                            "reviewerClass": "流音一乙",
+                            "content": "配音的部分太隨便了也沒有音樂",
+                            "rating": 2
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音很有張力，多變很有特色",
+                            "rating": 5
+                        },]
                     }
                 ]
             },
@@ -899,22 +974,27 @@ const classData = [
                             "rating": 2
                         },
                         {
-                            "reviewerName": "閃莉萍",
-                            "reviewerClass": "流音一乙",
-                            "content": "配音的部分太隨便了也沒有音樂",
-                            "rating": 2
-                        },
-                        {
-                            "reviewerName": "洪宇亮",
-                            "reviewerClass": "流音一乙",
-                            "content": "陽光照不到你的光輝 即便雨來 我的心不會動搖 這句話我覺得還不錯",
-                            "rating": 1
-                        },
-                        {
                             "reviewerName": "李均",
                             "reviewerClass": "流音一乙",
                             "content": "詩詞寫得不錯，氣很足，豐富感情",
                             "rating": 2
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "將心上人的笑跟任何偶像比較，果然厲害",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "聲音很有張力，多變很有特色",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "蘇筠淇",
+                            "reviewerClass": "流音一乙",
+                            "content": "運用多種修辭，多角度描述愛情",
+                            "rating": 5
                         }]
                     },
                     {
@@ -1008,17 +1088,17 @@ const classData = [
                             "rating": 3
                         },
                         {
-                            "reviewerName": "洪宇亮",
+                            "reviewerName": "林芳賢",
                             "reviewerClass": "流音一乙",
-                            "content": "名字落在身上 如晨曦吻人間 我喜歡這種句子",
-                            "rating": 2
+                            "content": "不負青春所初見的他/她",
+                            "rating": 4
                         },
                         {
-                            "reviewerName": "李均",
+                            "reviewerName": "黃綉庭",
                             "reviewerClass": "流音一乙",
-                            "content": "背景圖好看，很有藝術氣息",
-                            "rating": 3
-                        }]
+                            "content": "初見時在心中的甜蜜是不可替代的，應該好好珍惜",
+                            "rating": 5
+                        },]
                     },
                     {
                         studentName: "鄧宇智",
@@ -1127,6 +1207,12 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "很好的!給100分，雖然文字有點看不見",
                             "rating": 5
+                        },
+                        {
+                            "reviewerName": "蘇筠淇",
+                            "reviewerClass": "流音一乙",
+                            "content": "押韻流暢，文筆簡單動人",
+                            "rating": 3
                         }]
                     },
                     {
@@ -1232,7 +1318,18 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "怕讀者看不清楚，還打了一次清楚的在旁邊",
                             "rating": 3
-                        }]
+                        },{
+                            "reviewerName": "林芳賢",
+                            "reviewerClass": "流音一乙",
+                            "content": "轟轟烈烈的愛情，像個煙火一樣，夢醒之後只剩餘溫，很酷的譬喻",
+                            "rating": 4
+                        },
+                        {
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "俗話說:喜歡上一個人的時候，眼睛是不會騙人的",
+                            "rating": 5
+                        },]
                     },
                     {
                         studentName: "許守豐",
@@ -1334,11 +1431,6 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "這張圖也太頂",
                                     "rating": 5
-                                },{
-                                    "reviewerName": "沈俊毅",
-                                    "reviewerClass": "流音一乙",
-                                    "content": "聲音可以再穩定一點",
-                                    "rating": 3
                                 }
                             ]
                         },
@@ -1694,6 +1786,11 @@ const classData = [
                                 "reviewerClass": "電子一甲",
                                 "content": "音量不錯",
                                 "rating": 3
+                            },{
+                                "reviewerName": "沈俊毅",
+                                "reviewerClass": "流音一乙",
+                                "content": "聲音可以大聲點，但整體不錯",
+                                "rating": 5
                             }]
                         }
                     ]
@@ -1745,7 +1842,12 @@ const classData = [
                                 "reviewerClass": "電子一甲",
                                 "content": "字幕清晰",
                                 "rating": 5
-                            },]
+                            },,{
+                                "reviewerName": "張愉祥",
+                                "reviewerClass": "TA",
+                                "content": "圖片生成很好！內容寫不錯",
+                                "rating": 5
+                            }]
                         },
                         {
                             "studentName": "4B330034 李易勳",
@@ -1857,6 +1959,16 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "情感和圖片以及聲音都很契合",
                                     "rating": 4
+                                },{
+                                    "reviewerName": "張愉祥",
+                                    "reviewerClass": "TA",
+                                    "content": "聲音可以，你生成的圖片感覺很特別有繪畫感覺",
+                                    "rating": 5
+                                },{
+                                    "reviewerName": "李奇叡",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "整體很好!",
+                                    "rating": 4
                                 }
                             ]
                         },
@@ -1875,6 +1987,16 @@ const classData = [
                                     "reviewerName": "黃昱嘉",
                                     "reviewerClass": "電子一甲",
                                     "content": "講的時候速度放慢一點",
+                                    "rating": 4
+                                },{
+                                    "reviewerName": "張愉祥",
+                                    "reviewerClass": "TA",
+                                    "content": "朗讀有情緒很好!圖片生成很ＯＫ",
+                                    "rating": 5
+                                }, {
+                                    "reviewerName": "李奇叡",
+                                    "reviewerClass": "電子一甲",
+                                    "content": "圖非常好看，詩詞也很棒",
                                     "rating": 4
                                 }
                             ]
@@ -2091,12 +2213,7 @@ const classData = [
                                 "content": "不錯但速度有點快",
                                 "rating": 5
                             },
-                            {
-                                "reviewerName": "李奇叡",
-                                "reviewerClass": "電子一甲",
-                                "content": "圖非常好看，詩詞也很棒",
-                                "rating": 4
-                            }]
+                           ]
                         }
                     ]
                 },
@@ -2203,6 +2320,11 @@ const classData = [
                                     "reviewerClass": "電子一甲",
                                     "content": "作品稍微有點短，不過整體來說還不錯，所使用的圖片也與詩的內容相當契合。",
                                     "rating": 5
+                                },{
+                                    "reviewerName": "張愉祥",
+                                    "reviewerClass": "TA",
+                                    "content": "圖很好看欸，看出浪漫點，內容很有趣~",
+                                    "rating": 5
                                 }
                             ]
                         }
@@ -2244,6 +2366,11 @@ const classData = [
                                 "reviewerClass": "流音一乙",
                                 "content": "文字與圖片很搭配感覺不錯",
                                 "rating": 4
+                            },{
+                                "reviewerName": "張愉祥",
+                                "reviewerClass": "TA",
+                                "content": "圖片很有感覺!字幕選顏色的確很搭，讚",
+                                "rating": 5
                             }]
                         },
                         {
@@ -2291,6 +2418,11 @@ const classData = [
                                 "reviewerClass": "流音一乙",
                                 "content": "這圖很好欸生成指令很會寫的",
                                 "rating": 4
+                            },{
+                                "reviewerName": "張愉祥",
+                                "reviewerClass": "TA",
+                                "content": "聲音可以，圖片看出一人寂寞樣子",
+                                "rating": 5
                             }]
                         }
                     ]
@@ -2514,6 +2646,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "背景音樂太大聲蓋過說話聲",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "這首詩述說著孤獨的痛苦與掙扎讓我感同身受",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2540,6 +2677,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "講話聲音能大聲點就完美了",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "這首詩選得題材很好且聲音的高低起伏很好",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2557,7 +2699,12 @@ const classData = [
                             "reviewerClass": "流音一乙",
                             "content": "非常的投入 很棒",
                             "rating": 4
-                        }]
+                        },{
+                            "reviewerName": "黃綉庭",
+                            "reviewerClass": "流音一乙",
+                            "content": "祝福你，不放手，直到夢想到手",
+                            "rating": 5
+                        },]
                     },
                     {
                         studentName: "林相名",
@@ -2572,6 +2719,11 @@ const classData = [
                             "reviewerName": "葉育綸",
                             "reviewerClass": "電子一乙",
                             "content": "圖片不錯",
+                            "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "生成的圖片很不錯，不過字幕與圖分開會好點",
                             "rating": 5
                         }]
                     }
@@ -2686,6 +2838,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "背景音樂有點不符合詩",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "很棒背景圖選得我很喜歡",
+                            "rating": 5
                         }]
                     }
                 ]
@@ -2718,6 +2875,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "影片和詩都處理的非常好",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "是一段讓人身心靈沉澱的美好時光。在這段時間裡，我能遠離喧囂",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2745,6 +2907,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "影片和詩都處理的非常好",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "呈現出愛情多元而真摯的樣貌，不拘泥於傳統形式",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2760,6 +2927,11 @@ const classData = [
                             "reviewerName": "蘇映君",
                             "reviewerClass": "電子一甲",
                             "content": "這是目前我看過最標準的報告了，給予高分",
+                            "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "生成的人物很帥欸，字幕有點大，郎讀聲音剛好",
                             "rating": 5
                         }]
                     },
@@ -2821,6 +2993,11 @@ const classData = [
                             "reviewerClass": "電子一甲",
                             "content": "聲音宏亮，圖片符合詩意，排版清晰",
                             "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "太神了圖片不錯看欸",
+                            "rating": 5
                         }]
                     }
                 ]
@@ -2847,6 +3024,11 @@ const classData = [
                             "reviewerName": "鍾天悅 ",
                             "reviewerClass": "電子一甲",
                             "content": "圖片符合詩意，排版好",
+                            "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "圖與聲音可以，文字分開方比較好點",
                             "rating": 5
                         }]
                     },
@@ -2946,6 +3128,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "不管如何 都不要活在過去 應該向前",
                             "rating": 5
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "圖片可以!很搭的，文字內容很好",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2972,6 +3159,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "影片和詩都處理的非常好",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "帶來一種溫柔而深邃的氛圍。它喚起人們對過往的回憶與對未來的憧憬s",
+                            "rating": 5
                         }]
                     },
                     {
@@ -2989,7 +3181,12 @@ const classData = [
                             "reviewerClass": "電子一甲",
                             "content": "圖片好看",
                             "rating": 4
-                        },
+                        },{
+                            "reviewerName": "張愉祥",
+                            "reviewerClass": "TA",
+                            "content": "圖與字幕可以!聲音剛剛好我滿喜歡的",
+                            "rating": 5
+                        }
                         ]
                     }
                 ]
@@ -3023,6 +3220,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "感覺很用心在寫這首詩",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "充滿情感厚度與文化意義，展現了對過往記憶與家園的深切守護",
+                            "rating": 5
                         }]
                     },
                     {
@@ -3048,6 +3250,11 @@ const classData = [
                             "reviewerName": "簡揚凱",
                             "reviewerClass": "電子一乙",
                             "content": "感覺很用心在寫這首詩",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "這個讓我回想起我國中的時候",
                             "rating": 5
                         }]
                     },
@@ -3075,6 +3282,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "感覺很用心在寫這首詩",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "這個我沒有很喜歡題材",
+                            "rating": 5
                         }]
                     },
                     {
@@ -3091,6 +3303,17 @@ const classData = [
                             "reviewerName": "吳宗恩",
                             "reviewerClass": "電子一乙",
                             "content": "詩選的很好",
+                            "rating": 5
+                        },
+                        {
+                            "reviewerName": "洪宇亮",
+                            "reviewerClass": "流音一乙",
+                            "content": "很有古風的感覺 那個畫面跟詩句 然後聲音很適合這個",
+                            "rating": 4
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "感覺很用心在寫這首詩",
                             "rating": 5
                         }]
                     }
@@ -3129,6 +3352,11 @@ const classData = [
                             "reviewerClass": "電子一乙",
                             "content": "感覺很用心在寫這首詩",
                             "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "我不喜歡他的題材其他的比較好",
+                            "rating": 5
                         }]
                     },
                     {
@@ -3159,6 +3387,11 @@ const classData = [
                             "reviewerName": "簡揚凱",
                             "reviewerClass": "電子一乙",
                             "content": "感覺很用心在寫這首詩",
+                            "rating": 5
+                        },{
+                            "reviewerName": "黃柏霖",
+                            "reviewerClass": "電子一乙",
+                            "content": "很喜歡妳生成的內容",
                             "rating": 5
                         }]
                     }
