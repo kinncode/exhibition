@@ -315,6 +315,68 @@
             opacity: 0.4;
             font-size: 0.8rem;
         }
+/* ========== 響應式設計 ========== */
+
+/* 平板以下（<=1024px）調整欄寬 */
+@media (max-width: 1024px) {
+    .two-column-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem 0;
+    }
+
+    .three-column-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .hero-section {
+        padding: 3rem 0 2rem;
+    }
+
+    :root {
+        --main-title-size: 2.8rem;
+        --subtitle-size: 1.1rem;
+    }
+}
+
+/* 手機版（<=768px）主要調整 */
+@media (max-width: 768px) {
+
+    /* 版面改為單欄 */
+    .two-column-section,
+    .three-column-section {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 1.5rem 0;
+    }
+
+    /* 主標題縮小 */
+    .main-title {
+        font-size: 2.2rem;
+        letter-spacing: 4px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    /* 書籍條目更緊湊 */
+    .book-item {
+        padding-left: 1.5rem;
+    }
+
+    /* 評分卡片改直式 */
+    .grade-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }}
 
 /* 課程大綱 */
 #outline {
