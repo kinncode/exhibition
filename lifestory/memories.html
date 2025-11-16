@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <script src="js/main.js"></script>
+    <title>那些年我們一起的回憶 - 生命故事成果展</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif TC', 'Noto Sans TC', 'Microsoft JhengHei', serif;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(160, 130, 109, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 111, 71, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #faf8f5 0%, #f5e6d3 100%);
+            color: #4a3f35;
+            line-height: 1.9;
+            min-height: 100vh;
+            letter-spacing: 0.3px;
+        }
+        
+        main {
+            padding-top: 100px;
+            padding-bottom: 4rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #8b6f47;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #7a6a5a;
+        }
+
+        .class-section {
+            margin-bottom: 5rem;
+        }
+
+        .class-title {
+            font-size: 2rem;
+            color: #8b6f47;
+            margin-bottom: 2.5rem;
+            padding-left: 1rem;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .class-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: #a0826d;
+            border-radius: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(139, 111, 71, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(139, 111, 71, 0.2);
+        }
+
+        .work-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(160, 130, 109, 0.2), rgba(139, 111, 71, 0.2));
+        }
+
+        .work-image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(160, 130, 109, 0.2), rgba(139, 111, 71, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #a0826d;
+        }
+
+        .work-info {
+            padding: 0.8rem 1rem;
+        }
+
+        .work-title {
+            font-size: 1rem;
+            color: #8b6f47;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .work-author {
+            font-size: 0.85rem;
+            color: #7a6a5a;
+            margin-bottom: 0.3rem;
+        }
+
+        .work-description {
+            font-size: 0.9rem;
+            color: #6b5d4f;
+            line-height: 1.6;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 8px 8px 0 0;
+            flex-shrink: 0;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+        }
+
+        .lightbox-image.zoomed {
+            cursor: zoom-out;
+            max-height: none;
+            max-width: none;
+            width: auto;
+            height: auto;
+        }
+
+        .lightbox-image-container {
+            overflow: auto;
+            max-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .lightbox-info {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0 0 8px 8px;
+            max-width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #6b5d4f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            background: #a0826d;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* 導航按鈕 */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #6b5d4f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .lightbox-nav:hover {
+            background: #a0826d;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-nav:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .lightbox-nav:disabled:hover {
+            background: white;
+            color: #6b5d4f;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev {
+            left: -60px;
+        }
+
+        .lightbox-next {
+            right: -60px;
+        }
+
+        /* 計數器 */
+        .lightbox-counter {
+            position: absolute;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #6b5d4f;
+        }
+
+        footer {
+            background: rgba(139, 111, 71, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #7a6a5a;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .class-title {
+                font-size: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .lightbox {
+                padding: 0;
+            }
+
+            .lightbox-content {
+                max-width: 100%;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .lightbox-image-container {
+                max-height: 70vh;
+                border-radius: 0;
+            }
+
+            .lightbox-image {
+                max-height: 70vh;
+                border-radius: 0;
+            }
+
+            .lightbox-info {
+                border-radius: 0;
+                padding: 1rem;
+                max-height: 25vh;
+            }
+
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.8rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+
+            .lightbox-counter {
+                top: 10px;
+                left: 10px;
+                transform: none;
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+
+            .lightbox-prev {
+                left: 10px;
+                bottom: 10px;
+                top: auto;
+                transform: none;
+            }
+
+            .lightbox-next {
+                right: 10px;
+                bottom: 10px;
+                top: auto;
+                transform: none;
+            }
+
+            .lightbox-nav:hover {
+                transform: scale(1.05);
+            }
+
+            .lightbox-nav:active {
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">生命書寫成果展</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li>
+                    <a href="#">生命書寫</a>
+                    <ul class="dropdown">
+                        <li><a href="life-image.html">生命圖像</a></li>
+                        <li><a href="life-video.html">生命故事影片</a></li>
+                        <li><a href="life-story.html">生命故事1000字</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">佳作分享</a>
+                    <ul class="dropdown">
+                        <li><a href="resume.html">創作履歷表</a></li>
+                        <li><a href="memories.html">那些年我們一起的回憶</a></li>
+                    </ul>
+                </li>
+                <li><a href="outline.html">課程大綱</a></li>
+                <li><a href="../daily/journal.html">工作日誌</a></li>
+                <li><a href="team.html">課程團隊</a></li>
+                <li><a href="feedback.html">課程回饋</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>🎨 那些年我們一起的回憶作品</h1>
+                <p>展示全班同學的精彩創作</p>
+            </div>
+
+            <div class="class-section">
+                <h2 class="class-title">多樂一甲班作品</h2>
+                <div class="gallery" id="class1Gallery"></div>
+            </div>
+
+            <div class="class-section">
+                <h2 class="class-title">電子一乙班作品</h2>
+                <div class="gallery" id="class2Gallery"></div>
+            </div>
+
+            <div class="class-section">
+                <h2 class="class-title">流音一乙班作品</h2>
+                <div class="gallery" id="class3Gallery"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="closeLightbox">×</button>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            <button class="lightbox-nav lightbox-prev" id="prevBtn">❮</button>
+            <button class="lightbox-nav lightbox-next" id="nextBtn">❯</button>
+            <div class="lightbox-image-container" id="imageContainer">
+                <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            </div>
+            <div class="lightbox-info">
+                <h3 class="work-title" id="lightboxTitle"></h3>
+                <p class="work-author" id="lightboxAuthor"></p>
+                <p class="work-description" id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 生命書寫成果展 | 中文閱讀與表達課程 | 南台科技大學</p>
+        <p>指導老師:駱育萱</p>
+    </footer>
+
+    <script>
+        const worksData = {
+            class1: [
+                {
+                    title: "國中回憶",
+                    author: "第四組",
+                    description: "透過色彩與線條,描繪我生命中的重要時刻。",
+                    image: "img/me/A (1).jpg"
+                },
+                {
+                    title: "國小回憶",
+                    author: "第十四組",
+                    description: "那些年我們一起經歷的美好時光。",
+                    image: "img/me/A (2).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第十三組",
+                    description: "記錄我從幼稚園到現在的成長歷程。",
+                    image: "img/me/A (3).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第一組",
+                    description: "媽媽做的菜永遠是最溫暖的記憶。",
+                    image: "img/me/A (4).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第二和第三組",
+                    description: "追逐夢想的每一步都值得紀念。",
+                    image: "img/me/A (5).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第五組",
+                    description: "朋友們給我的生命增添了繽紛色彩。",
+                    image: "img/me/A (6).jpg"
+                },
+                {
+                    title: "視覺回憶",
+                    author: "第六組",
+                    description: "朋友們給我的生命增添了繽紛色彩。",
+                    image: "img/me/A (7).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第七組",
+                    image: "img/me/A (8).jpg"
+                },
+                {
+                    title: "高中回憶",
+                    author: "第八組",
+                    image: "img/me/A (9).jpg"
+                },
+                {
+                    title: "嗅覺回憶",
+                    author: "第九組",
+                    image: "img/me/A (10).jpg"
+                },
+                {
+                    title: "味覺回憶",
+                    author: "第十組",
+                    image: "img/me/A (11).jpg"
+                },
+                {
+                    title: "國中回憶",
+                    author: "第十一組",
+                    image: "img/me/A (12).jpg"
+                },
+                {
+                    title: "國中回憶",
+                    author: "第十二組",
+                    image: "img/me/A (13).jpg"
+                }
+            ],
+            class2: [
+                {
+                    title: "國小回憶",
+                    author: "第四組",
+                    description: "用圖像記錄下時光流轉的痕跡。",
+                    image: "img/me/B (1).jpg"
+                },
+                {
+                    title: "國小回憶",
+                    author: "第十四組",
+                    description: "家鄉的山水永遠在我心中。",
+                    image: "img/me/B (2).jpg"
+                },
+                {
+                    title: "視覺的回憶",
+                    author: "第五組",
+                    description: "音樂陪伴我度過人生的起伏。",
+                    image: "img/me/B (3).jpg"
+                },
+                {
+                    title: "視覺的回憶",
+                    author: "第十五組",
+                    description: "在書本中找到另一個世界。",
+                    image: "img/me/B (4).jpg"
+                },
+                {
+                    title: "聽覺的回憶",
+                    author: "第六組",
+                    description: "籃球場上揮灑的汗水與青春。",
+                    image: "img/me/B (5).jpg"
+                },
+              {
+                    title: "國中的回憶",
+                    author: "第九組",
+                    description: "音樂陪伴我度過人生的起伏。",
+                    image: "img/me/B (6).jpg"
+                },
+                {
+                    title: "聽覺的回憶",
+                    author: "第七組",
+                    description: "在書本中找到另一個世界。",
+                    image: "img/me/B (7).jpg"
+                },
+                {
+                    title: "高中的回憶",
+                    author: "第八組",
+                    description: "籃球場上揮灑的汗水與青春。",
+                    image: "img/me/B (8).jpg"
+                },
+                {
+                    title: "那些年我們一起的童年的回憶",
+                    author: "第十二組",
+                    description: "音樂陪伴我度過人生的起伏。",
+                    image: "img/me/B (9).jpg"
+                },
+                {
+                    title: "高中的回憶",
+                    author: "第十組",
+                    description: "在書本中找到另一個世界。",
+                    image: "img/me/B (10).jpg"
+                },
+                {
+                    title: "視覺的回憶",
+                    author: "第二組",
+                    description: "籃球場上揮灑的汗水與青春。",
+                    image: "img/me/B (11).jpg"
+                },
+                {
+                    title: "聽覺的回憶",
+                    author: "第十三組",
+                    description: "音樂陪伴我度過人生的起伏。",
+                    image: "img/me/B (12).jpg"
+                },
+                {
+                    title: "高中的回憶",
+                    author: "第一組",
+                    description: "在書本中找到另一個世界。",
+                    image: "img/me/B (13).jpg"
+                },
+                {
+                    title: "國中的回",
+                    author: "第三組",
+                    description: "籃球場上揮灑的汗水與青春。",
+                    image: "img/me/B (14).jpg"
+                }
+            ],
+            class3: [
+                {
+                    title: "視覺的回憶",
+                    author: "第四組，第八組",
+                    description: "探索藝術世界的奇妙旅程。",
+                    image: "img/me/C (1).jpg"
+                },
+                {
+                    title: "視覺的回憶",
+                    author: "第二組，第五組",
+                    description: "感受四季更迭帶來的不同美感。",
+                    image: "img/me/C (2).jpg"
+                },
+                {
+                    title: "高中的回憶",
+                    author: "第一組",
+                    description: "用鏡頭捕捉城市的多樣面貌。",
+                   image: "img/me/C (3).jpg"
+                },
+                {
+                    title: "聽覺的回憶",
+                    author: "第七組",
+                    description: "我和毛孩子的溫馨日常。",
+                    image: "img/me/C (4).jpg"
+                },
+                {
+                    title: "高中的回憶",
+                    author: "第三組",
+                    description: "每一次旅行都是一次心靈的成長。",
+                    image: "img/me/C (5).jpg"
+                }
+            ]
+        };
+
+        // 當前狀態
+        let currentClass = '';
+        let currentIndex = 0;
+
+        // 初始化
+        renderGallery('class1', worksData.class1);
+        renderGallery('class2', worksData.class2);
+        renderGallery('class3', worksData.class3);
+
+        function renderGallery(classId, works) {
+            const gallery = document.getElementById(classId + 'Gallery');
+            
+            gallery.innerHTML = works.map((work, index) => `
+                <div class="work-card" onclick="openLightbox('${classId}', ${index})">
+                    ${work.image ? 
+                        `<img class="work-image" src="${work.image}" alt="${work.title}" onerror="this.outerHTML='<div class=\\'work-image-placeholder\\'>🖼️</div>'">` : 
+                        `<div class="work-image-placeholder">🖼️</div>`
+                    }
+                    <div class="work-info">
+                        <h3 class="work-title">${work.title}</h3>
+                        <p class="work-author">👤 ${work.author}</p>
+                      
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Lightbox 元素
+        const lightbox = document.getElementById('lightbox');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const imageContainer = document.getElementById('imageContainer');
+
+        // 圖片縮放功能
+        let isZoomed = false;
+        let scale = 1;
+        let touchStartDistance = 0;
+
+        lightboxImage.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleZoom();
+        });
+
+        function toggleZoom() {
+            isZoomed = !isZoomed;
+            if (isZoomed) {
+                lightboxImage.classList.add('zoomed');
+                lightboxImage.style.transform = 'scale(2)';
+                imageContainer.style.overflow = 'auto';
+            } else {
+                lightboxImage.classList.remove('zoomed');
+                lightboxImage.style.transform = 'scale(1)';
+                imageContainer.style.overflow = 'hidden';
+            }
+        }
+
+        function resetZoom() {
+            isZoomed = false;
+            lightboxImage.classList.remove('zoomed');
+            lightboxImage.style.transform = 'scale(1)';
+            imageContainer.style.overflow = 'hidden';
+        }
+
+        // 觸控手勢支援
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                // 雙指縮放
+                touchStartDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+            } else if (e.touches.length === 1) {
+                // 單指滑動
+                touchStartX = e.touches[0].clientX;
+            }
+        }, { passive: true });
+
+        lightbox.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1 && touchStartDistance > 0) {
+                // 雙指縮放
+                const currentDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                const scaleChange = currentDistance / touchStartDistance;
+                
+                if (scaleChange > 1.2 && !isZoomed) {
+                    toggleZoom();
+                } else if (scaleChange < 0.8 && isZoomed) {
+                    toggleZoom();
+                }
+            }
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (e.changedTouches.length === 1) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }
+            touchStartDistance = 0;
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold && !isZoomed) {
+                if (diff > 0) {
+                    // 向左滑 - 下一張
+                    showNext();
+                } else {
+                    // 向右滑 - 上一張
+                    showPrevious();
+                }
+            }
+        }
+
+        function openLightbox(classId, index) {
+            currentClass = classId;
+            currentIndex = index;
+            resetZoom();
+            showWork();
+            lightbox.classList.add('active');
+        }
+
+        function showWork() {
+            const works = worksData[currentClass];
+            const work = works[currentIndex];
+            
+            resetZoom();
+            document.getElementById('lightboxImage').src = work.image || '';
+            document.getElementById('lightboxTitle').textContent = work.title;
+            document.getElementById('lightboxAuthor').textContent = '作者: ' + work.author;
+            document.getElementById('lightboxDescription').textContent = work.description || '';
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${works.length}`;
+            
+            // 更新按鈕狀態
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === works.length - 1;
+        }
+
+        function showPrevious() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showWork();
+            }
+        }
+
+        function showNext() {
+            const works = worksData[currentClass];
+            if (currentIndex < works.length - 1) {
+                currentIndex++;
+                showWork();
+            }
+        }
+
+        // 事件監聽
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrevious();
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNext();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // 鍵盤導航
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                showPrevious();
+            } else if (e.key === 'ArrowRight') {
+                showNext();
+            }
+        });
+    </script>
+</body>
+</html>
