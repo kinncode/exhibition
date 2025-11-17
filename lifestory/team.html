@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程團隊 - 生命故事成果展</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <script src="js/main.js"></script>  
+<body>
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="logo">生命書寫成果展</div>
+                <!-- 手機版漢堡按鈕 -->
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="NO.HTML">首頁</a></li>
+    
+                    <li>
+                        <a href="#">生命書寫</a>
+                        <ul class="dropdown">
+                            <li><a href="#">生命圖像</a></li>
+                            <li><a href="#">生命故事影片</a></li>
+                            <li><a href="#">生命故事1000字</a></li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        <a href="#">佳作分享</a>
+                        <ul class="dropdown">
+                            <li><a href="resume.html">創作履歷表</a></li>
+                            <li><a href="memories.html">那些年我們一起的回憶</a></li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="outline.html">課程大綱</a></li>
+                    <li><a href="NO.html">工作日誌</a></li>
+                    <li><a href="team.html">課程團隊</a></li>
+                    <li><a href="NO.html">課程回饋</a></li>
+                </ul>
+            </div>
+        </nav>    
+    <style>
+        /* Teacher Section - Magazine Style */
+        .teacher-section {
+            margin-bottom: 100px;
+        }
+
+        .teacher-layout {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .teacher-photo-area {
+            position: sticky;
+            top: 120px;
+        }
+
+        .teacher-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #d4c5b0 0%, #b8a990 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .teacher-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            text-align: center;
+            color: #7a6a5a;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .teacher-content {
+            padding-top: 2rem;
+        }
+
+        .teacher-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #5a4633;
+        }
+
+        .teacher-name {
+            font-size: 3rem;
+            color: #2a2520;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .teacher-title {
+            font-size: 1.4rem;
+            color: #7a6a5a;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .content-block {
+            margin-bottom: 4rem;
+        }
+
+        .block-title {
+            font-size: 1.6rem;
+            color: #5a4633;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .block-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #8b6f47;
+        }
+
+        .teacher-intro {
+            font-size: 1.1rem;
+            color: #2a2520;
+            line-height: 2.2;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            column-count: 1;
+        }
+
+        .teacher-intro::first-letter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            float: left;
+            line-height: 0.9;
+            margin: 0.1em 0.1em 0 0;
+            color: #8b6f47;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.2rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #5a4633;
+            font-size: 1.05rem;
+        }
+
+        .info-value {
+            color: #3a3328;
+            font-size: 1.05rem;
+        }
+
+        .credentials-list {
+            list-style: none;
+            margin-left: 1rem;
+        }
+
+        .credentials-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #2a2520;
+            font-size: 1.05rem;
+            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
+        }
+
+        .credentials-list li:last-child {
+            border-bottom: none;
+        }
+
+        .credentials-list li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #8b6f47;
+            font-size: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .specialty-badge {
+            padding: 0.8rem 1.8rem;
+            background: white;
+            border: 2px solid #8b6f47;
+            border-radius: 30px;
+            color: #5a4633;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .specialty-badge:hover {
+            background: #8b6f47;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b6f47, transparent);
+            margin: 80px 0;
+        }
+
+        /* Assistants Section - Two Column */
+        .assistants-section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #5a4633;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7a6a5a;
+        }
+
+        .assistants-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+        }
+
+        .assistant-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .assistant-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #d4c5b0 0%, #b8a990 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .assistant-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .assistant-info h3 {
+            font-size: 1.8rem;
+            color: #2a2520;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .assistant-role {
+            font-size: 1rem;
+            color: #7a6a5a;
+            margin-bottom: 1.5rem;
+        }
+
+        .assistant-bio {
+            font-size: 1.05rem;
+            color: #3a3328;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background: white;
+            padding: 5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin: 80px 0;
+        }
+
+        .philosophy-section h2 {
+            font-size: 2.5rem;
+            color: #5a4633;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .philosophy-text {
+            font-size: 1.15rem;
+            color: #2a2520;
+            line-height: 2.3;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-quote {
+            font-size: 1.4rem;
+            color: #5a4633;
+            text-align: center;
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 2px solid rgba(139, 111, 71, 0.2);
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .teacher-layout {
+                grid-template-columns: 320px 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 968px) {
+            main {
+                padding: 0 2rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .teacher-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .teacher-photo-area {
+                position: static;
+            }
+
+            .teacher-photo {
+                max-width: 400px;
+                margin: 0 auto 2rem;
+            }
+
+            .teacher-name {
+                font-size: 2.2rem;
+            }
+
+            .teacher-intro {
+                column-count: 1;
+            }
+
+            .assistants-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .philosophy-section {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 120px 1.5rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            main {
+                padding: 0 1.5rem 3rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .specialties {
+                gap: 0.8rem;
+            }
+
+            .specialty-badge {
+                padding: 0.6rem 1.3rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding-top: 8rem;">
+        <h2 style="text-align: center;">課程團隊</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">接下來這是我們這門課的成員</p>
+
+    <main>
+        <!-- Teacher Section -->
+        <section class="teacher-section">
+            <div class="teacher-layout">
+                <div class="teacher-photo-area">
+                    <div class="teacher-photo">
+                        <img src="img/teachers.png" alt="駱育萱教授">
+                    </div>
+                    <p class="photo-caption">駱育萱 教授</p>
+                </div>
+
+                <div class="teacher-content">
+                    <div class="teacher-header">
+                        <h2 class="teacher-name">駱育萱</h2>
+                        <p class="teacher-title">中文閱讀與表達課程 / 南臺科技大學通識教育中心</p>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="block-title">教師簡介</h3>
+                        <p class="teacher-intro">
+                            駱育萱教授專精於現當代文學研究、生命敘事與創意寫作教學,長期致力於推動生命書寫教育。她相信,每個人的生命經驗都是獨特而珍貴的文本,透過書寫,我們得以整理記憶、理解自我、連結他人。在教學現場,駱老師不僅傳授寫作技巧,更重視引導學生探索內在世界,培養同理心與人文素養。她的課堂氛圍溫暖而開放,鼓勵每位學生勇敢說出自己的故事,在書寫中找到生命的意義與力量。
+                        </p>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="block-title">聯絡資訊</h3>
+                        <div class="info-grid">
+                            <span class="info-label">電子郵件</span>
+                            <span class="info-value">yib@stust.edu.tw</span>
+                            <span class="info-label">研究室</span>
+                            <span class="info-value">T1250-2 </span>
+                            <span class="info-label">分機</span>
+                            <span class="info-value">5678</span>
+                        </div>
+                    </div>
+                    <div class="content-block">
+                        <h3 class="block-title">學術背景與經歷</h3>
+                        <ul class="credentials-list">
+                            <li>國立中山大學中文博士</li>
+                            <li>現任 南臺科技大學通識教育中心 副教授</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="block-title">專長領域</h3>
+                        <div class="specialties">
+                            <span class="specialty-badge">生命書寫</span>
+                            <span class="specialty-badge">口語表達與敘事技巧</span>
+                            <span class="specialty-badge">古典小說</span>
+                            <span class="specialty-badge">女性彈詞</span>
+                            <span class="specialty-badge">跨領域教學</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Assistants Section -->
+        <section class="assistants-section">
+            <div class="section-header">
+                <h2>教學助理</h2>
+                <p>陪伴與支持學生的學習旅程</p>
+            </div>
+
+            <div class="assistants-grid">
+                <div class="assistant-card">
+                    <div class="assistant-photo">
+                        <img src="img/assistant1.jpg" alt="劉時澈">
+                    </div>
+                    <div class="assistant-info">
+                        <h3>劉時澈</h3>
+                        <p class="assistant-role">南台科技大學 創新產品設計 </p>
+                       <!--   <p class="assistant-bio">
+                            就讀中文研究所,研究興趣為現代詩歌與生命書寫。喜歡透過文字與學生交流,分享對文學的熱愛。在協助課程期間,用心記錄每一堂課的精彩瞬間,也從同學們的故事中獲得感動。相信每個生命都有獨特的光芒,期待與大家一起在文字的世界裡探索、成長。
+                        </p>-->
+                        <div class="content-block">
+                            <h3 class="block-title">專長領域和興趣</h3>
+                            <div class="specialties">
+                                <span class="specialty-badge">平面設計</span>
+                                <span class="specialty-badge">具斯</span>
+                                <span class="specialty-badge">吉他</span>
+                                <span class="specialty-badge">琵琶</span>
+                                <span class="specialty-badge">素描</span>
+                                <span class="specialty-badge">唱歌</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-photo">
+                        <img src="img/assistant2.jpg" alt="張愉祥">
+                    </div>
+                    <div class="assistant-info">
+                        <h3>張愉祥</h3>
+                        <p class="assistant-role">南台科技大學 資訊管理系</p>
+                      <!--  <p class="assistant-bio">
+                            主修文學創作與教學,熱衷於將理論與實務結合。擔任助教期間,負責課程設計輔助、作業批改與學生諮詢。喜歡觀察同學們在書寫過程中的成長與轉變,也從中反思自己的生命經驗。希望能成為老師與學生之間的橋樑,讓這門課程帶給每個人溫暖而深刻的收穫。
+                        </p>-->
+                         <div class="content-block">
+                            <h3 class="block-title">專長領域</h3>
+                            <div class="specialties">
+                                <span class="specialty-badge">網頁開發和程式設計</span>
+                                <span class="specialty-badge">使用AI輔助學習</span>
+                                <span class="specialty-badge">數據視覺化</span>
+                                <span class="specialty-badge">越南語中高級</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <h2>團隊理念</h2>
+            <div class="philosophy-content">
+                <p class="philosophy-text">
+                    我們相信,每個人的生命都是一部值得書寫的作品。透過「生命書寫」課程,我們不僅教授寫作技巧,更重要的是引導同學們學會聆聽內心的聲音、梳理生命的經驗、建構自我的認同。
+                </p>
+                <p class="philosophy-text">
+                    在這個快節奏的時代,我們希望提供一個安靜而溫暖的空間,讓學生能夠停下來,回顧過往、觀照當下、展望未來。文字不僅是表達的工具,更是理解自我、連結他人的媒介。
+                </p>
+                <p class="philosophy-quote">
+                    「書寫、是為了記得;分享,是為了理解;傾聽,是為了同行。」
+                </p>
+            </div>
+        </section>
+    </main>
+</div>
+<footer>
+        <p>© 2025 生命故事成果展 | 中文閱讀與表達課程</p>
+        <p>指導老師:駱育萱</p>
+</footer>
+</body>
+</html>
