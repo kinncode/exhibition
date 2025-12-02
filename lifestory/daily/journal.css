@@ -1,1 +1,347 @@
+  /* Main Content */
+  main {
+    padding-top: 100px;
+    padding-bottom: 4rem;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #8b6f47;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #7a6a5a;
+}
+
+/* Control Panel */
+.control-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(139, 111, 71, 0.1);
+}
+
+.control-section {
+    margin-bottom: 1.5rem;
+}
+
+.control-section:last-child {
+    margin-bottom: 0;
+}
+
+.control-label {
+    font-size: 1rem;
+    color: #8b6f47;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+/* Class Selector */
+.class-selector {
+    position: relative;
+    max-width: 300px;
+}
+
+.class-select {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(160, 130, 109, 0.4);
+    border-radius: 12px;
+    color: #6b5d4f;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b6f47' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+.class-select:hover {
+    border-color: rgba(160, 130, 109, 0.7);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.class-select:focus {
+    outline: none;
+    border-color: #a0826d;
+    box-shadow: 0 0 0 3px rgba(160, 130, 109, 0.2);
+}
+
+.class-select option {
+    padding: 0.8rem;
+    background: white;
+    color: #6b5d4f;
+}
+
+/* Week Navigation */
+.week-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.week-nav button {
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(160, 130, 109, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #6b5d4f;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.week-nav button:hover:not(:disabled) {
+    background: rgba(160, 130, 109, 0.2);
+    border-color: rgba(160, 130, 109, 0.5);
+}
+
+.week-nav button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.week-display {
+    padding: 0.6rem 1.5rem;
+    background: #a0826d;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Journal Content */
+.journal-content {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.journal-section {
+    margin-bottom: 4rem;
+}
+
+.journal-section:last-child {
+    margin-bottom: 0;
+}
+
+
+.section-title {
+    font-size: 24px;
+    color: #8b6f47;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 600;
+    text-align: left;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: #a0826d;
+    border-radius: 2px;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.photo-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(160, 130, 109, 0.15);
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(139, 111, 71, 0.2);
+}
+
+.photo-placeholder {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, rgba(160, 130, 109, 0.2), rgba(139, 111, 71, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.photo-caption {
+    padding: 1.2rem;
+    color: #6b5d4f;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Course Record Section */
+.course-record {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.08);
+    border-left: 4px solid #a0826d;
+    line-height: 2;
+    color: #6b5d4f;
+}
+
+/* Activity Sections */
+.activity {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(139, 111, 71, 0.08);
+    border-left: 4px solid #a0826d;
+}
+
+.activity-title {
+    font-size: 1.4rem;
+    color: #8b6f47;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.activity-content {
+    color: #6b5d4f;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+.activity-content p {
+    margin-bottom: 1rem;
+}
+
+.observation {
+    background: rgba(160, 130, 109, 0.06);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 3px solid #a0826d;
+}
+
+.observation-title {
+    color: #a0826d;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.observation p {
+    color: #6b5d4f;
+    line-height: 1.9;
+}
+
+/* Footer */
+footer {
+    background: rgba(139, 111, 71, 0.1);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #7a6a5a;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .control-panel {
+        padding: 1.5rem;
+    }
+
+    .class-select {
+        font-size: 0.95rem;
+    }
+
+    .week-nav {
+        gap: 0.5rem;
+    }
+
+    .week-display {
+        font-size: 1rem;
+    }
+
+    .journal-content {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        padding-left: 1.2rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .activity {
+        padding: 1.5rem;
+    }
+
+    .activity-title {
+        font-size: 1.2rem;
+    }
+
+    .observation {
+        padding: 1.2rem;
+    }
+
+    .course-record {
+        padding: 1.5rem;
+    }
+}
