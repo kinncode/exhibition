@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命故事成果展 - 首頁</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="daily/journal.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">生命書寫成果展</div>
+      <!-- 手機版漢堡按鈕 -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+
+        <li>
+          <a href="#">生命書寫</a>
+          <ul class="dropdown">
+            <li><a href="life-image.html">生命圖像</a></li>
+            <li><a href="life-video.html">生命故事影片</a></li>
+            <li><a href="life-story.html">生命故事1000字</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">佳作分享</a>
+          <ul class="dropdown">
+            <li><a href="resume.html">創作履歷表</a></li>
+            <li><a href="memories.html">那些年的氣味</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../outline.html">課程大綱</a></li>
+        <li><a href="../daily/journal.html">工作日誌</a></li>
+        <li><a href="../team.html">課程團隊</a></li>
+        <li><a href="../feedback.html">課程回饋</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>📖 工作日誌</h1>
+                <p>記錄每週課程精彩瞬間與學習歷程</p>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="control-section">
+                    <label class="control-label">選擇班級</label>
+                    <div class="class-selector">
+                        <select class="class-select" id="classSelect">
+                            <option value="class1">多樂一甲</option>
+                            <option value="class2">流音一乙</option>
+                            <option value="class3">電子一乙</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <label class="control-label">選擇週次</label>
+                    <div class="week-nav">
+                        <button id="prevWeek">← 上一週</button>
+                        <div class="week-display">第 <span id="currentWeek">1</span> 週</div>
+                        <button id="nextWeek">下一週 →</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <label class="control-label">文字大小</label>
+                    <div class="font-size-control">
+                        <button id="decreaseFont" title="縮小文字">A-</button>
+                        <span id="fontSizeDisplay">100%</span>
+                        <button id="increaseFont" title="放大文字">A+</button>
+                        <button id="resetFont" title="重設大小">重設</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal Content -->
+            <div class="journal-content" id="journalContent">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 生命故事成果展 | 中文閱讀與表達課程</p>
+        <p>指導老師:駱育萱</p>
+    </footer>
+    <script src="daily/journal.js"></script>
+    <!-- Journal data structure -->
+    <script>        
+        // State
+        let currentClass = 'class1';
+        let currentWeek = 2;
+        const maxWeek = 18; // Update as more weeks are added
+        let fontSize = 100; // Font size percentage
+
+        // DOM Elements
+        const classSelect = document.getElementById('classSelect');
+        const prevWeekBtn = document.getElementById('prevWeek');
+        const nextWeekBtn = document.getElementById('nextWeek');
+        const currentWeekDisplay = document.getElementById('currentWeek');
+        const journalContent = document.getElementById('journalContent');
+        const increaseFontBtn = document.getElementById('increaseFont');
+        const decreaseFontBtn = document.getElementById('decreaseFont');
+        const resetFontBtn = document.getElementById('resetFont');
+        const fontSizeDisplay = document.getElementById('fontSizeDisplay');
+
+        // Event Listeners
+        classSelect.addEventListener('change', (e) => {
+            currentClass = e.target.value;
+            renderJournal();
+        });
+
+        prevWeekBtn.addEventListener('click', () => {
+            if (currentWeek > 1) {
+                currentWeek--;
+                updateWeekDisplay();
+                renderJournal();
+            }
+        });
+
+        nextWeekBtn.addEventListener('click', () => {
+            if (currentWeek < maxWeek) {
+                currentWeek++;
+                updateWeekDisplay();
+                renderJournal();
+            }
+        });
+
+        // Font size controls
+        increaseFontBtn.addEventListener('click', () => {
+            if (fontSize < 150) {
+                fontSize += 10;
+                updateFontSize();
+            }
+        });
+
+        decreaseFontBtn.addEventListener('click', () => {
+            if (fontSize > 70) {
+                fontSize -= 10;
+                updateFontSize();
+            }
+        });
+
+        resetFontBtn.addEventListener('click', () => {
+            fontSize = 100;
+            updateFontSize();
+        });
+
+        // Functions
+        function updateWeekDisplay() {
+            currentWeekDisplay.textContent = currentWeek;
+            prevWeekBtn.disabled = currentWeek === 2;
+            nextWeekBtn.disabled = currentWeek === maxWeek;
+        }
+
+        function updateFontSize() {
+            journalContent.style.fontSize = fontSize + '%';
+            fontSizeDisplay.textContent = fontSize + '%';
+            decreaseFontBtn.disabled = fontSize <= 70;
+            increaseFontBtn.disabled = fontSize >= 150;
+        }
+
+        function renderJournal() {
+            const data = journalData[currentClass][currentWeek];
+            
+            if (!data) {
+                journalContent.innerHTML = '<p style="text-align: center; color: #7a6a5a; padding: 3rem;">本週課程記錄尚未更新</p>';
+                return;
+            }
+
+            let html = '';
+
+            // Photos Section
+            if (data.photos && data.photos.length > 0) {
+                html += `
+                    <div class="journal-section">
+                        <h2 class="section-title">一、課程照片</h2>
+                        <div class="photo-gallery">
+                `;
+                
+                data.photos.forEach((photo, index) => {
+                    html += `
+                        <div class="photo-item">
+                            <img src="${photo.src}" alt="課程照片 ${index + 1}" class="photo-image" 
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="photo-placeholder" style="display: none;">📸</div>
+                            <div class="photo-caption">${index + 1}. ${photo.caption}</div>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Record Section
+            if (data.record) {
+                html += `
+                    <div class="journal-section">
+                        <h2 class="section-title">二、課程紀錄</h2>
+                        <div class="course-record">
+                            ${data.record.summary}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Activities Section
+            if (data.activities && data.activities.length > 0) {
+                data.activities.forEach(activity => {
+                    html += `
+                        <div class="activity">
+                            <h3 class="activity-title">${activity.title}</h3>
+                            <div class="activity-content">
+                                <p>${activity.content}</p>
+                            </div>
+                            ${activity.observation ? `
+                                <div class="observation">
+                                    <div class="observation-title">課程觀察:</div>
+                                    <p>${activity.observation}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                });
+            }
+
+            journalContent.innerHTML = html;
+        }
+
+        // Initialize
+        updateWeekDisplay();
+        updateFontSize();
+        renderJournal();
+    </script>
+    
+    <style>
+        .photo-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .font-size-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .font-size-control button {
+            padding: 0.5rem 1rem;
+            background: #fff;
+            border: 2px solid #d4c5b9;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #7a6a5a;
+            transition: all 0.3s ease;
+        }
+
+        .font-size-control button:hover:not(:disabled) {
+            background: #f5ebe0;
+            border-color: #c4b5a9;
+            transform: translateY(-2px);
+        }
+
+        .font-size-control button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #fontSizeDisplay {
+            min-width: 50px;
+            text-align: center;
+            font-weight: 600;
+            color: #7a6a5a;
+        }
+
+        @media (max-width: 768px) {
+            .font-size-control {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>
