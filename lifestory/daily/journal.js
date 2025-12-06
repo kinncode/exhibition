@@ -4,19 +4,19 @@ const journalData = {
       title: "第二週: 讀辛波絲卡〈寫履歷表〉",
       photos: [
         {
-          src: "img/class1/week2/photo1.jpg",
+          src: "img/class1/W2.jpg",
           caption: "學生在討論選擇能力強項卡"
         },
         {
-          src: "img/class1/week2/photo2.jpg",
+          src: "img/class1/W2_2.jpg",
           caption: "老師對同學提出履歷相關問題"
         },
         {
-          src: "img/class1/week2/photo3.jpg",
+          src: "img/class1/W2_3.jpg",
           caption: "各組當老闆提出兩項能力應徵條件"
         },
         {
-          src: "img/class1/week2/photo4.jpg",
+          src: "img/class1/W2_4.jpg",
           caption: "在各組老闆提出能力條件下，各組換位思考當員工時，來選擇最想應徵公司的條件"
         }
       ],
@@ -50,19 +50,19 @@ const journalData = {
       title: "第三週: 閱讀辛波絲卡〈寫履歷表〉",
       photos: [
         {
-          src: "images/class1/week3/photo1.jpg",
+          src: "img/class1/W3-1.jpg",
           caption: "學生進行討論詮釋被分配的辛波絲卡寫履歷表裡的文章。"
         },
         {
-          src: "images/class1/week3/photo2.jpg",
+          src: "img/class1/W3-2.jpg",
           caption: "組員代表上台閱讀和詮釋組別討論的結果。"
         },
         {
-          src: "images/class1/week3/photo3.jpg",
+          src: "img/class1/W3-3.jpg",
           caption: "老師對各組同學進行提問，請同學詮釋最後一段：「反正，還有什麼好聽的？碎紙機嘈雜的聲音。」"
         },
         {
-          src: "images/class1/week3/photo4.jpg",
+          src: "img/class1/W3-4.jpg",
           caption: "各組針對「反正，還有什麼好聽的？碎紙機嘈雜的聲音。」提出一個形容詞，來表達自己對於這段文字的感受。"
         }
       ],
@@ -81,7 +81,7 @@ const journalData = {
           observation: "在巡視同學討論與提議的過程中，有部分同學認為只要解釋本文的意思就好，沒想到其實可以提出自己是否認同這段文字，甚至能舉例分享自己的故事。第十四組的同學很有自己的主見，當時我與他們聊到時也建議同學可以在上台時講出自己過去的經驗。上台的同學大多著重在解釋文本的意思，少數組提出了自己的看法，對作者的想法進行反諷。"
         },
         {
-          title: "活動三",
+          title: "活動三",  
           content: "各組要對最後一段「反正，還有什麼好聽的？碎紙機嘈雜的聲音。」進行詮釋，老師也針對這一句向各組提問，讓同學表達自己的看法。這句很現實，每組別的同學都能抓住作者想表達的重點。",
           observation: ""
         },
@@ -96,19 +96,19 @@ const journalData = {
       title: "第六週: 創意履歷表-心智圖",
       photos: [
         {
-          src: "images/class1/week6/photo1.jpg",
+          src: "img/class1/W6-1.jpg",
           caption: "同學在課本空白地方手寫作引導句。"
         },
         {
-          src: "images/class1/week6/photo2.jpg",
+          src: "img/class1/W6-2.jpg",
           caption: "各組上台分享創作活動反履歷表的寫作內容"
         },
         {
-          src: "images/class1/week6/photo3.jpg",
+          src: "img/class1/W6-3.jpg",
           caption: "同學在課堂上觀看心智圖教學"
         },
         {
-          src: "images/class1/week6/photo4.jpg",
+          src: "img/class1/W6-4.jpg",
           caption: "同學開始動手繪製自我介紹心智圖"
         }
       ],
@@ -132,19 +132,19 @@ const journalData = {
       title: "第七週: 創意履歷表-心智圖",
       photos: [
         {
-          src: "images/class1/week7/photo1.jpg",
+          src: "img/class1/W7-1.jpg",
           caption: "同學在課本繪製心智圖"
         },
         {
-          src: "images/class1/week7/photo2.jpg",
+          src: "img/class1/W7-2.jpg",
           caption: "同學完成作品進行佈展"
         },
         {
-          src: "images/class1/week7/photo3.jpg",
+          src: "img/class1/W7-3.jpg",
           caption: "同學在創作履歷表展活動進行看展和互評。"
         },
         {
-          src: "images/class1/week7/photo4.jpg",
+          src: "img/class1/W7-4.jpg",
           caption: "老師開問卷結果對同學們說明大家的回覆"
         }
       ],
@@ -168,19 +168,19 @@ const journalData = {
       title: "第八週: 妙語說書人",
       photos: [
         {
-          src: "images/class1/week8/photo1.jpg",
+          src: "img/class1/W8-1.jpg",
           caption: "老師講解遊戲運作方式和規則"
         },
         {
-          src: "images/class1/week8/photo2.jpg",
+          src: "img/class1/W8-2.jpg",
           caption: "大組正在進行遊戲中"
         },
         {
-          src: "images/class1/week8/photo3.jpg",
+          src: "img/class1/W8-3.jpg",
           caption: "同學在黑板上登記分數"
         },
         {
-          src: "images/class1/week8/photo4.jpg",
+          src: "img/class1/W8-4.jpg",
           caption: "各組在篩選自己喜歡的卡牌，進行故事創作"
         }
       ],
@@ -209,19 +209,19 @@ const journalData = {
       title: "第九週: 生命書寫四路徑-氣味、那些年我們一起回憶",
       photos: [
         {
-          src: "images/class1/week9/photo1.jpg",
+          src: "img/class1/W9-1.jpg",
           caption: "老師講解今天課程要上的楊照<氣味>。"
         },
         {
-          src: "images/class1/week9/photo2.jpg",
+          src: "img/class1/W9-2.jpg",
           caption: "組員進行閱讀和討論楊照<氣味>這篇故事時序。"
         },
         {
-          src: "images/class1/week9/photo3.jpg",
+          src: "img/class1/W9-3.jpg",
           caption: "組員代表上台說明自己答案和講故事的細部內容。"
         },
         {
-          src: "images/class1/week9/photo4.jpg",
+          src: "img/class1/W9-4.jpg",
           caption: "組員在那些年我們一起回憶活動繪製感官回憶心智圖"
         }
       ],
@@ -245,19 +245,19 @@ const journalData = {
       title: "第十週: oh! Dear me 250天憂鬱症紀實情緒年史、情緒拼圖",
       photos: [
         {
-          src: "images/class1/week10/photo1.jpg",
+          src: "img/class1/W10-1.jpg",
           caption: "同學們正在進行投票，把貼紙貼到感官故事心智圖上有趣的故事。"
         },
         {
-          src: "images/class1/week10/photo2.jpg",
+          src: "img/class1/W10-2.jpg",
           caption: "學生們分享被投票的感官故事心智圖回憶。"
         },
         {
-          src: "images/class1/week10/photo3.jpg",
+          src: "img/class1/W10-3.jpg",
           caption: "學生在感官地圖活動撰寫200個字關於自己印象深刻的回憶故事。"
         },
         {
-          src: "images/class1/week10/photo4.jpg",
+          src: "img/class1/W10-4.jpg",
           caption: "觀看完關於憂鬱症研究影片學生寫影片的重點。"
         }
       ],
@@ -291,19 +291,19 @@ const journalData = {
       title: "第十一週: 專案演講情緒照顧_自我照顧",
       photos: [
         {
-          src: "images/class1/week11/photo1.jpg",
+          src: "img/class1/W11-1.jpg",
           caption: "講師正在講解關於照顧身心的! 打造幸福的能量花園--情緒照護的議題"
         },
         {
-          src: "images/class1/week11/photo2.jpg",
+          src: "img/class1/W11-2.jpg",
           caption: "同學正在撰寫七項對自己是很重要的。"
         },
         {
-          src: "images/class1/week11/photo3.jpg",
+          src: "img/class1/W11-3.jpg",
           caption: "同學正在閉上眼睛五感靜觀練習 。"
         },
         {
-          src: "images/class1/week11/photo4.jpg",
+          src: "img/class1/W11-4.jpg",
           caption: "同學們正在選出喜歡的裝飾來放入心靜瓶。"
         }
       ],
@@ -332,19 +332,19 @@ const journalData = {
       title: "第十二週: oh!Dear me 250天憂鬱症紀實情緒年史、情緒拼圖",
       photos: [
         {
-          src: "img/class1/week12/photo1.jpg",
+          src: "img/class1/W12-1.jpg",
           caption: "老師播放一個關於憂鬱症感受的歌"
         },
         {
-          src: "img/class1/week12/photo2.jpg",
+          src: "img/class1/W12-2.jpg",
           caption: "同學正在繪製情緒地圖"
         },
         {
-          src: "img/class1/week12/photo3.jpg",
+          src: "img/class1/W12-3.jpg",
           caption: "同學在選擇兩張情緒卡"
         },
         {
-          src: "img/class1/week12/photo4.jpg",
+          src: "img/class1/W12-4.jpg",
           caption: "第一組同學正在撰寫情緒200個字"
         }
       ],
@@ -363,14 +363,56 @@ const journalData = {
           observation: "同學們在撰寫過程遇到最大問題有些細節內容無法敘述或太久而忘，但有部分同學還是會有最有印象深刻重要事件撰寫，情緒卡在這次撰寫也很重要也是一種輔助同學們聯想到情緒地圖上的當時的情緒情況。"
         }
       ]
-    }
+    },
+    13: {
+        title: "第十三週: 因為我植得—園藝治療與自我價值探索",
+        photos: [
+          {
+            src: "img/class1/W13-1.jpg",
+            caption: "專家演講：因為我植得，園藝治療"
+          },
+          {
+            src: "img/class1/W13-2.jpg",
+            caption: "閱讀《達利B的旅程》探索自我特質"
+          },
+          {
+            src: "img/class1/W13-3.jpg",
+            caption: "進行愛之語測驗與特質卡轉念練習"
+          },
+          {
+            src: "img/class1/W13-4.jpg",
+            caption: "同學專心製作療癒水苔球"
+          }
+        ],
+    record: {
+      summary: "第十三週課程以專家演講「因為我植得」為主題，在今天課程會邀請專家老師帶學生們進行演講，關於「因為值得，值得的園藝治療」。<br>活動中老師會讓學生進行各種活動，讓學生可以在這些活動中探索自我價值，找出自己的特質和在不同關係中最喜歡、最渴望的表達愛，以及自己希望別人怎麼對待自己是最舒服的。<br>最後老師帶學生製作水苔球，讓學生可以透過植物來療癒自己，讓它們在一年四季成為我們最好的陪伴。"
+    },
+    activities: [
+      {
+        title: "活動一: 閱讀《達利B的旅程》與自我對話",
+        content: "在這活動老師會讓每位學生閱讀投影上的小說，關於動物之間的溝通。故事裡面是動物之間詢問自己是什麼動物、是什麼的角色，動物們會是如何尋找自己是誰，主要尋找自我，也因為兔子的優異特質（大腳）讓他拯救了兔子們並成為他們眼中的英雄。<br><br>完成閱讀後，老師讓學生進行回答問題:<br>1.自我探索與認同：成長過程面對自我存在的疑惑？思考自己的特質和喜好?<br>2.自我探問，我是誰? 我喜歡什麼?<br><br>最後同學們需要寫出自己的三個特質（正向特質）。讓學生可以思考自己目前具備哪些特質，是在與人互動方面或道德上有關的正向特質。",
+        reflection: "我最印象深刻是關於兔子的劇情，因為兔子遇到某些危機的動物時，那動物對兔子說：我會吃兔子，但兔子反而疑問的說自己是兔子嗎？後面透過一些說服，說自己大腳所以不可能是兔子，反而因為這件事兔子成為了兔子們的英雄。<br>在特質表我自己覺得會列為：勇敢，活潑，開朗這三個特質。",
+        observation: "透過讓大家每個人閱讀方式，大家可以更容易專心聆聽其他同學的發言。在了解《達利B的旅程》故事後，學生們在探索自己過程也許更容易。在回答問題方面，對於了解自己有什麼特質，有同學不知自己會有哪些特質，但老師有提供特質表讓同學好寫點。"
+      },
+      {
+        title: "活動二: 特質轉念與愛的五種語言",
+        content: "老師會給學生看特質卡片，對每個特質上說明。此外也讓學生思考如何把負面特質說成正面的，例如：「你很依賴對方」，依賴是有帶點負面形容，如果換成正面方式可以說：「你對對方很信任」。<br><br>另一個活動是老師會讓學生觀看五種表達愛的方式：<br>1.肯定的語句<br>2.肢體的接觸<br>3.送禮物<br>4.服務的行動<br>5.精心時刻<br><br>讓學生選擇前三個最喜歡被別人或親人的表達愛方式。其次學生會進行測驗30題的愛之語線上測驗，最後可以看出在這五種表達愛方式的排名，同時可以對比剛剛在紙本上寫的三個最喜歡是否相同。",
+        reflection: "在要把負面特質說成正面的有點困難，我想了有點久才認為對於「依賴對方」這特質，說成因為對他們有信任才會有依賴的事情。<br>老師在演講有說到人類腦子出生就帶有負面思想方向，要正面需要累積要練習。在要把負面特質說成正面的有點困難，我想了有點久才認為對於依賴對方這特質，說成因為對他們有信任才會有依賴的是情。老師在演講有說到人類腦子出生就帶有負面思想方向，要正面需要累積要練習。"
+      },
+      {
+        title: "活動三: 製作水苔球",
+        content: "最後大家在活動上會進行製作水苔球，每個人可以選自己喜歡的植物來製作。每個人可以選擇喜歡植物，此外老師也準備小裝飾可以插在水苔球上。",
+        observation: "大家在製作過程很用心觀看老師播放的教學影片，因為是有動手實作，大家製作過程有很多同學需要幫忙，大家很專心地完成自己的產品。<br>最後下課我感覺每個人都很開心，因為沒想到在這門課可以製作水苔球，並放在自己房間可以陪伴自己過日子。"
+      }
+    ]
   },
+},
     class2: {
         1: {
             title: "第一週:感官故事與憂鬱症探討",
             photos: [
                 { 
-                    src: "images/class2/week1/photo1.jpg",
+                    src: "img/class2/week1/photo1.jpg",
                     caption: "乙班課程照片待更新" 
                 }
             ],
@@ -385,7 +427,7 @@ const journalData = {
             title: "第一週:感官故事與憂鬱症探討",
             photos: [
                 { 
-                    src: "images/class3/week1/photo1.jpg",
+                    src: "img/class3/week1/photo1.jpg",
                     caption: "丙班課程照片待更新" 
                 }
             ],
