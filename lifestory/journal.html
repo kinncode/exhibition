@@ -13,7 +13,6 @@
   <nav class="nav">
     <div class="nav-content">
       <div class="logo">生命書寫成果展</div>
-      <!-- 手機版漢堡按鈕 -->
       <div class="menu-toggle" id="menu-toggle">
         <span></span>
         <span></span>
@@ -40,10 +39,10 @@
           </ul>
         </li>
 
-        <li><a href="../outline.html">課程大綱</a></li>
-        <li><a href="../daily/journal.html">工作日誌</a></li>
-        <li><a href="../team.html">課程團隊</a></li>
-        <li><a href="../feedback.html">課程回饋</a></li>
+        <li><a href="outline.html">課程大綱</a></li>
+        <li><a href="journal.html">工作日誌</a></li>
+        <li><a href="team.html">課程團隊</a></li>
+        <li><a href="#">課程回饋</a></li>
       </ul>
     </div>
   </nav>
@@ -54,7 +53,6 @@
                 <p>記錄每週課程精彩瞬間與學習歷程</p>
             </div>
 
-            <!-- Control Panel -->
             <div class="control-panel">
                 <div class="control-section">
                     <label class="control-label">選擇班級</label>
@@ -70,9 +68,12 @@
                 <div class="control-section">
                     <label class="control-label">選擇週次</label>
                     <div class="week-nav">
-                        <button id="prevWeek">← 上一週</button>
-                        <div class="week-display">第 <span id="currentWeek">1</span> 週</div>
-                        <button id="nextWeek">下一週 →</button>
+                        <button id="prevWeek">←</button>
+                        <div class="week-selector-wrapper">
+                            <select id="weekSelect" class="week-select">
+                                </select>
+                        </div>
+                        <button id="nextWeek">→</button>
                     </div>
                 </div>
 
@@ -87,10 +88,8 @@
                 </div>
             </div>
 
-            <!-- Journal Content -->
             <div class="journal-content" id="journalContent">
-                <!-- Content will be loaded here -->
-            </div>
+                </div>
         </div>
     </main>
 
@@ -99,7 +98,7 @@
         <p>指導老師:駱育萱</p>
     </footer>
     <script src="daily/journal.js"></script>
-    <!-- Journal data structure -->
+    
     <script>        
         // State
         let currentClass = 'class1';
@@ -111,12 +110,24 @@
         const classSelect = document.getElementById('classSelect');
         const prevWeekBtn = document.getElementById('prevWeek');
         const nextWeekBtn = document.getElementById('nextWeek');
-        const currentWeekDisplay = document.getElementById('currentWeek');
+        const weekSelect = document.getElementById('weekSelect'); // 新增：獲取下拉選單
         const journalContent = document.getElementById('journalContent');
         const increaseFontBtn = document.getElementById('increaseFont');
         const decreaseFontBtn = document.getElementById('decreaseFont');
         const resetFontBtn = document.getElementById('resetFont');
         const fontSizeDisplay = document.getElementById('fontSizeDisplay');
+
+        // Initialization: 產生週次選項
+        function initWeekOptions() {
+            weekSelect.innerHTML = '';
+            for (let i = 1; i <= maxWeek; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = `第 ${i} 週`;
+                if (i === currentWeek) option.selected = true;
+                weekSelect.appendChild(option);
+            }
+        }
 
         // Event Listeners
         classSelect.addEventListener('change', (e) => {
@@ -124,10 +135,17 @@
             renderJournal();
         });
 
+        // 新增：下拉選單變更事件
+        weekSelect.addEventListener('change', (e) => {
+            currentWeek = parseInt(e.target.value);
+            updateButtonState(); // 更新按鈕狀態
+            renderJournal();
+        });
+
         prevWeekBtn.addEventListener('click', () => {
             if (currentWeek > 1) {
                 currentWeek--;
-                updateWeekDisplay();
+                updateWeekUI(); // 同步更新下拉選單和按鈕
                 renderJournal();
             }
         });
@@ -135,7 +153,7 @@
         nextWeekBtn.addEventListener('click', () => {
             if (currentWeek < maxWeek) {
                 currentWeek++;
-                updateWeekDisplay();
+                updateWeekUI(); // 同步更新下拉選單和按鈕
                 renderJournal();
             }
         });
@@ -161,9 +179,16 @@
         });
 
         // Functions
-        function updateWeekDisplay() {
-            currentWeekDisplay.textContent = currentWeek;
-            prevWeekBtn.disabled = currentWeek === 2;
+        
+        // 新增：統一更新週次介面 (同步下拉選單與按鈕)
+        function updateWeekUI() {
+            weekSelect.value = currentWeek; // 讓下拉選單顯示當前週次
+            updateButtonState();
+        }
+
+        // 新增：只更新按鈕的禁用狀態
+        function updateButtonState() {
+            prevWeekBtn.disabled = currentWeek === 1;
             nextWeekBtn.disabled = currentWeek === maxWeek;
         }
 
@@ -175,13 +200,18 @@
         }
 
         function renderJournal() {
-            const data = journalData[currentClass][currentWeek];
-            
-            if (!data) {
-                journalContent.innerHTML = '<p style="text-align: center; color: #7a6a5a; padding: 3rem;">本週課程記錄尚未更新</p>';
+            // 安全性檢查：確保 journalData 存在
+            if (typeof journalData === 'undefined' || !journalData[currentClass] || !journalData[currentClass][currentWeek]) {
+                journalContent.innerHTML = `
+                    <div style="text-align: center; color: #7a6a5a; padding: 3rem; background: #fff; border-radius: 12px; border: 2px dashed #e0d5ce;">
+                        <h3>本週課程記錄尚未更新</h3>
+                        <p>請選擇其他週次或稍後再訪</p>
+                    </div>`;
                 return;
             }
 
+            const data = journalData[currentClass][currentWeek];
+            
             let html = '';
 
             // Photos Section
@@ -221,12 +251,12 @@
                 `;
             }
 
-            // Activities Section
             if (data.activities && data.activities.length > 0) {
                 data.activities.forEach(activity => {
                     html += `
                         <div class="activity">
                             <h3 class="activity-title">${activity.title}</h3>
+                            
                             <div class="activity-content">
                                 <p>${activity.content}</p>
                             </div>
@@ -236,6 +266,13 @@
                                     <p>${activity.observation}</p>
                                 </div>
                             ` : ''}
+
+                            ${activity.reflection ? `
+                                <div class="reflection">
+                                    <div class="reflection-title">課程心得: </div>
+                                    <p>${activity.reflection}</p>
+                                </div>
+                            ` : ''}
                         </div>
                     `;
                 });
@@ -243,14 +280,41 @@
 
             journalContent.innerHTML = html;
         }
-
         // Initialize
-        updateWeekDisplay();
+        initWeekOptions(); // 產生選項
+        updateWeekUI();    // 設定初始狀態
         updateFontSize();
         renderJournal();
     </script>
     
     <style>
+        /* 新增週次選單樣式 */
+        .week-select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #d4c5b9;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #5d4037;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .week-select:focus {
+            outline: none;
+            border-color: #a18e80;
+            box-shadow: 0 0 0 3px rgba(161, 142, 128, 0.2);
+        }
+
+        /* 調整按鈕寬度，讓排版更好看 */
+        #prevWeek, #nextWeek {
+            min-width: 40px;
+            padding: 0.5rem;
+        }
+
+        /* ----------------------- */
+
         .photo-image {
             width: 100%;
             height: auto;
