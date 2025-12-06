@@ -96,6 +96,12 @@
             box-shadow: 0 2px 8px rgba(139, 111, 71, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            
+            /* 新增：針對 iOS 的硬體加速與防止閃爍 */
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
         .work-card:hover {
@@ -681,7 +687,7 @@ let currentIndex = 0;
 const imageCache = new Map();
 
 // 優化的圖片預載入函數
-function preloadImage(src) {
+function preloadImage(src, forceDecode = false) {
     return new Promise((resolve, reject) => {
         if (imageCache.has(src)) {
             resolve(imageCache.get(src));
@@ -690,15 +696,17 @@ function preloadImage(src) {
 
         const img = new Image();
         
-        // 使用 decode() API 提升性能（支援現代瀏覽器）
         img.onload = () => {
-            if ('decode' in img) {
+            // iOS 優化：只有在大圖模式(Lightbox)才強制解碼
+            // 列表模式下讓瀏覽器自己處理，避免卡頓
+            if (forceDecode && 'decode' in img) {
                 img.decode()
                     .then(() => {
                         imageCache.set(src, img);
                         resolve(img);
                     })
                     .catch(() => {
+                        // 解碼失敗仍視為載入成功
                         imageCache.set(src, img);
                         resolve(img);
                     });
@@ -726,30 +734,32 @@ async function preloadImagesInBatches(images, batchSize = 3) {
     return results;
 }
 
-// 使用 Intersection Observer 實現懶載入
+// 修改 setupLazyLoading
+// 簡化觀察器邏輯
 function setupLazyLoading() {
     const observerOptions = {
         root: null,
-        rootMargin: '50px', // 提前 50px 開始載入
-        threshold: 0.01
+        rootMargin: '100px', // 增加預載距離，讓使用者滑動時感覺更順
+        threshold: 0.1
     };
 
-    const imageObserver = new IntersectionObserver((entries) => {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 const src = img.dataset.src;
                 
-                if (src && !img.src) {
-                    preloadImage(src).then(() => {
-                        img.src = src;
+                if (src) {
+                    // 直接設定 src，不經過 Promise 鏈
+                    img.src = src;
+                    img.onload = () => {
+                        img.style.opacity = '1';
                         img.classList.add('loaded');
-                    }).catch(() => {
-                        img.outerHTML = '<div class="work-image-placeholder">🖼️</div>';
-                    });
-                    
-                    imageObserver.unobserve(img);
+                    };
+                    // 移除 data-src 避免重複處理
+                    img.removeAttribute('data-src');
                 }
+                observer.unobserve(img);
             }
         });
     }, observerOptions);
@@ -767,50 +777,48 @@ function renderGallery(classId, works) {
     }
     
     // 使用 DocumentFragment 提升性能
-    const fragment = document.createDocumentFragment();
+const fragment = document.createDocumentFragment();
     
     works.forEach((work, index) => {
         const card = document.createElement('div');
         card.className = 'work-card';
+        // 加入 iOS 硬體加速樣式
+        card.style.transform = "translateZ(0)"; 
         card.onclick = () => openLightbox(classId, index);
         
+        // 圖片處理邏輯優化
+        let imageHtml = '';
         if (work.image) {
-            // 使用懶載入
-            card.innerHTML = `
-                <img class="work-image" 
+            // 使用 data-src 但不依賴複雜的 JS 預載
+            // 加上 decoding="async" 讓瀏覽器非同步解碼
+            imageHtml = `
+                <img class="work-image lazy-img" 
                      data-src="${work.image}" 
                      alt="${work.title}"
-                     loading="lazy"
-                     style="opacity: 0; transition: opacity 0.3s;">
-                <div class="work-info">
-                    <h3 class="work-title">${work.title}</h3>
-                    <p class="work-author">👤 ${work.author}</p>
-                </div>
+                     decoding="async" 
+                     style="opacity: 0; transition: opacity 0.5s ease-in;">
             `;
         } else {
-            card.innerHTML = `
-                <div class="work-image-placeholder">🖼️</div>
-                <div class="work-info">
-                    <h3 class="work-title">${work.title}</h3>
-                    <p class="work-author">👤 ${work.author}</p>
-                </div>
-            `;
+            imageHtml = '<div class="work-image-placeholder">🖼️</div>';
         }
+
+        card.innerHTML = `
+            ${imageHtml}
+            <div class="work-info">
+                <h3 class="work-title">${work.title}</h3>
+                <p class="work-author">👤 ${work.author}</p>
+            </div>
+        `;
         
         fragment.appendChild(card);
     });
     
-    gallery.appendChild(fragment);
+gallery.appendChild(fragment);
     
-    // 設置懶載入
-    const images = gallery.querySelectorAll('img[data-src]');
+    // 重新啟動觀察器
+    const images = gallery.querySelectorAll('.lazy-img');
     const observer = setupLazyLoading();
-    images.forEach(img => {
-        observer.observe(img);
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        }, { once: true });
-    });
+    images.forEach(img => observer.observe(img));
 }
 
 // 初始化
@@ -938,20 +946,15 @@ function showWork() {
     
     resetZoom();
     
-    // 使用快取的圖片或直接設置
     if (work.image) {
-        if (imageCache.has(work.image)) {
+        lightboxImage.style.opacity = '0';
+        // Lightbox 需要高品質體驗，所以這裡開啟強制解碼
+        preloadImage(work.image, true).then((img) => {
             lightboxImage.src = work.image;
             lightboxImage.style.opacity = '1';
-        } else {
-            lightboxImage.style.opacity = '0';
-            preloadImage(work.image).then(() => {
-                lightboxImage.src = work.image;
-                lightboxImage.style.opacity = '1';
-            }).catch(() => {
-                lightboxImage.src = '';
-            });
-        }
+        }).catch(() => {
+            lightboxImage.src = '';
+        });
     } else {
         lightboxImage.src = '';
     }
