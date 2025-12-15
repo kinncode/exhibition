@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命故事成果展 - 首頁</title>
+    <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">生命書寫成果展</div>
+      <!-- 手機版漢堡按鈕 -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+
+        <li>
+          <a href="#">生命書寫</a>
+          <ul class="dropdown">
+            <li><a href="life-image.html">生命圖像</a></li>
+            <li><a href="life-video.html">生命故事影片</a></li>
+            <li><a href="life-story.html">生命故事1000字</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">佳作分享</a>
+          <ul class="dropdown">
+            <li><a href="resume.html">創作履歷表</a></li>
+            <li><a href="memories.html">那些年的氣味</a></li>
+          </ul>
+        </li>
+
+        <li><a href="outline.html">課程大綱</a></li>
+        <li><a href="journal.html">工作日誌</a></li>
+        <li><a href="team.html">課程團隊</a></li>
+        <li><a href="#">課程回饋</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>生命故事成果展</h1>
+        <p class="subtitle">探索每個生命的獨特軌跡，聆聽故事的力量</p>
+        <p class="hero-description">
+            在這門「中文閱讀與表達」課程中，我們透過影像、文字與影片，記錄並分享每個人獨特的生命經驗。
+            這不僅是一場成果展示，更是一次心靈的對話與生命的交流。
+        </p>
+    </div>
+
+    <!-- 三大路徑 -->
+    <section>
+        <div class="container">
+            <h2>探索生命故事</h2>
+            <p class="section-subtitle">選擇你想深入了解的呈現方式</p>
+            <div class="path-cards">
+                <a href="life-images.html" class="path-card fade-in">
+                    <div class="icon">📸</div>
+                    <h3>生命圖像</h3>
+                    <p>透過影像記錄生命中的重要時刻，每一張照片都訴說著一段獨特的故事，凝結了時間與情感的交織。</p>
+                    <span class="view-link">查看完整作品 →</span>
+                </a>
+                <a href="life-videos.html" class="path-card fade-in">
+                    <div class="icon">🎬</div>
+                    <h3>生命故事影片</h3>
+                    <p>用動態影像呈現生命的軌跡，聽見每個故事背後的聲音與情感，感受生命的流動與變化。</p>
+                    <span class="view-link">查看完整作品 →</span>
+                </a>
+                <a href="life-stories.html" class="path-card fade-in">
+                    <div class="icon">✍️</div>
+                    <h3>生命故事1000字</h3>
+                    <p>用文字細膩刻劃生命經驗，在千字之間感受人生的厚度與溫度，每個字都承載著真實的生命重量。</p>
+                    <span class="view-link">查看完整作品 →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <!-- 精選作品預覽 -->
+   <section class="preview-section">
+    <div class="container">
+        <h2>佳作精選</h2>
+        <p class="section-subtitle">搶先預覽部分優秀作品</p>
+        <div class="preview-grid">
+            <!-- 這裡的內容將由 JavaScript 動態生成 -->
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="works.html" class="path-card" style="display: inline-block; padding: 1rem 2rem;">
+                <span class="view-link">查看更多佳作 →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- 課程活動花絮 -->
+    <section class="activity-carousel-section">
+        <div class="container">
+            <div class="activity-carousel-wrapper">
+                <div class="carousel-header">
+                    <h2>課程活動花絮</h2>
+                </div>
+                <div class="carousel-wrapper-inner">
+                    <button class="carousel-nav-btn carousel-prev" id="activity-carousel-prev" aria-label="上一組">
+                        <span>‹</span>
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track" id="activity-carousel-track">
+                            <!-- 輪播內容將由 JavaScript 動態生成 -->
+                        </div>
+                    </div>
+                    <button class="carousel-nav-btn carousel-next" id="activity-carousel-next" aria-label="下一組">
+                        <span>›</span>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="activity-carousel-indicators">
+                    <!-- 指示器將由 JavaScript 動態生成 -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="journal.html" class="journal-link-btn">
+                        <span>查看完整工作日誌 →</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速連結 -->
+    <section>
+        <div class="container">
+            <h2>了解更多</h2>
+            <div class="quick-links">
+                <a href="outline.html" class="quick-link fade-in">
+                    <div class="icon">📚</div>
+                    <h3>課程大綱</h3>
+                    <p>探索課程規劃與學習歷程</p>
+                </a>
+                <a href="journal.html" class="quick-link fade-in">
+                    <div class="icon">📝</div>
+                    <h3>工作日誌</h3>
+                    <p>記錄每週的學習點滴</p>
+                </a>
+                <a href="team.html" class="quick-link fade-in">
+                    <div class="icon">👥</div>
+                    <h3>課程團隊</h3>
+                    <p>認識陪伴我們的師長</p>
+                </a>
+                <a href="feedback.html" class="quick-link fade-in">
+                    <div class="icon">💬</div>
+                    <h3>課程回饋</h3>
+                    <p>聽聽學員的真實心聲</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程介紹 -->
+    <section>
+        <div class="container">
+            <div class="info-box fade-in">
+                <h3>關於這門課程</h3>
+                <p>「中文閱讀與表達」是一門結合生命敘事與創意表達的課程。我們相信每個人的生命都是一本獨特的書，值得被細細閱讀與書寫。</p>
+                <p>透過影像、文字與影片等多元媒材，學員們學習如何觀察生活、捕捉瞬間、梳理經驗，並將這些化為動人的故事。在這個過程中，我們不僅提升了表達能力，更重要的是，我們學會了如何與自己的生命對話。</p>
+                <a href="outline.html" class="more-link">查看完整課程大綱 →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 生命書寫成果展 | 中文閱讀與表達課程 | 南台科技大學</p>
+        <p>指導老師:駱育萱</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/featured-works.js"></script>
+    <script src="daily/journal.js"></script>
+    <script src="js/activity-carousel.js"></script>
+</body>
+</html>
