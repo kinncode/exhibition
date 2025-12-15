@@ -110,7 +110,7 @@ function getDefaultImages() {
 // 動態獲取照片資料
 let activityCarouselImages = [];
 
-const SLIDES_PER_VIEW = 2; // 一次顯示三張照片
+const SLIDES_PER_VIEW = 3; // 一次顯示三張照片
 let currentGroupIndex = 0;
 let carouselInterval = null;
 
@@ -369,4 +369,5 @@ function setupCarousel() {
 }
 
 setupCarousel();
+
 
