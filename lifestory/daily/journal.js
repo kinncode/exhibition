@@ -912,24 +912,24 @@ class2: {
     ]
   }
 },
-  class3: {
+class3: {
         2: {
           title: "第二週: 讀辛波絲卡〈寫履歷表〉",
           photos: [
             {
-              src: "img/class3/W02-1.png",
+              src: "img/class3/W2-1.png",
               caption: "學生在討論選擇能力強項卡"
             },
             {
-              src: "img/class3/W02-2.png",
+              src: "img/class3/W2-2.png",
               caption: "各組當老闆提出兩項能力應徵條件"
             },
             {
-              src: "img/class3/W02-3.png",
+              src: "img/class3/W2-3.png",
               caption: "老師討論"
             },
             {
-              src: "img/class3/W02-4.png",
+              src: "img/class3/W2-4.png",
               caption: "在各組老闆提出能力條件下，各組換位思考當員工時，來選擇最想應徵公司的條件"
             }
           ],
@@ -955,19 +955,19 @@ class2: {
           title: "第三週: 閱讀辛波絲卡〈寫履歷表〉",
           photos: [
             {
-              src: "img/class3/W03-1.png",
+              src: "img/class3/W3-1.png",
               caption: "學生在討論選擇能力強項卡。"
             },
             {
-              src: "img/class3/W03-2.png",
+              src: "img/class3/W3-2.png",
               caption: "組員代表上台閱讀和詮釋組別討論的結果。"
             },
             {
-              src: "img/class3/W03-3.png",
+              src: "img/class3/W3-3.png",
               caption: "組員代表上台閱讀和詮釋組別討論的結果。"
             },
             {
-              src: "img/class3/W03-4.png",
+              src: "img/class3/W3-4.png",
               caption: "組員代表上台閱讀和詮釋組別討論的結果。"
             }
           ],
@@ -996,19 +996,19 @@ class2: {
           title: "第四週: 創意履歷表-心智圖",
           photos: [
             {
-              src: "img/class3/W04-1.png",
+              src: "img/class3/W4-1.png",
               caption: "同學在課本空白地方手寫作引導句。"
             },
             {
-              src: "img/class3/W04-2.png",
+              src: "img/class3/W4-2.png",
               caption: "同學在課本空白地方手寫作引導句。"
             },
             {
-              src: "img/class3/W04-3.png",
+              src: "img/class3/W4-3.png",
               caption: "同學在課堂上觀看心智圖教學"
             },
             {
-              src: "img/class3/W04-4.png",
+              src: "img/class3/W4-4.png",
               caption: "同學開始動手繪製自我介紹心智圖"
             }
           ],
@@ -1030,19 +1030,19 @@ class2: {
           title: "第六週: 創意履歷表-心智圖",
           photos: [
             {
-              src: "img/class3/W06-1.png",
+              src: "img/class3/W6-1.png",
               caption: "同學繪製心智圖"
             },
             {
-              src: "img/class3/W06-2.png",
+              src: "img/class3/W6-2.png",
               caption: "同學完成作品進行佈展"
             },
             {
-              src: "img/class3/W06-3.png",
+              src: "img/class3/W6-3.png",
               caption: "同學在創作履歷表展活動進行看展和互評。"
             },
             {
-              src: "img/class3/W06-4.png",
+              src: "img/class3/W6-4.png",
               caption: "同學在創作履歷表展活動進行看展和互評。"
             }
           ],
@@ -1064,19 +1064,19 @@ class2: {
           title: "第八週: 妙語說書人",
           photos: [
             {
-              src: "img/class3/W08-1.png",
+              src: "img/class3/W8-1.png",
               caption: "老師講解遊戲運作方式和規則"
             },
             {
-              src: "img/class3/W08-2.png",
+              src: "img/class3/W8-2.png",
               caption: "大組正在進行遊戲中"
             },
             {
-              src: "img/class3/W08-3.png",
+              src: "img/class3/W8-3.png",
               caption: "大組正在進行遊戲中"
             },
             {
-              src: "img/class3/W08-4.png",
+              src: "img/class3/W8-4.png",
               caption: "各組在篩選自己喜歡的卡牌，進行故事創作"
             }
           ],
@@ -1102,19 +1102,19 @@ class2: {
           title: "第九週: 生命書寫四路徑-氣味、那些年我們一起回憶",
           photos: [
             {
-              src: "img/class3/W09-1.png",
+              src: "img/class3/W9-1.png",
               caption: "老師講解今天課程要上的楊照<氣味>。"
             },
             {
-              src: "img/class3/W09-2.png",
+              src: "img/class3/W9-2.png",
               caption: "組員進行閱讀和討論楊照<氣味>這篇故事時序。"
             },
             {
-              src: "img/class3/W09-3.png",
+              src: "img/class3/W9-3.png",
               caption: "組員在那些年我們一起回憶活動繪製感官回憶心智圖"
             },
             {
-              src: "img/class3/W09-4.png",
+              src: "img/class3/W9-4.png",
               caption: "組員在那些年我們一起回憶活動繪製感官回憶心智圖"
             }
           ],
