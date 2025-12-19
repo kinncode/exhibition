@@ -99,7 +99,7 @@
     </footer>
     <script src="daily/journal.js"></script>
     
-    <script>        
+   <script>        
         // State
         let currentClass = 'class1';
         let currentWeek = 2;
@@ -213,7 +213,13 @@
             const data = journalData[currentClass][currentWeek];
             
             let html = '';
-
+            if (data.title) {
+                html += `
+                    <div class="journal-header-section">
+                        <h1 class="weekly-main-title">${data.title}</h1>
+                    </div>
+                `;
+            }
             // Photos Section
             if (data.photos && data.photos.length > 0) {
                 html += `
@@ -370,6 +376,28 @@
             font-weight: 600;
             color: #7a6a5a;
         }
+        /* 新增週次標題樣式 */
+        .journal-header-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e0d5ce; /* 底部加一條裝飾線 */
+        }
+
+        .weekly-main-title {
+            font-size: 1.8rem;
+            color: #5d4037;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* 手機版字體稍微縮小 */
+        @media (max-width: 768px) {
+            .weekly-main-title {
+                font-size: 1.5rem;
+            }
+        }
 
         @media (max-width: 768px) {
             .font-size-control {
@@ -379,5 +407,5 @@
         }
     </style>
 </body>
-
 </html>
+
