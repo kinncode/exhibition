@@ -93,6 +93,7 @@ body {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    align-items: center;
 }
 
 .carousel-slide-group {
@@ -565,23 +566,57 @@ footer p {
     }
 
     .carousel-wrapper-inner {
-        gap: 0.8rem;
+        gap: 0.5rem;
+        align-items: center;
     }
 
+    .carousel-viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carousel-track {
+        align-items: center;
+    }
+
+    /* 手機版：一次只顯示一張照片，以照片原始大小顯示 */
     .carousel-slide-group {
-        gap: 0.8rem;
-        padding: 0 0.3rem;
+        min-width: 100%;
+        width: 100%;
+        gap: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    .carousel-slide {
+        flex: none !important;
+        width: auto !important;
+        max-width: calc(100vw - 4rem);
+        margin: 0 auto;
+        display: block;
+        overflow: visible;
+        position: relative;
+    }
+
+    .carousel-slide img {
+        width: auto !important;
+        height: auto !important;
+        max-width: calc(70vw - 4rem);
+        max-height: 75vh;
+        min-width: 0;
+        object-fit: contain !important;
+        display: block;
+        margin: 0;
+        border-radius: 15px;
     }
 
     .carousel-nav-btn {
         width: 35px;
         height: 35px;
         font-size: 1.2rem;
-    }
-
-    .carousel-slide img {
-        aspect-ratio: 3/2;
-        max-height: 200px;
     }
 
     .carousel-caption {
@@ -598,23 +633,8 @@ footer p {
         width: 24px;
     }
 
-    /* 手機上改為一次顯示一張 */
-    @media (max-width: 640px) {
-        .carousel-slide-group {
-            flex-direction: column;
-        }
-        
-        .carousel-slide {
-            width: 100%;
-        }
-        
-        .carousel-slide img {
-            max-height: 250px;
-        }
-        
-        .journal-link-btn {
-            padding: 0.8rem 1.5rem;
-            font-size: 0.9rem;
-        }
+    .journal-link-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
