@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命故事成果展 - 首頁</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        /* 頁面主要內容 */
+        .main-content {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header.page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        header.page-header h1 {
+            font-size: 3rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-brown);
+            margin: 3rem 0 2rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(139, 111, 71, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        /* 影片容器 - 保持 16:9 比例且對 iOS 友善 */
+        .video-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 111, 71, 0.15);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .video-info h3 {
+            color: var(--primary-brown);
+            font-size: 1.25rem;
+        }
+
+        /* 佈局網格 */
+        .speech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(139, 111, 71, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #7a6a5a;
+            margin-top: 4rem;
+        }
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            header.page-header h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.6rem; }
+            .speech-grid { grid-template-columns: 1fr; }
+            .class-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* 簡化手機版，通常應有漢堡選單 */
+            .main-content { padding-top: 6rem; }
+        }
+    </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">生命書寫成果展</div>
+      <!-- 手機版漢堡按鈕 -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+
+        <li>
+          <a href="#">生命書寫</a>
+          <ul class="dropdown">
+            <li><a href="life-image.html">生命圖像</a></li>
+            <li><a href="life-video.html">生命故事影片</a></li>
+            <li><a href="life-story.html">生命故事1000字</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#">佳作分享</a>
+          <ul class="dropdown">
+            <li><a href="resume.html">創作履歷表</a></li>
+            <li><a href="memories.html">那些年的氣味</a></li>
+          </ul>
+        </li>
+
+        <li><a href="outline.html">課程大綱</a></li>
+        <li><a href="journal.html">工作日誌</a></li>
+        <li><a href="team.html">課程團隊</a></li>
+        <li><a href="feedback.html">課程回饋</a></li>
+      </ul>
+    </div>
+  </nav>
+<main class="main-content">
+        <header class="page-header">
+            <h1>課程回饋與紀錄</h1>
+            <p>透過影像，回顧我們在生命書寫過程中的點滴與感動</p>
+        </header>
+
+        <!-- 演講回顧區塊 -->
+        <section>
+            <h2 class="section-title">演講回顧</h2>
+            <div class="speech-grid" id="speech-container">
+                <!-- 由 JavaScript 動態生成 -->
+            </div>
+        </section>
+        <!-- 班級回顧區塊 -->
+        <section>
+            <h2 class="section-title">班級回顧</h2>
+            <div class="class-grid" id="class-container">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 生命故事成果展 | 中文閱讀與表達課程</p>
+        <p>探索生命，書寫故事</p>
+    </footer>
+
+    <script>
+        const videoData = {
+            speech: [
+                { title: "因為我稙得", youtubeId: "10GHMhbg0UE" }, // 範例 ID
+                { title: "影片標題二", youtubeId: "dQw4w9WgXcQ" }
+            ],
+            classes: [
+                { title: "多勒一甲", youtubeId: "dQw4w9WgXcQ" },
+                { title: "電子一乙", youtubeId: "dQw4w9WgXcQ" },
+                { title: "流音一乙", youtubeId: "dQw4w9WgXcQ" }
+            ]
+        };
+        function createVideoCard(video) {
+            return `
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1" 
+                            title="${video.title}" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>${video.title}</h3>
+                    </div>
+                </div>
+            `;
+        }
+        window.onload = function() {
+            const speechContainer = document.getElementById('speech-container');
+            const classContainer = document.getElementById('class-container');
+            // 渲染演講回顧
+            speechContainer.innerHTML = videoData.speech.map(v => createVideoCard(v)).join('');
+            // 渲染班級回顧
+            classContainer.innerHTML = videoData.classes.map(v => createVideoCard(v)).join('');
+        };
+    </script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
