@@ -110,13 +110,18 @@ function getDefaultImages() {
 // 動態獲取照片資料
 let activityCarouselImages = [];
 
-const SLIDES_PER_VIEW = 3; // 一次顯示三張照片
+// 根據螢幕寬度動態設定一次顯示的照片數量
+function getSlidesPerView() {
+    return window.innerWidth <= 768 ? 1 : 3; // 手機版顯示1張，桌面版顯示3張
+}
+
 let currentGroupIndex = 0;
 let carouselInterval = null;
 
 // 計算總共有多少組
 function getTotalGroups() {
-    return Math.ceil(activityCarouselImages.length / SLIDES_PER_VIEW);
+    const slidesPerView = getSlidesPerView();
+    return Math.ceil(activityCarouselImages.length / slidesPerView);
 }
 
 // 創建單個幻燈片（優化：使用 DocumentFragment）
@@ -174,7 +179,8 @@ function initActivityCarousel() {
     const trackFragment = document.createDocumentFragment();
     const indicatorsFragment = document.createDocumentFragment();
     
-    // 創建幻燈片組（每組3張）
+    // 創建幻燈片組（根據螢幕寬度決定每組張數）
+    const slidesPerView = getSlidesPerView();
     const totalGroups = getTotalGroups();
     
     for (let groupIndex = 0; groupIndex < totalGroups; groupIndex++) {
@@ -185,9 +191,9 @@ function initActivityCarousel() {
         // 使用 DocumentFragment 批量添加
         const groupFragment = document.createDocumentFragment();
         
-        // 每組顯示3張照片
-        for (let i = 0; i < SLIDES_PER_VIEW; i++) {
-            const imageIndex = groupIndex * SLIDES_PER_VIEW + i;
+        // 根據螢幕寬度決定每組顯示的照片數量
+        for (let i = 0; i < slidesPerView; i++) {
+            const imageIndex = groupIndex * slidesPerView + i;
             
             if (imageIndex < activityCarouselImages.length) {
                 const image = activityCarouselImages[imageIndex];
@@ -351,6 +357,7 @@ function initializeCarousel() {
 
 // 使用單一事件監聽器，避免重複初始化
 let isInitialized = false;
+let resizeTimeout = null;
 
 function setupCarousel() {
     if (isInitialized) return;
@@ -360,14 +367,35 @@ function setupCarousel() {
             if (!isInitialized) {
                 isInitialized = true;
                 initializeCarousel();
+                setupResizeHandler();
             }
         });
     } else {
         isInitialized = true;
         initializeCarousel();
+        setupResizeHandler();
     }
 }
 
-setupCarousel();
+// 設置視窗大小改變監聽器（用於響應式切換）
+function setupResizeHandler() {
+    let lastWidth = window.innerWidth;
+    
+    window.addEventListener('resize', () => {
+        // 使用防抖，避免頻繁重新初始化
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const currentWidth = window.innerWidth;
+            // 只在跨越 768px 閾值時重新初始化
+            if ((lastWidth <= 768 && currentWidth > 768) || 
+                (lastWidth > 768 && currentWidth <= 768)) {
+                lastWidth = currentWidth;
+                // 重新初始化輪播以適應新的螢幕寬度
+                initActivityCarousel();
+            }
+        }, 250);
+    });
+}
 
+setupCarousel();
 
