@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命故事1000字 - 作品選集</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        /* === 頁面切換控制 === */
+        .view-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .view-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* === VIEW 1: 故事選集列表 === */
+        .page-header { padding: 8rem 2rem 3rem; text-align: center; }
+        .page-title { font-size: 2.5rem; color: #8b6f47; margin-bottom: 1rem; letter-spacing: 2px; }
+        .page-subtitle { color: #7a6a5a; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 6rem; }
+        .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; }
+        
+        /* 卡片樣式 */
+        .story-card {
+            background: #fff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(139, 111, 71, 0.08);
+            transition: all 0.4s ease; border: 1px solid rgba(160, 130, 109, 0.1);
+            display: flex; flex-direction: column; cursor: pointer;
+        }
+        .story-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(139, 111, 71, 0.2); border-color: rgba(160, 130, 109, 0.4); }
+        .card-body { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.85rem; color: #999; }
+        .category-tag { background: rgba(160, 130, 109, 0.1); color: #a0826d; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+        .card-title { font-size: 1.4rem; color: #4a3f35; margin-bottom: 1rem; line-height: 1.4; font-weight: bold; font-family: 'Noto Serif TC', serif; }
+        .card-excerpt { color: #666; font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; flex-grow: 1; }
+        .card-footer { padding-top: 1.5rem; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .author-info { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #5a4633; }
+        .read-btn { color: #a0826d; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem; transition: gap 0.3s; }
+        .story-card:hover .read-btn { gap: 0.6rem; }
+
+        /* === VIEW 2: 閱讀版面 === */
+        .article-wrapper {
+            padding-top: 6rem; padding-bottom: 6rem; min-height: 100vh;
+            display: flex; justify-content: center; padding-left: 1rem; padding-right: 1rem;
+        }
+        
+        .back-nav { max-width: 210mm; margin: 0 auto 1rem; width: 100%; display: flex; justify-content: space-between; }
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            color: #8b6f47; font-weight: bold; cursor: pointer;
+            padding: 0.5rem 1rem; border-radius: 20px;
+            background: rgba(255,255,255,0.5); transition: all 0.3s;
+        }
+        .back-btn:hover { background: #fff; box-shadow: 0 2px 10px rgba(139, 111, 71, 0.1); }
+
+        .paper-container {
+            background: #fff; width: 100%; max-width: 210mm;
+            /* 改為固定高度範圍，讓翻頁更有感，但保留彈性以免字被切掉 */
+            min-height: 160mm; 
+            padding: 2.54cm 3.18cm;
+            box-shadow: 0 10px 40px rgba(139, 111, 71, 0.15);
+            border-radius: 2px; position: relative;
+            font-family: "DFKai-SB", "BiauKai", "標楷體", "PMingLiU", "新細明體", serif;
+            font-size: 12pt; line-height: 1.8; color: #000;
+            display: flex; flex-direction: column;
+        }
+
+        .student-info { text-align: right; margin-bottom: 2rem; font-size: 12pt; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+        .article-title { text-align: center; font-size: 18pt; font-weight: bold; margin-bottom: 2rem; color: #000; }
+        
+        /* 動態內容區塊 */
+        #article-content-area { flex-grow: 1; }
+        #article-content-area p { text-indent: 2em; margin-bottom: 1.5rem; text-align: justify; }
+        .sub-title { font-size: 14pt; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #000; }
+        blockquote { margin: 2rem 3rem; padding: 1rem; background: #f9f9f9; border-left: 4px solid #8b6f47; font-style: italic; font-family: 'Noto Serif TC', serif; }
+        figure { margin: 1.5rem 0; text-align: center; }
+        figure img { max-width: 80%; height: auto; border: 1px solid #ddd; padding: 4px; }
+        figcaption { text-align: center; font-size: 10pt; color: #666; margin-top: 0.5rem; font-family: "PMingLiU", sans-serif; }
+
+        /* === 分頁控制區 (Pagination) === */
+        .pagination-controls {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .page-btn {
+            background: transparent;
+            border: 1px solid #a0826d;
+            color: #a0826d;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: #a0826d;
+            color: #fff;
+        }
+
+        .page-btn:disabled {
+            border-color: #ccc;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .page-indicator {
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .paper-container { padding: 2rem 1.5rem; max-width: 100%; min-height: auto; }
+            .nav-links { display: none; }
+        }
+
+        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+<nav class="nav">
+        <div class="nav-content">
+            <div class="logo">生命書寫成果展</div>
+            <!-- 手機版漢堡按鈕 -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">首頁</a></li>
+
+                <li>
+                    <a href="#">生命書寫</a>
+                    <ul class="dropdown">
+                        <li><a href="life-images.html">生命圖像展覽</a></li>
+                        <li><a href="#">生命故事影片</a></li>
+                        <li><a href="#">生命故事1000字</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">佳作分享</a>
+                    <ul class="dropdown">
+                        <li><a href="life-imagetop.html">生命圖像</a></li>
+                        <li><a href="resume.html">創作履歷表</a></li>
+                        <li><a href="memories.html">那些年我們一起的回憶</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="outline.html">課程大綱</a></li>
+                <li><a href="journal.html">工作日誌</a></li>
+                <li><a href="team.html">課程團隊</a></li>
+                <li><a href="feedback.html">課程回饋</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- VIEW 1: 故事列表 -->
+    <section id="index-view" class="view-section active">
+        <header class="page-header">
+            <h1 class="page-title">生命故事 1000字</h1>
+            <p class="page-subtitle">
+                文字是有重量的。在這裡，我們用一千個字，<br>
+                梳理那些關於成長、傷痕、愛與記憶的生命片段。
+            </p>
+        </header>
+
+        <div class="container">
+            <div class="stories-grid" id="stories-grid-container"></div>
+        </div>
+    </section>
+
+    <!-- VIEW 2: 閱讀版面 (含分頁) -->
+    <section id="reader-view" class="view-section">
+        <div class="article-wrapper">
+            <div style="width: 100%; max-width: 210mm;">
+                <div class="back-nav">
+                    <div class="back-btn" onclick="showIndexView()">
+                        ← 返回列表
+                    </div>
+                </div>
+
+                <article class="paper-container">
+                    <!-- 固定頭部 -->
+                    <div class="student-info" id="student-info"></div>
+                    <h1 class="article-title" id="article-title"></h1>
+                    
+                    <!-- 變動內容區 (這裡只會顯示當前頁面的內容) -->
+                    <div id="article-content-area"></div>
+                    
+                    <!-- 分頁控制 -->
+                    <div class="pagination-controls" id="pagination-controls" style="display: none;">
+                        <button class="page-btn" id="btn-prev" onclick="changePage(-1)">← 上一頁</button>
+                        <span class="page-indicator" id="page-indicator">第 1 頁 / 共 3 頁</span>
+                        <button class="page-btn" id="btn-next" onclick="changePage(1)">下一頁 →</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 生命書寫成果展 | 中文閱讀與表達課程 | 南台科技大學</p>
+        <p>指導老師:駱育萱</p>
+    </footer>
+
+    <script>
+        // === 1. 故事資料庫 (增加了一些長度測試分頁) ===
+        const storiesData = [
+            {
+                id: 1,
+                title: "地獄遊記",
+                author: "林敬凱",
+                studentInfo: "自控一甲 4A2071 林敬凱 ",
+                date: "",
+                category: "",
+                excerpt: "那一天的我告別了我小學時稱兄道弟的夥伴，過去我們曾打架鬧事，過去我們曾在校長室上過課，過去還差點上少年法庭，就這樣精采的六年就這樣過去了，再見了我的小學；進入國中，我是林敬凱，我要在這裡三年過著安分守己的生活。...",
+                content: `
+                    <p>那一天的我告別了我小學時稱兄道弟的夥伴，過去我們曾打架鬧事，過去我們曾在校長室上過課，過去還差點上少年法庭，就這樣精采的六年就這樣過去了，再見了我的小學；進入國中，我是林敬凱，我要在這裡三年過著安分守己的生活。</p>
+                    <div class="sub-title">那晚跪神明廳</div>
+                    <p>踏進新教室的那天，我左顧右盼想找到自己的知己，當時的教室就像關者 一群飢餓的野狼，心裡不知道為甚麼像是磁鐵一樣受到了干擾也跟著開始飢餓 了，巴不得趕快下課。國中我第一個朋友是坐我後面的同學，他長得很像小叮 噹，可是他有一頭自然捲的頭髮，小時候常聽別人說有自然捲的脾氣都很不好， 所以我對他不會開太大的玩笑，都只是小小的，就那麼一點吧⋯⋯我國中一年級 的班導師是一個女老師，看起來人好好的，應該很好說話，結果我不知道是習 慣了，還是怎麼樣，有天他在訓斥我的行為，我手中剛好有一本書，就直接往 她臉上，輕輕的把書放到她的頭上，她當下勃然大怒，我心想事情大條了，於 是我國中的第一天就這樣精采的結束了。然而我的悲劇也悄悄的來臨，一回家 導師就打電話到家裡和家長溝通，當然竹筍炒肉絲是免不了的，第二天一支警 告寄到家裡，當下還沾沾自喜說達成一項成就了，結果回家，又是悲劇的開端， 這次換罰跪在神明廳一整晚，那一晚我敵不過睡魔的侵蝕，於是就跪著跪著就 睡著了，凌晨的時候我醒過來，一整個爬不起來，可是還是得去學校。</p>
+                    <div class="sub-title">勒索並不開心</div>
+                    <p>在國一的時候我們班有一個凱子很有錢，他爸是銀行的總經理，而且跟他 交情好，還會送手機，我聽到這消息幫他做牛做馬，就為了賺 300 塊，結果到 給錢那天，他居然沒錢，我當下很生氣感覺就像是被耍，中午的時候我把他拖 到陰暗的角落勒索，隔天他就吐出錢了。老師當然知道這件事，可是他也不知 道該怎麼辦，於是就放給他爛，其實當下拿到錢的我不是很開心，因為我為了 300 塊跟別人勒索，時光飛逝一年過去了，國一的導師因為龐大的壓力而導致 小產，書也沒辦法好好教了，所以我們在國二換了班導師。</p>
+                    <div class="sub-title">惡魔菁英班</div>
+                    <p>國二的第一天我很乖的坐在位置上，看著新老師在對我們展現他有甚麼武 器可以好好的教訓我們，我想可能是在早休的時候，訓導主任走進了我們班一 把鼻涕一把淚的說：「恭喜你，教到這班吧」，國二的那年是班上許多菁英分 子崛起的一年，當然我身為精英中的精英要以身作則，可惜我不敢在那軍事化 的教育下亂來；國二的導師是教理化的，他的考試只要梅達標準就是被打，曾 經有一次老師打到了一位千金就被學校警告了，真好，千金就是不一樣，只有 她不用被打，這時的班上開始效仿了那位千金裝死，導師打人的次數就真的減 少了。結果對我還是一樣，古人云：「玉不琢，不成器，人不打，不知學」， 我在班上，理化成績算是前面的，雖然是軍事化的教育，但是那是適用在軍人 身上，對於惡魔是不管用的，國二結束，導師也舉旗投降了，所有的老師都在 議論紛紛我們班的「事蹟」，還在推託說不要教這個班級。</p>
+                    <div class="sub-title">給我一個眼神，我什麼都願意 </div>
+                    <p>國三前的暑假學校做出了決策，是讓一位有年紀的女老師來帶我們班，可能是小時候的教育，要我們不能讓老人家生氣，所以我們異常地在她的課乖乖的，但其他的課就另當別論了。有老師氣到翻學生桌子，或是差點打起來的都有。國三這一個階段算是戀愛旺季，許多人開始有了男女朋友，而我是對我的 24 支警告開始煩惱。偏偏在這時候有一個住海邊的老師想拆散班上的一對情侶， 結果就逼問我他們是情侶的事情，甚至拿記過權力來壓著我，「真是該死，居 然這樣壓我，可是我再被記過就不能畢業了」，我心裡頓時吐出了這番話，最 終我還是講了。那對情侶是班上大條的班對，結果還是被拆散了，那個住海邊 的老師當然不會背這個罪，所以我背了黑鍋。那一天我失去了所有人對我的信 任，沒人想理我了，就連國中交的第一位朋友也沒察覺到，那陣子好痛苦好痛 苦：「為甚麼？沒有人肯聽我說話，為甚麼？沒人肯相信我……拜託拜託相信 我，求求你們了，求求你們了……事情不是你們想的那樣的……」</p>
+                    <p>在這些日子裡為了捍衛我最後那一點尊嚴，我跟人打架被打到手術台上眼睛縫了三針，這三針讓我拋棄了我在國中最後的尊嚴。我開始搞笑，開始學人家乞討，那怕是甚麼丟臉的事我都會做，就為了那一個眼神，就為了那一個機會，我都做，我都做……國中結束前，我們班有位同學被高中部的人給欺負了，同學之間聽了當然很不是滋味，就為了那位同學出氣，這件事情鬧得非常大。在那已經沒有尊嚴的我心裡產生想解決這件事的衝動，於是我就和高中部的學長串通好了要阻止，結果還是沒能阻止，眼看事情準備要爆發了，我就收手還把一些無關緊要的人帶走，以免被波及。才能讓校方比較溫和的處理，學校讓在場的人不能參加畢業典禮，但還是能畢業。雖然沒有讓大家看到我，可是讓大家又重新得看到了我。那一場畢業典禮對我來說是根本沒什麼重大的意義，心裡還覺得能不能快點結束，就這樣我的國中畫上了句點了。</p>
+                    <div class="sub-title">高中該何去何從</div>
+                    <p>暑假應該是個快樂的假期，可是我卻不怎麼快樂，每間高中都不要我，甚 至我去餐廳打工，就為了見我想去的高中的副校長，結果還是不行。那餐廳的 小開看了也不是滋味罵說：「哪有這種副校長的，學生都那麼想進去了，為甚 麼還不敢來。」我聽了也只是笑笑的，心裡也覺得副校長不來也是應該的。 「誰，會想要我呀？」我輕嘆。；8 月 8 號是一個重要的日子，那天是我外公過 世的日子，他在走的前些日子還說到：「敬凱，是個乖孩子，每次看到他，他 都會陪我。」「對不起，外公……我不乖，我讓家裡的人蒙羞了。」那天的我 跪在離家不遠的廟裡拜拜，乞求能夠有高中唸，突然有人叫了我，我轉身是一 個不認識的叔叔叫我，他問我：「你是不是沒高中念？」我當下有些驚訝，可 能是我那眼神透露出來了吧，我點點頭，他說我可以讓你進一間高中，可是你 要好好努力，那間高中就是我心裡想去的高中，我二話不說馬上答應他，就這 樣我有高中唸了。</p>
+                    <div class="sub-title">置之死地而後生</div>
+                    <p>回想當初國中時期酸甜苦辣，就好像在一個輪迴一樣，看過了同儕以及長輩的生老病死，快樂過，也失去過所有的東西，但在高中這個階段我付出了我最大的努力，我讓大家都看到了我，甚至對我跌破眼鏡，高中的同學很多人羨慕我，「為甚麼你感覺身邊都有很多人圍繞在你身邊，感覺你甚麼事都那麼認真？」我笑笑的回答：「我死過一次，所以我知道要怎麼活。」</p>
+                    `
+            },
+            {
+            }
+        ];
+
+        // === 2. 初始化：產生故事列表 ===
+        function initGrid() {
+            const gridContainer = document.getElementById('stories-grid-container');
+            gridContainer.innerHTML = storiesData.map(story => `
+                <div class="story-card" onclick="openStory(${story.id})">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="category-tag">${story.category}</span>
+                            <span>${story.date}</span>
+                        </div>
+                        <h3 class="card-title">${story.title}</h3>
+                        <p class="card-excerpt">${story.excerpt}</p>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <span>✍️ ${story.author}</span>
+                            </div>
+                            <span class="read-btn">閱讀全文 →</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // === 3. 分頁邏輯變數 ===
+        let currentPages = [];  // 存放切分後的頁面內容
+        let currentPageIndex = 0; // 當前在第幾頁 (0開始)
+        const CHARS_PER_PAGE = 1000; // 設定一頁大概多少字 (這是一個權衡值，可調整)
+
+        // === 4. 自動分頁函式 (核心邏輯) ===
+        function paginateContent(htmlContent, imageObj) {
+            // 創建一個暫時的 div 來解析 HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = htmlContent;
+            
+            // 取得所有的段落、標題、引用等元素
+            // 這裡假設內容都是由區塊元素組成的 (p, div, blockquote, etc)
+            const elements = Array.from(tempDiv.children);
+            
+            const pages = [];
+            let currentPageContent = [];
+            let currentCharCount = 0;
+            
+            // 如果有圖片，把它當作第一頁的一部分，或者獨立顯示
+            // 這裡的策略：如果有圖片，強制圖片放在第一頁最上面
+            if (imageObj && imageObj.src) {
+                const imgHtml = `
+                    <figure>
+                        <img src="${imageObj.src}" alt="文章配圖">
+                        <figcaption>${imageObj.caption || ''}</figcaption>
+                    </figure>
+                `;
+                currentPageContent.push(imgHtml);
+                currentCharCount += 150; // 圖片大約佔 150 字的空間感
+            }
+
+            elements.forEach(el => {
+                const textLength = el.textContent.length;
+                const html = el.outerHTML;
+
+                // 如果當前頁面加上這一段會太長，且當前頁面不是空的，就換頁
+                // (如果這一段本身就超長 > CHARS_PER_PAGE，它還是會獨佔一頁，不會被切斷)
+                if (currentCharCount + textLength > CHARS_PER_PAGE && currentPageContent.length > 0) {
+                    pages.push(currentPageContent.join(''));
+                    currentPageContent = [];
+                    currentCharCount = 0;
+                }
+
+                currentPageContent.push(html);
+                currentCharCount += textLength;
+            });
+
+            // 把剩下的內容放入最後一頁
+            if (currentPageContent.length > 0) {
+                pages.push(currentPageContent.join(''));
+            }
+
+            return pages;
+        }
+
+        // === 5. 切換到閱讀模式 ===
+        function openStory(id) {
+            const story = storiesData.find(s => s.id === id);
+            if (!story) return;
+
+            // 設定固定資訊
+            document.getElementById('student-info').textContent = story.studentInfo;
+            document.getElementById('article-title').textContent = story.title;
+
+            // 準備圖片物件
+            const imageObj = story.image ? { src: story.image, caption: story.imageCaption } : null;
+
+            // 執行分頁切割
+            currentPages = paginateContent(story.content, imageObj);
+            currentPageIndex = 0; // 重置回第一頁
+
+            // 渲染第一頁
+            renderPage();
+
+            // 切換畫面
+            switchView('reader-view');
+            window.scrollTo(0, 0);
+        }
+
+        // === 6. 渲染當前頁面 ===
+        function renderPage() {
+            const contentArea = document.getElementById('article-content-area');
+            const controls = document.getElementById('pagination-controls');
+            
+            // 填入當前頁面的 HTML
+            contentArea.innerHTML = currentPages[currentPageIndex];
+
+            // 更新按鈕狀態
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            const indicator = document.getElementById('page-indicator');
+
+            // 如果只有一頁，隱藏控制列
+            if (currentPages.length <= 1) {
+                controls.style.display = 'none';
+            } else {
+                controls.style.display = 'flex';
+                
+                // 設定指示器文字
+                indicator.textContent = `第 ${currentPageIndex + 1} 頁 / 共 ${currentPages.length} 頁`;
+
+                // 控制按鈕啟用/禁用
+                btnPrev.disabled = (currentPageIndex === 0);
+                btnNext.disabled = (currentPageIndex === currentPages.length - 1);
+            }
+            
+            // 每次翻頁都滾動到紙張頂部 (模擬翻書視線回到上面)
+            // 這裡滾動到 .article-wrapper 的位置，而不是整個網頁頂部，體驗較好
+            const wrapper = document.querySelector('.article-wrapper');
+            if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // === 7. 翻頁函式 ===
+        function changePage(delta) {
+            const newIndex = currentPageIndex + delta;
+            if (newIndex >= 0 && newIndex < currentPages.length) {
+                currentPageIndex = newIndex;
+                // 淡出舊內容 (簡單視覺優化)
+                const contentArea = document.getElementById('article-content-area');
+                contentArea.style.opacity = 0;
+                
+                setTimeout(() => {
+                    renderPage();
+                    contentArea.style.opacity = 1;
+                }, 200);
+            }
+        }
+
+        function showIndexView() { switchView('index-view'); }
+
+        function switchView(viewId) {
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+                setTimeout(() => { if(!el.classList.contains('active')) el.style.display = 'none'; }, 500);
+            });
+            const target = document.getElementById(viewId);
+            target.style.display = 'block';
+            setTimeout(() => { target.classList.add('active'); }, 50);
+        }
+
+        document.addEventListener('DOMContentLoaded', initGrid);
+
+    </script>
+</body>
+</html>
