@@ -142,6 +142,26 @@
     transform: translateY(-7.5px) rotate(-45deg);
 }
 
+/* === 平板裝置調整（iPad 等）=== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-links {
+        gap: 1rem; /* 減少項目間距 */
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem; /* 稍微縮小字體 */
+        white-space: nowrap; /* 確保不換行 */
+    }
+    
+    .logo {
+        font-size: 18px; /* 稍微縮小 logo */
+    }
+    
+    .nav {
+        padding: 0.8rem 1rem; /* 減少上下內距 */
+    }
+}
+
 /* === 手機響應式設計 === */
 @media (max-width: 768px) {
     .menu-toggle {
