@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,74 +14,255 @@
             opacity: 0;
             transition: opacity 0.5s ease;
         }
+
         .view-section.active {
             display: block;
             opacity: 1;
         }
 
         /* === VIEW 1: 故事選集列表 === */
-        .page-header { padding: 8rem 2rem 3rem; text-align: center; }
-        .page-title { font-size: 2.5rem; color: #8b6f47; margin-bottom: 1rem; letter-spacing: 2px; }
-        .page-subtitle { color: #7a6a5a; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 6rem; }
-        .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; }
-        
+        .page-header {
+            padding: 8rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #8b6f47;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .page-subtitle {
+            color: #7a6a5a;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 6rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
         /* 卡片樣式 */
         .story-card {
-            background: #fff; border-radius: 12px; overflow: hidden;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 4px 15px rgba(139, 111, 71, 0.08);
-            transition: all 0.4s ease; border: 1px solid rgba(160, 130, 109, 0.1);
-            display: flex; flex-direction: column; cursor: pointer;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(160, 130, 109, 0.1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
         }
-        .story-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(139, 111, 71, 0.2); border-color: rgba(160, 130, 109, 0.4); }
-        .card-body { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.85rem; color: #999; }
-        .category-tag { background: rgba(160, 130, 109, 0.1); color: #a0826d; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
-        .card-title { font-size: 1.4rem; color: #4a3f35; margin-bottom: 1rem; line-height: 1.4; font-weight: bold; font-family: 'Noto Serif TC', serif; }
-        .card-excerpt { color: #666; font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden; flex-grow: 1; }
-        .card-footer { padding-top: 1.5rem; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .author-info { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #5a4633; }
-        .read-btn { color: #a0826d; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 0.3rem; transition: gap 0.3s; }
-        .story-card:hover .read-btn { gap: 0.6rem; }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(139, 111, 71, 0.2);
+            border-color: rgba(160, 130, 109, 0.4);
+        }
+
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .category-tag {
+            background: rgba(160, 130, 109, 0.1);
+            color: #a0826d;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #4a3f35;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: bold;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .card-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #5a4633;
+        }
+
+        .read-btn {
+            color: #a0826d;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: gap 0.3s;
+        }
+
+        .story-card:hover .read-btn {
+            gap: 0.6rem;
+        }
 
         /* === VIEW 2: 閱讀版面 === */
         .article-wrapper {
-            padding-top: 6rem; padding-bottom: 6rem; min-height: 100vh;
-            display: flex; justify-content: center; padding-left: 1rem; padding-right: 1rem;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
-        
-        .back-nav { max-width: 210mm; margin: 0 auto 1rem; width: 100%; display: flex; justify-content: space-between; }
+
+        .back-nav {
+            max-width: 210mm;
+            margin: 0 auto 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
         .back-btn {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            color: #8b6f47; font-weight: bold; cursor: pointer;
-            padding: 0.5rem 1rem; border-radius: 20px;
-            background: rgba(255,255,255,0.5); transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8b6f47;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s;
         }
-        .back-btn:hover { background: #fff; box-shadow: 0 2px 10px rgba(139, 111, 71, 0.1); }
+
+        .back-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(139, 111, 71, 0.1);
+        }
 
         .paper-container {
-            background: #fff; width: 100%; max-width: 210mm;
-            min-height: 160mm; 
+            background: #fff;
+            width: 100%;
+            max-width: 210mm;
+            min-height: 160mm;
             padding: 2.54cm 3.18cm;
             box-shadow: 0 10px 40px rgba(139, 111, 71, 0.15);
-            border-radius: 2px; position: relative;
+            border-radius: 2px;
+            position: relative;
             font-family: "DFKai-SB", "BiauKai", "標楷體", "PMingLiU", "新細明體", serif;
-            font-size: 12pt; line-height: 1.8; color: #000;
-            display: flex; flex-direction: column;
+            font-size: 12pt;
+            line-height: 1.8;
+            color: #000;
+            display: flex;
+            flex-direction: column;
         }
 
-        .student-info { text-align: right; margin-bottom: 2rem; font-size: 12pt; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
-        .article-title { text-align: center; font-size: 18pt; font-weight: bold; margin-bottom: 2rem; color: #000; }
-        
+        .student-info {
+            text-align: right;
+            margin-bottom: 2rem;
+            font-size: 12pt;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-title {
+            text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
         /* 動態內容區塊 */
-        #article-content-area { flex-grow: 1; }
-        #article-content-area p { text-indent: 2em; margin-bottom: 1.5rem; text-align: justify; }
-        .sub-title { font-size: 14pt; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #000; }
-        blockquote { margin: 2rem 3rem; padding: 1rem; background: #f9f9f9; border-left: 4px solid #8b6f47; font-style: italic; font-family: 'Noto Serif TC', serif; }
-        figure { margin: 1.5rem 0; text-align: center; }
-        figure img { max-width: 80%; height: auto; border: 1px solid #ddd; padding: 4px; }
-        figcaption { text-align: center; font-size: 10pt; color: #666; margin-top: 0.5rem; font-family: "PMingLiU", sans-serif; }
+        #article-content-area {
+            flex-grow: 1;
+        }
+
+        #article-content-area p {
+            text-indent: 2em;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .sub-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        blockquote {
+            margin: 2rem 3rem;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-left: 4px solid #8b6f47;
+            font-style: italic;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 80%;
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 4px;
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            margin-top: 0.5rem;
+            font-family: "PMingLiU", sans-serif;
+        }
 
         /* === 分頁控制區 (Pagination) === */
         .pagination-controls {
@@ -126,86 +308,125 @@
 
         /* === 響應式設計優化 === */
         @media (max-width: 768px) {
-            .page-title { font-size: 2rem; }
-            .page-subtitle { font-size: 1rem; padding: 0 1rem; }
-            .stories-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .container { padding: 1rem 1rem 4rem; }
-            
-            /* 閱讀版面手機優化 */
-            .article-wrapper { 
-                padding-top: 4rem; 
-                padding-bottom: 4rem;
-                padding-left: 0.5rem; 
-                padding-right: 0.5rem; 
+            .page-title {
+                font-size: 2rem;
             }
-            
-            .paper-container { 
-                padding: 2rem 1.5rem; 
-                max-width: 100%; 
+
+            .page-subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem 1rem 4rem;
+            }
+
+            /* 閱讀版面手機優化 */
+            .article-wrapper {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            .paper-container {
+                padding: 2rem 1.5rem;
+                max-width: 100%;
                 min-height: auto;
                 font-size: 11pt;
                 box-shadow: 0 5px 20px rgba(139, 111, 71, 0.1);
             }
-            
-            .article-title { font-size: 16pt; margin-bottom: 1.5rem; }
-            .student-info { font-size: 10pt; margin-bottom: 1.5rem; }
-            .sub-title { font-size: 13pt; margin-top: 1.2rem; }
-            
-            #article-content-area p { 
-                text-indent: 2em; 
+
+            .article-title {
+                font-size: 16pt;
+                margin-bottom: 1.5rem;
+            }
+
+            .student-info {
+                font-size: 10pt;
+                margin-bottom: 1.5rem;
+            }
+
+            .sub-title {
+                font-size: 13pt;
+                margin-top: 1.2rem;
+            }
+
+            #article-content-area p {
+                text-indent: 2em;
                 margin-bottom: 1.2rem;
                 line-height: 1.9;
             }
-            
-            blockquote { 
-                margin: 1.5rem 0.5rem; 
+
+            blockquote {
+                margin: 1.5rem 0.5rem;
                 padding: 0.8rem;
                 font-size: 10.5pt;
             }
-            
-            figure img { max-width: 100%; }
-            figcaption { font-size: 9pt; }
-            
+
+            figure img {
+                max-width: 100%;
+            }
+
+            figcaption {
+                font-size: 9pt;
+            }
+
             .pagination-controls {
                 margin-top: 1.5rem;
                 padding-top: 0.8rem;
             }
-            
+
             .page-btn {
                 padding: 6px 12px;
                 font-size: 0.85rem;
             }
-            
+
             .page-indicator {
                 font-size: 0.85rem;
             }
         }
 
         @media (max-width: 480px) {
-            .paper-container { 
+            .paper-container {
                 padding: 1.5rem 1.2rem;
                 font-size: 10.5pt;
             }
-            
-            .article-title { font-size: 15pt; }
-            
+
+            .article-title {
+                font-size: 15pt;
+            }
+
             .page-btn {
                 padding: 5px 10px;
                 font-size: 0.8rem;
             }
-            
+
             .page-indicator {
                 font-size: 0.8rem;
             }
-            
-            .nav-links { display: none; }
+
+            .nav-links {
+                display: none;
+            }
         }
 
-        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
+
 <body>
-<nav class="nav">
+    <nav class="nav">
         <div class="nav-content">
             <div class="logo">生命書寫成果展</div>
             <!-- 手機版漢堡按鈕 -->
@@ -249,7 +470,7 @@
         <header class="page-header">
             <h1 class="page-title">生命故事 1000字</h1>
             <p class="page-subtitle">
-               進過十八週課程同學們把自己生命故事撰寫成1000個字<br>
+                進過十八週課程同學們把自己生命故事撰寫成1000個字<br>
             </p>
         </header>
 
@@ -272,10 +493,10 @@
                     <!-- 固定頭部 -->
                     <div class="student-info" id="student-info"></div>
                     <h1 class="article-title" id="article-title"></h1>
-                    
+
                     <!-- 變動內容區 (這裡只會顯示當前頁面的內容) -->
                     <div id="article-content-area"></div>
-                    
+
                     <!-- 分頁控制 -->
                     <div class="pagination-controls" id="pagination-controls" style="display: none;">
                         <button class="page-btn" id="btn-prev" onclick="changePage(-1)">← 上一頁</button>
@@ -320,6 +541,142 @@
                     `
             },
             {
+                id: 2,
+                title: "從男孩到男人，我的生命軌跡與體驗",
+                author: "匿名",
+                studentInfo: "",
+                date: "",
+                category: "生命故事",
+                excerpt: "國小六年級，我是個非常聽姐姐話的人，某天姐姐突然說：「你可以去學吉他，談吉他很帥喔！」就因為姐姐的這句話，我讓媽媽幫我報名了吉他的一對一教學，我就這樣學了一年。...",
+                content: `
+                    <div class="sub-title">吉他啟蒙</div>
+                    <p>國小六年級，我是個非常聽姐姐話的人，某天姐姐突然說：「你可以去學吉他，談吉他很帥喔！」就因為姐姐的這句話，我讓媽媽幫我報名了吉他的一對一教學，我就這樣學了一年。</p>
+                    <blockquote>「彈吉他的男人真的很帥。」</blockquote>
+
+                    <div class="sub-title">又愛又恨的網球</div>
+                    <p>我爸爸是個非常喜愛網球的人，不僅愛打網球，也愛看網球，10 歲的我，總是被他帶到球場打球，我相信那時候的他，或許只希望自己的兒子能夠陪伴他一起打球，培養興趣，但是天生對這項運動不具有興趣的我，雖然勉強學了幾年，打得也算不錯，但是我的心裡似乎沒有真正喜歡並接受他。於是，在掙扎了幾年後，我在高中二年級時徹底不再碰這項運動。雖然掙脫了束縛，也不會被逼學網球了，但是這項運動一直是我牽掛的，就連打羽球時打得也不流暢，全都是我把打網球的方式拿來打羽球的關係。或許在未來的某天，當我重拾球拍時，我能夠找回以前的回憶與遺憾，再次打出漂亮的好球。</p>
+                    <blockquote>「我也算是網球王子吧？」</blockquote>
+
+                    <div class="sub-title">國中的會考</div>
+                    <p>對台灣的學生來說，會考一定是一段難忘的經歷。對我來說，這段經歷也算是一段重要的經歷，正是因為這段經歷，我才真正明白：我不適合讀書，讀書不是我的強項。</p>
+                    <p>會考倒數 100 天時，我家人幫我報名了許多補習班，我那時候對未來感到迷茫，不知道自己為了甚麼而讀書，更不知道為了什麼拚搏，也許有人說 5A，但是我的想法是：考了這樣子的成績又如何，還不是被逼出來、監督出來的，這樣的成績，有什麼意義？</p>
+                    <p>最後我的成績是 3B2A，有幾個+對我來說並不重要，不影響最後的結果，住在新竹的我進入了竹東高中，我爸媽對於這樣的結果也算是意料之內，我當時也漸漸接受了自己的平庸。</p>
+                    <blockquote>「我可能天生不是讀書的料吧。」</blockquote>
+
+                    <div class="sub-title">高中的開始</div>
+                    <p>初次進入高中時，我為了進入科探班，還前往竹東高中面試，但這樣的決定也非我本意，對我來說，進入不進入，沒有任何意義，就算進入了，我也沒把握讓自己變得好，但我爸媽一直鼓勵我，所以我也只能認命。</p>
+                    <p>教師節那天，我們班為了慶祝，我和另一位同學選擇帶著吉他給每個老師唱一首歌，也是如此，在國中沒有用武之地的吉他技能，在此刻宣洩而出，大家都對於我的熟練度震驚，大家都紛紛稱我為「吉他王子」，就連選拔吉他社時，學長姊都對我的能力感到驚艷。</p>
+                    <p>吉他救了我也害了我，他救了我是因為它讓我發現我並不平凡，害了我是因為吉他讓我沉迷於社交，而忽略了課業，導致我的第一次月考考了個全班倒數第一，那時我拿到成績單時感到十分震驚，我明白科探班競爭激烈，但是沒想到那麼激烈，也是因為如此，我乾脆全心投入社團，不再管課業。</p>
+                    <blockquote>「對於讓我自卑的事物，我連碰都不想碰。」</blockquote>
+
+                    <div class="sub-title">關於我如何在自主學習裡找回學習熱忱</div>
+                    <p>我是個從小就對恐龍極度感興趣的人，或許每個男孩都是這樣，但是因為高中時玩古生物手遊的加成，我變得非常愛鑽研恐龍與古代生物，甚至做了一系列簡報介紹牠們，我製作簡報與查找資料的過程，我的感受是：樂趣無窮且每次都能學到關於古生物的新知識。</p>
+                    <blockquote>「我愛古生物和地質學。」</blockquote>
+
+                    <div class="sub-title">餐車事件</div>
+                    <p>高二末尾，我和我朋友們突發奇想：一起推著餐車去丟回收。我們是一群喜歡搞事情的男孩子，不僅要推著餐車去，還要把餐車當成載具來玩，某個林姓同學提議要直接坐上去，並讓我們將他從斜坡上推下去，我們一開始都覺得不能這樣，因為太過危險，但是林同學的執著感動了我們。於是，一群男生便一面錄影，一面在一旁為林同學做保護措施。因為學校有兩個斜坡，所以一開始林同學玩完第一個斜坡雲霄飛車後，義無反顧地打算體驗第二個。在他下定決心後，我們在一旁一面記錄這個歷史性的時刻，並一面擔心著餐車上的林同學。</p>
+                    <p>餐車從第二個斜坡滑下，但因為偏差，所以餐車被撞了一下，開始不停原地轉圈，我們看到這一幕都不禁為捏了把冷汗。我是鎮守坡下的人，一看見林同學跟著餐車天旋地轉地轉下來，我趕忙伸出救援之手，強行拉停了餐車，甚至在我拉餐車時，鞋底還因此磨了一段距離，才勉強煞住。看見餐車被煞停後，周圍圍觀的同學都紛紛感到不可思議，我們也紛紛過來關心林同學，林同學只說了一句：沒事啦，沒那麼容易死。</p>
+                    <blockquote>「林同學真是個勇士。」</blockquote>
+
+                    <div class="sub-title">自己的未來掌握在自己手上</div>
+                    <p>「自己決定自己是誰。」這是我一直相信的話，我相信別人無法定義我，當我正在準備學測期間，我也明白了一個道理：我掌握著我自己。當時我為了找尋有沒有遊戲設計相關的科系期間可是操碎了心，甚至我媽媽都不同意我的選擇，但我依然執著地想要證明自己是可以的，於是她承諾：如果我能夠面試上南台科技大學，她便同意。結局也是我成功了，我用我自己的能力，讓教授對我價值表示認可，以正取 2 入學。</p>
+                    <blockquote>「自己決定自己是誰。」</blockquote>
+
+                    <div class="sub-title">畢業後的打工旅程</div>
+                    <p>畢業後，在家裡無所事事的我，被家人逼著去外頭打工，一開始我在飲料店工作，但因為試用期時被老闆覺得能力不行，於是被辭退。不久後，又有一家公司找上我：和點壽司，220 的時薪加上老闆說不用每天上班，我很爽快地答應了，後來我就知道了為什麼時薪會是 220……</p>
+                    <p>由於人手的短缺，我們不得不一個人當成兩個人來用，每次在尖峰黃金時段，我們都忙得不可開交，更不用說假日了，單子鋪天蓋地地襲來，把我壓得喘不過氣，直到大學即將開學之前，我才終於脫離了這樣地獄般的地方，但也同時改變了我很多。</p>
+                    <blockquote>「錢沒那麼好賺。」</blockquote>
+
+                    <div class="sub-title">地獄救生員訓練班</div>
+                    <p>因為家人的推薦，我在暑假也同時參加了救生員訓練專班，這段經歷對我來說也非常重要，尤其是在海泳時，但這要從頭說起。</p>
+                    <p>一進入專班時，我們要測試體能，測驗 5 分鐘內，游完四種泳姿，這真的把我折磨得不輕，但是我還不知道：更折磨的還在後頭。</p>
+                    <p>開訓後，我們每天有早午晚餐以及宵夜，當然不是字面上的意思：早餐是熱身游泳，一般會在 400-800 公尺不等，而泳姿有分四式與救生四式，四式就是自仰蛙蝶(一般的游泳姿式)，而救生四式為：抬頭捷泳、抬頭蛙泳、側泳與基本仰泳，簡單來說就是眼睛可以在游泳時睜開的泳姿，而我們的早餐，最常被使用的料有：正常自由式、正常蛙式與救生四式，至於救生四式裡面最累的是抬頭捷泳；而午餐就是上正課，教導我們新東西；晚餐是練習新學到的東西；而宵夜與早餐大同小異，也同樣是體能訓練，游泳長度一般落在 400-600 公尺不等。雖然每天訓練都將我操得四肢痠軟、回家倒頭就睡，但是也將我訓練得更加強大、體力更好。</p>
+                    <p>直到我們來到了訓練的尾聲，也就是溪訓與海訓，跟溪訓比起來，海訓是最累的，因為我們整整在海裡游了半個小時，加上新月沙灘的風浪特別大，我活生生喝了好幾口海水，被折磨得不成人樣，直到終於到了沙灘，我才痛苦地癱倒在沙灘上懷疑人生。</p>
+                    <p>不僅如此，我們還得下海進行救人演練，這也把我折磨得不清，風浪太大導致我根本無法看見要被救援的人。瞎游了好久後，我總算是救到了溺者，還花了好多力氣將她拉回岸邊，並演練 CPR，整套流程完成後，我攤倒在沙灘上，喘著粗氣，這種體驗，打死我都不想體驗第二次。</p>
+                    <p>隔天的溪訓比起海訓舒服非常多，唯一的缺點是山上的溪水實在太冰了，把我凍得直打寒顫。我們還體驗了用救生繩索拉人，那真的是一段奇妙的體驗，那種感覺好像在釣魚，但那隻魚會自己抓繩子。</p>
+                    <p>等到訓練與考核全都結束，我真的覺得我獲益良多，除了收穫健康強壯的身體，也獲得了許多救生知識，我變得更能冷靜看待事情，也記住了教練的話：「學救生知識不是為了救人，是為了在關鍵時刻不魯莽，不白送性命，越是懂救生的，越是不會下海救人，因為他們知道危險性，知道當一個人慌亂時會六親不認，這不是殘忍，這是理性。你也是一個家庭的寶貝兒子，憑什麼要冒著生命危險拯救一個素未謀面的人。」這段話非常重要，也讓我蛻變成一個更理性、更有智慧的人。</p>
+                    <blockquote>「海訓時，我感覺我差點溺死在海裡，不說了，先買杯雙響炮壓壓驚。」</blockquote>
+                `
+            },
+            {
+                id: 3,
+                title: "精彩的平凡",
+                author: "匿名",
+                studentInfo: "",
+                date: "",
+                category: "生命故事",
+                excerpt: "「生活中的大小事，不過是滄海一粟，終將被時間的長河沖刷：晴朗的一天，下雨的一天，起風的一天。這樣的日子累積起來，就成為了人生」。...",
+                content: `
+                    <blockquote>「生活中的大小事，不過是滄海一粟，終將被時間的長河沖刷：晴朗的一天，下雨的一天，起風的一天。這樣的日子累積起來，就成為了人生」。</blockquote>
+
+                    <div class="sub-title">高中印象</div>
+                    <p>秋雨綿綿、北雁南飛，現在正值秋日之時節，秋風蕭蕭，些許黃葉被潮濕的風從蒼老的樹枝上搔落，頑皮的降落在了我的頭上。此時此刻身處南工的我，看著金黃玉露的校景，竟然覺有些傷感，距離初來乍到的時間飛逝而過，轉瞬間，一年就在不知不覺中悄然滑落。剩下不到兩年的光陰，還尚且剩餘多少真正的「時間」呢？此刻，我回憶起了當初。</p>
+                    <p>「你國中畢業以後，想去哪間學校就讀？未來有什麼打算？」，面對來自國中班導師的提問，我陷入了沉思。這是一輩子的大事，對我來說只有一次機會。但是，我心中早已浮現出了答案。</p>
+                    <p>「這樣……就大功告成了！…送出！」，在發亮的螢幕上，志願選填的第一欄，赫然寫著十五個大字：國立台南高級工業職業學校--資訊科。</p>
+                    <p>「我的選擇，應該不會有問題吧。」，我懷著忐忑、期待又怕受傷害的心情，再三詢問著自己。</p>
+                    <p>就這樣，我來到了南工。</p>
+                    <p>綠意盎然的植栽；鱗次櫛比的建築物；人聲鼎沸的禮堂；無邊無際的校景。初入校園，各種景象便令我目不暇給，感到新奇。而當中最令我感興趣的，非要數那排排而站的各種科館了，正如其名，每種科系都有對應的科館，而其中的各種專業工具，更是給我一種無法形容的高級感，雖然有些建築物的外表已經有些破舊了，但換句話說，這就是歷史悠久的象徵吧。</p>
+                    <p>而另一項讓我感到新奇的東西，就是「大圓」還有「小圓」了，不同於「刻板印象」中方方正正的建築物，它的造型是中間鏤空的圓柱體，而當中的教室為了配合其獨特的「體型」，而變成了弧形的樣子，甚至內附起伏不大的階梯，頗像某些縮小版本的大學教室。而中間的「空置域」部分，則種植了一顆似乎年事已高的樟樹，而略為遺憾的部分，便是中心除了那棵巨樹以外，就只剩下一層薄薄的草地了與覆蓋其上的落葉了，想像此處繁花景簇的樣子，或許會變得美麗許多吧。</p>
+                    <p>而我新生訓練，第一次來到南工時，也發生了一件趣事。那天接近中午時正好下起了傾盆大雨，而在這樣的因緣巧合之下，我們也首次見識到了「南工水樂園」的名號。凡是稍微低漥一點的部分，便會被雨水們給躲進去。所以，大雨滂沱，水面滿盈，讓我們望而卻步。而剛剛提到的大圓建築物中心，則早已變成了游泳池。這麼一想，我或許能理解為什麼此處無法「繁花景簇」了。比起花朵，種點水草也許比較實際。</p>
+                    <p>而那天的各種趣事，與師長們的熱情。也讓我留下了很深刻的印象，我也漸漸開始熱愛起南工了。</p>
+                    <p>回過神，陰雨早已止歇。秋高氣爽，疊翠流金，太陽也小心翼翼地從灰濛的雲朵後探出了頭，掃去陰霾。「珍惜當下吧」，我拿起之前飄落到頭上的葉子，端詳著，並泛起了微笑。</p>
+
+                    <div class="sub-title">班導初會面</div>
+                    <p>由於未成年沒有駕照，所以公車便成了我往返於居家與學校間的橋梁。而我的公車的班次比較早，所以我抵達教室時，距離八點的鐘聲還有差不多半個多小時才會敲響。而當時是一年級剛開學，「人生地不熟」，我也不太敢跟身旁的同學搭話，最後，我只好默默的在位置上發呆，等待時間流逝。</p>
+                    <p>終於，在度過了「煎熬」的半個小時後，伴隨著響徹學園的鐘聲，我們新的班導師進入了教師，並「振筆疾書」的在黑板上寫下了她的名字。</p>
+                    <p>「這就是...接下來三年的導師嗎？」我心想著。但是，事實似乎並不完全是如此。</p>
+                    <p>雖然外表與動作完全看不出來，但實際上這位導師已經快到了要退休的年齡了。結果就導致她可能沒辦法帶完我們三年，或許在一升二或者二升三年級時就會更換導師，光榮迎接退休，雖然似乎會繼續在學校傳授國文知識就是了。</p>
+                    <p>如果以一詞概括我對班導的感覺，就像是關愛孫子的阿嬤一樣，時而嘮叨，時而讚許。會注意很多生活小細節，並時常責備我們沒做好的地方。但也正因為如此，我可以抬頭挺胸的說，我認為們班是最整潔的一班。至少我在段考時去往別班時，誇張的說，看到的是環境「滿目瘡痍」，甚至還有異味的。雖然在我們班也有可能是「入鮑魚之肆，久而不聞其臭」罷了。</p>
+                    <p>當然除了優點，缺點也還是有的。我覺得最大的問題就是「關心過度」，有很多同學對此都感到厭煩，出發點是善意，但到了實行階段就轉換為厭惡。管教相對嚴格，很排斥同學們下課使用手機的行為（雖然錯在我們就是了）。</p>
+                    <p>雖然很多時候我都知道「這是為我們好」，但就跟聽不進父母的「金玉良言」一般，聽不下去，左耳進右耳出，甚至避而不聽。</p>
+                    <p>導師曾讓我們在早自修考過試，但畢竟對於學校來說，這不能算是早自修，結果引起我們很大的反彈，早到是好事，可是結果變成要來強制考試，是否會本末倒置呢。想讀的人自然會認真讀；不想讀的人依然會選擇放棄。主旨在於提升大家的成績，但如果結果卻是差強人意，效果不彰，這就只是白白浪費了寶貴的時間與試卷。</p>
+                    <p>「我知道這是為了我們好......但最後的結果，是這樣嗎」如此催眠自己，希望能將此合理化——</p>
+                    <p>但至少，在相對嚴格的教育下，成效也確實是有的。班上的同學相處融洽，就算遇到爭執也能解衣卸甲，重歸於好。也如同前面所說的，正因為導師吹毛求疵的「潔癖」，我們的環境也非常整潔。上課風氣與秩序也很良好，跟老師有問有答，雖然有些時候太多話，但這也是讓我們哄堂大笑的因子，在不過分的情況下，這也是緩解上課嚴肅氣氛的調和劑之一。同時，在導師的管教之下，我們的手機袋「在上課時」是有實質上的功用的，大家會自覺的將手機放置於此，以心無旁騖（自稱）的聽課。</p>
+                    <p>雖然導師明天就要退休了，但我依然很感謝她的含辛茹苦與諄諄教誨。身為老師的最後一屆學生，我能抬頭挺胸的「炫耀」我們班的良好。</p>
+                    <p>過去，您帶給了我們很多；如今，時光飛梭，已剩下半年多的時間了；在此，我想說一聲：「老師，謝謝您。」；未來，我也將永遠銘記於心。</p>
+
+                    <div class="sub-title">終點：統測</div>
+                    <p>今夜，早早地睡了。翻來覆去，思來想去。輾轉反側，無法入眠。現在的我，又是懷著什麼樣的心情，寫下這篇日記的呢？在統測前夕。</p>
+                    <p>每天告誡自己，每天提醒自己，每天反思自己。卻沒有一天做到。沒有興趣，所以不願翻開書本；沒有興致，所以寧願不去面對。未來的我，該何去何從？</p>
+                    <p>「沒錯，你們學三年就是為了這25題。」雖然這是早已知曉的事實，但真實聽到時......又覺得難過不已。我的所學，我的所思，我的所想——從來都不重要。在將答案抹黑後，用數字決定我的未來。</p>
+                    <p>電子學、基本電學、數位邏輯......專業科目反而成了我的難題。雖然嘴上說著努力了也沒用，但我真的有好好努力過嗎？我知道，現在自我檢討只是徒勞，我了解，我想過。我真的對他沒興趣嗎？還是......我也不用問了。我很清楚我在逃避，我不想學。因為我討厭......不如說痛恨這樣的教育制度。我並非沒興趣。只是，一味的紙上談兵，一味的坐而論道。這不是能讓我......真正想去學的。我希望能瞭解、能應用、能融會貫通。它的運作、它的功能、它的歷史。來自「實習」。我在紙筆考試或許連及格都做不到。但在實習考試高分沒有壓力。</p>
+                    <p>但是，不會有人在意。</p>
+                    <p>在考場上，唯有死記硬背才是真理。我不用知道原因；我只需記住結果。放棄自己的想法；擁抱大眾的結論。</p>
+                    <p>我的未來，何時是由我決定的？考完就丟的知識。將未來的路途蜷縮在一張張早已佈滿行跡的紙張上。「選擇」我自己的將來——用四分之一的選項。將自由贈與了我。讓自由束縛著我。</p>
+                    <p>一直以來決定我們價值的，從來都不是我自己。「那樣做是對的」、「這樣做才是對的」，因為周遭的人如此說著。「那樣是不行的」、「做這種事不可原諒」因為身旁的人如此說著。</p>
+                    <p>「從今以後都隨我們自己喜歡的，善惡也都由自己的想法去決定」即使如此，如果沒有得到某人的同意，還是無法感到安心。</p>
+                    <p>猶豫不決的話就會惹人生氣。語帶矛盾的話就會被人怒斥。所以一直以來都放棄去思考。所以一直以來都放棄去反抗。</p>
+                    <p>社會是寫實的，理想是諷刺的。仔細一想，好的成績、好的學校。最後的目標結果都是為了更多的金錢。為了一生不必再為錢所困。「不戚戚於貧賤，不汲汲於富貴」。不是不存在這樣的人，而是現在在社會的耳濡目染、潛移默化之下。使這樣的人不復存在。我當然也不例外。「環堵蕭然，不蔽風日，短褐穿結，簞瓢屢空」。在現今的環境怎麼可能會晏如也呢？</p>
+                    <p>「幸」這個字包括著「¥」，是為什麼呢。少了「ㄧ」就變成「辛」，是故意的吧。以後該怎麼做才能輕鬆呢？答案是「這種事沒有人知道」嗎？不想承受痛苦什麼的、只想無所事事的過下去。只想仰望藍天也是一種任性嗎？偶爾只想——閉上眼睛感受夏天的氣息，用指尖描繪著雲朵。只想活在回憶中也是一種任性嗎？</p>
+                    <p>回望如今——連殘花敗柳都要被貼上價格也覺得厭煩了。我小時候的夢想又是什麼呢？難道是漸漸長大後就會被遺忘的嗎？淚水能使人成長什麼的不過是詭辯罷了。「即使現在這樣也真的沒關係嗎？」、「照這樣過下去也可以嗎？」答案會是「這是只有我才知道的事情」嗎？閉上眼，感受夏天的氣息。俯下身，想一直被涼風吹拂。只想輕鬆的活下去，也算是一種任性嗎？</p>
+                    <p>「惟江上之清風，與山間之明月，耳得之而為聲，目遇之而成色。取之無禁，用之不竭。是造物者之無盡藏也」。有時，我也想好好感受。但是......被貼上價值標籤的生活，再也沒有無盡藏也的事物了。</p>
+                    <p>閉上眼，再睜開眼，早已被規劃好的一天一時不差的來臨。</p>
+
+                    <div class="sub-title">旅之形</div>
+                    <p>清晨，就連太陽都尚未起來梳洗之時。萬籟俱寂，只有偶爾傳來啁啾的鳥鳴聲，訴說著無人知曉的故事。而就在這時，刺耳的鈴聲劃破了寧靜，從我的書桌上流溢下來，鑽進我的夢中打擾我。</p>
+                    <p>我不情願的爬起來，揉了揉惺忪的雙眼。窗外一片漆黑，只有不時閃爍的路燈在努力的掙脫黑暗。我關掉惱人的鬧鐘，換上一套整潔的服裝，拿起早已完備的行李————。今天，是畢業旅行的日子————</p>
+                    <p>集合，點名，宣導，上車；興奮，雀躍，期待，緊張。————旅途，就此啟程。</p>
+                    <p>在遊覽車上，大家都丟棄了平日的嚴謹，用最雀躍的心，迎接接下來三天的旅程。原本以為會枯燥的坐車，等待目的地的到來，直到領隊拿起了話筒......，而我們的「五音不全」卡拉OK，也就此拉開帷幕。但不管有多「不全」，也仍然無法澆熄我們的歡欣。「狂歡」，這樣的形容詞再適合不過了。數小時的車程，卻絲毫不覺得漫長，時間的軌跡，在不知不覺中流逝。</p>
+                    <p>沒多久，我們便千里迢迢的抵達了位於台中第一站————麗寶樂園。</p>
+                    <p>雖然大家的體力在遊覽車上藉由唱歌抒發了不少，但這點消耗，根本不值一提。大家依舊容光煥發，迫不及待的一個接著一個下車。當天跟著來到此地的，不止有我們學校的學生，還有很多其他學校的人，年齡不一。大家彼此聊著天，時而竊竊私語，時而放聲大笑，將原本寂靜的地方渲染的車水馬龍、人聲鼎沸。當天萬人空巷之景可謂是好不熱鬧。</p>
+                    <p>在一邊合照，一邊步行一段距離後，我們總算抵達了檢票口。在那後方，就是「朝思暮想」的樂園了。我們絡繹不絕的一個跟著一個，有序的進入檢票口。當時，我看到站口旁身著紅色外套的工作人員，手中拿著計數器，每進入一個人，便按下一次按鈕，孜孜不倦的記錄著進場人數。令我不禁好奇，究竟，今天她需要按下多少次按鈕呢？</p>
+                    <p>很快，我們班便全員通過了檢票口，按照慣例，在與入口的超大型園區立牌一起留下讓相機留下美好的拓印後，我們便就地解散。</p>
+                    <p>由於人潮眾多，我身處的這一小組，便打算「伺機而動」，優先尋找沒有大排長龍的遊樂設施。結果，我們的第一個遊玩的設施便出爐了：碰碰車。在歲月的沖刷下，我早已忘卻上一次乘坐碰碰車是何年何月了，只有偶爾穿過過腦海的回憶提醒著我的思緒。而這一次，我又來的了這個設施前————「不必再去思考以前的瑣事，既然就在眼前了，就『放手一搏吧』」。於是，童心未泯的我們，在與其他國小生的爭先恐後中，進入了場地。</p>
+                    <p>隨著倒數聲的行進，所有車輛都在轉瞬間便衝了出去，我們一邊故意相撞，一邊放聲大笑。而在意外瞥見領隊也在其中一輛車上時。我們的「通緝」目標便不約而同的匯聚在了一起......。於是，幾乎是一瞬間，我們這組的所有人開著車朝著不知所措的領隊奔去，把他擠得水洩不通，動彈不得。領隊不停的依靠「車技」想要擺脫我們，但在我們「合作無間」的包圍下，他的一切努力都是徒勞的，以失敗告終。最後，在一片歡鬧聲中，遊戲也拉下了閉幕。</p>
+                    <p>在依靠「伺機而動」戰術又遊玩了數個設施後，太陽也快爬到了正上空，我們在短暫商討之後，便決定趁著在人潮如潮水般湧來之前，搶先一步到餐廳吃飯。而在汗水淋漓的步行了一段時間後，我們來到了飯館。而不出所料的，裡面沒有幾個人，我們算是搶到了頭香；而不出所料的，價格一如既往地……貴。小小的一份餐點，甚至能不能填飽經過一個上午消耗、快成了黑洞的肚子都是未知數，而這樣的含量，卻要台幣兩百多元。於是，我們快步逃離了這個吸乾錢包的地方。結果，最後我們來到了最親民的地點————7-11。兩個不大不小的三角鮪魚飯糰，填飽了空洞的胃；一罐沁入心脾的飲料，撫慰了疲勞的心靈。而對比下來，我們花的價格甚至還不到那份餐點的二分之一。「購買有風險，理財須小心」，我的腦中不自覺的浮出了這句話。</p>
+                    <p>令人頭暈眼花的旋轉馬克杯、頭暈目眩的天女散花、心驚膽跳的雲霄飛車、劫後餘生的小火車......。快樂的時間總是轉瞬即逝，在經歷了各種設施後，集合的時間也正悄悄地來臨，意猶未盡的我們也緩緩地朝著集合地點前行。</p>
+                    <p>......而在這第一站的遊樂園，也發生了一個有趣的小插曲。因為當時正值春季，所以樂園內主題為「水」設施基本都沒有向大眾開放，結果我們班有一個同學似乎因此而特別「難過」？於是，我們為了安慰他，只要一看到「水」，就會拍下照片發送到群主上，並順便＠他，問他要不要玩水。而發送的照片，也從從剛開始正常的拍攝關閉的水上設施，慢慢地變成了池塘，最後就連洗手台的水也不放過，通通被我們拓印成了圖片，被無情的發送了給他，順便附帶一句「要玩嗎」。</p>
+                    <p>在領隊清點過人數，確認全員到齊後，我們便開始返程前往心心念念的遊覽車了。而在途中經過一座噴水池時，有人冷不防的喊了一句「要玩嗎」，我們瞬間心領神會，連推帶拉的將那個因玩不到水而難過的他拉到了噴水池邊————一起拍下了離開這裡前的最後一張照片。從他無奈的表情就可以知道，有些事情，還是不要說出來為妙。</p>
+                    <p>在經歷了一整個將近一整個下午的「精力發散」後，大家都顯得略有疲憊。而今天的主要行程也差不多告一段落了，在登上遊覽車後，還有人想要繼續「高歌一曲」，但就連導遊都說我們的歌聲是毀滅性的，最好消停一下，也就到此為止了。但是仍然有人想要用那他自稱為「天籟」的嗓音獻聲。但只要耳朵還有正常的在工作，就能親自體驗到什麼叫做魔音貫腦。於是，在前往餐廳用餐的路上，上演著一齣由各種雜色音調與天籟混沌交織的交響樂。</p>
+
+                    <div class="sub-title">尾聲</div>
+                    <blockquote>「時間無情而公正，它從不為誰而停下腳步，也不曾為誰而加快速度。它默默的，走著、行著。」</blockquote>
+                    <p>或許，有些事情將隨著光陰的前行，而被滯留在後面。但只要一聲呼喚，記憶便會將「它」重新帶回我的面前。</p>
+                    <p>已經不記得的回憶，究竟是忘卻了，或者只是想不起來呢？</p>
+                    <p>一片花瓣，一抹芳香，一絲清甜，一席涼意……</p>
+                    <p>……一方文字。</p>
+                    <p>當我重新感觸到這接細節時，或許，那捉迷藏般的回憶便會出現：過去、現在、未來。當重新憶起時，摸了摸嘴角，已然不自覺上揚。</p>
+                `
             }
         ];
 
@@ -356,15 +713,15 @@
             // 創建一個暫時的 div 來解析 HTML
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = htmlContent;
-            
+
             // 取得所有的段落、標題、引用等元素
             // 這裡假設內容都是由區塊元素組成的 (p, div, blockquote, etc)
             const elements = Array.from(tempDiv.children);
-            
+
             const pages = [];
             let currentPageContent = [];
             let currentCharCount = 0;
-            
+
             // 如果有圖片,把它當作第一頁的一部分,或者獨立顯示
             // 這裡的策略:如果有圖片,強制圖片放在第一頁最上面
             if (imageObj && imageObj.src) {
@@ -430,7 +787,7 @@
         function renderPage() {
             const contentArea = document.getElementById('article-content-area');
             const controls = document.getElementById('pagination-controls');
-            
+
             // 填入當前頁面的 HTML
             contentArea.innerHTML = currentPages[currentPageIndex];
 
@@ -444,7 +801,7 @@
                 controls.style.display = 'none';
             } else {
                 controls.style.display = 'flex';
-                
+
                 // 設定指示器文字
                 indicator.textContent = `第 ${currentPageIndex + 1} 頁 / 共 ${currentPages.length} 頁`;
 
@@ -452,11 +809,11 @@
                 btnPrev.disabled = (currentPageIndex === 0);
                 btnNext.disabled = (currentPageIndex === currentPages.length - 1);
             }
-            
+
             // 每次翻頁都滾動到紙張頂部 (模擬翻書視線回到上面)
             // 這裡滾動到 .article-wrapper 的位置,而不是整個網頁頂部,體驗較好
             const wrapper = document.querySelector('.article-wrapper');
-            if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         // === 7. 翻頁函式 ===
@@ -467,7 +824,7 @@
                 // 淡出舊內容 (簡單視覺優化)
                 const contentArea = document.getElementById('article-content-area');
                 contentArea.style.opacity = 0;
-                
+
                 setTimeout(() => {
                     renderPage();
                     contentArea.style.opacity = 1;
@@ -480,7 +837,7 @@
         function switchView(viewId) {
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
-                setTimeout(() => { if(!el.classList.contains('active')) el.style.display = 'none'; }, 500);
+                setTimeout(() => { if (!el.classList.contains('active')) el.style.display = 'none'; }, 500);
             });
             const target = document.getElementById(viewId);
             target.style.display = 'block';
@@ -491,4 +848,5 @@
 
     </script>
 </body>
+
 </html>
