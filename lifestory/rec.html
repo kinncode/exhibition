@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>生命書寫 × 復原力</title>
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    :root {
+      --bg: #F7F1E7;
+      --paper: #FFFDF8;
+      --ink: #263238;
+      --muted: #66736D;
+      --line: #E5DCCF;
+      --tea: #D8BFA4;
+      --tea-dark: #9A7657;
+      --mist: #DDEBF0;
+      --mist-dark: #4C7180;
+      --sage: #DDE8D4;
+      --sage-dark: #55705D;
+      --rose: #F1DED9;
+      --rose-dark: #8B5D5A;
+      --gold: #D7B46A;
+      --shadow: 0 18px 50px rgba(81, 65, 45, .10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(221, 235, 240, .95), transparent 32%),
+        radial-gradient(circle at 88% 12%, rgba(241, 222, 217, .75), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(221, 232, 212, .9), transparent 34%),
+        var(--bg);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 48px;
+      padding: 120px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid rgba(154, 118, 87, .28);
+      background: rgba(255, 253, 248, .62);
+      border-radius: 999px;
+      color: var(--tea-dark);
+      font-size: 14px;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--gold)
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      color: #233236;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(18px, 2.1vw, 24px);
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 28px;
+    }
+
+    .hero-quote {
+      padding: 22px 24px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255, 253, 248, .72);
+      border-radius: 0 20px 20px 0;
+      box-shadow: var(--shadow);
+      color: #40504B;
+      font-size: 18px;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 480px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(255, 253, 248, .88), rgba(255, 253, 248, .56));
+      border: 1px solid rgba(255, 255, 255, .7);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 32px;
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px dashed rgba(154, 118, 87, .30);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(76, 113, 128, .22);
+      border-radius: 50%;
+      right: -65px;
+      top: -42px;
+    }
+
+    .note {
+      position: absolute;
+      width: 220px;
+      padding: 18px 18px 16px;
+      background: #FFF8E9;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(55, 45, 35, .12);
+      border: 1px solid rgba(216, 191, 164, .45);
+      transform: rotate(-3deg);
+      font-size: 15px;
+      color: #4F5D58;
+    }
+
+    .note strong {
+      display: block;
+      color: #2F3B38;
+      margin-bottom: 6px;
+      font-size: 16px
+    }
+
+    .note.n1 {
+      top: 78px;
+      left: 38px;
+      background: #FFF8E9
+    }
+
+    .note.n2 {
+      top: 200px;
+      right: 40px;
+      background: #EAF4F4;
+      transform: rotate(4deg)
+    }
+
+    .note.n3 {
+      bottom: 68px;
+      left: 92px;
+      background: #F5E6E2;
+      transform: rotate(2deg)
+    }
+
+    .line-art {
+      position: absolute;
+      left: 42px;
+      bottom: 35px;
+      width: 80%;
+      height: 160px;
+      opacity: .42;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 10px 0 56px;
+    }
+
+    .stat {
+      background: rgba(255, 253, 248, .72);
+      border: 1px solid rgba(229, 220, 207, .8);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(81, 65, 45, .06);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      color: #344642;
+      margin-bottom: 10px
+    }
+
+    .stat span {
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.12;
+      margin: 0;
+      letter-spacing: -.03em
+    }
+
+    .section-title p {
+      max-width: 560px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .info-card {
+      background: rgba(255, 253, 248, .78);
+      border: 1px solid rgba(229, 220, 207, .9);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(81, 65, 45, .06);
+    }
+
+    .info-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #2F3B38
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .privacy {
+      margin-top: 18px;
+      background: rgba(221, 235, 240, .55);
+      border: 1px solid rgba(76, 113, 128, .16);
+    }
+
+    .toc {
+      position: sticky;
+      top: 56px;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(247, 241, 231, .78);
+      border-top: 1px solid rgba(229, 220, 207, .7);
+      border-bottom: 1px solid rgba(229, 220, 207, .7);
+      padding: 12px 0;
+      margin: 24px 0 24px;
+    }
+
+    .toc-inner {
+      display: flex;
+      gap: 10px;
+      overflow: auto;
+      padding-bottom: 2px;
+    }
+
+    .toc a {
+      flex: 0 0 auto;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .7);
+      border: 1px solid rgba(229, 220, 207, .8);
+      color: #495A55;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .toc a:hover {
+      background: #fff;
+      color: #273532
+    }
+
+    .theme {
+      margin: 42px 0;
+      padding: 30px;
+      background: rgba(255, 253, 248, .70);
+      border: 1px solid rgba(229, 220, 207, .8);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .theme-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(229, 220, 207, .75);
+    }
+
+    .num {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--mist), #fff);
+      color: #2F4C54;
+      font-weight: 900;
+      font-size: 22px;
+      border: 1px solid rgba(76, 113, 128, .14);
+    }
+
+    .theme h3 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+      color: #263734;
+      letter-spacing: -.02em
+    }
+
+    .theme .question {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .insight {
+      margin: 22px 0 20px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: linear-gradient(90deg, rgba(221, 232, 212, .72), rgba(255, 253, 248, .65));
+      border: 1px solid rgba(85, 112, 93, .12);
+      color: #43534E;
+    }
+
+    .lens-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .lens {
+      padding: 16px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(229, 220, 207, .8);
+      background: rgba(255, 255, 255, .55);
+    }
+
+    .lens b {
+      display: block;
+      margin-bottom: 5px;
+      color: #2C3835
+    }
+
+    .lens span {
+      font-size: 14px;
+      color: var(--muted)
+    }
+
+    .voices {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .voice {
+      background: rgba(255, 253, 248, .88);
+      border: 1px solid rgba(229, 220, 207, .9);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 168px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .voice:before {
+      content: "“";
+      position: absolute;
+      right: 14px;
+      top: -18px;
+      color: rgba(215, 180, 106, .25);
+      font-size: 82px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .voice .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      color: #41524D;
+      background: rgba(221, 235, 240, .65);
+      border: 1px solid rgba(76, 113, 128, .12);
+    }
+
+    .voice p {
+      margin: 0;
+      color: #42504B;
+      font-size: 15px;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1
+    }
+
+    .theme:nth-of-type(3n+1) .num {
+      background: linear-gradient(145deg, var(--mist), #fff)
+    }
+
+    .theme:nth-of-type(3n+2) .num {
+      background: linear-gradient(145deg, var(--sage), #fff);
+      color: #496451
+    }
+
+    .theme:nth-of-type(3n) .num {
+      background: linear-gradient(145deg, var(--rose), #fff);
+      color: #76504C
+    }
+
+    .footer-cta {
+      margin: 0;
+      padding: 72px 0 48px;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(216, 191, 164, .18) 40%, rgba(221, 232, 212, .22) 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-cta::before {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--tea), transparent);
+      margin: 0 auto 36px;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(26px, 3.6vw, 40px);
+      line-height: 1.35;
+      margin: 0 0 18px;
+      color: #2F3B38;
+      letter-spacing: -.02em;
+      font-weight: 800;
+    }
+
+    .footer-cta p {
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 680px;
+      line-height: 1.9;
+    }
+
+    .footer-cta .decorative-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .footer-cta .decorative-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      opacity: .45;
+    }
+
+    .footer-cta .decorative-dots span:nth-child(1) {
+      background: var(--mist-dark);
+    }
+
+    .footer-cta .decorative-dots span:nth-child(2) {
+      background: var(--sage-dark);
+    }
+
+    .footer-cta .decorative-dots span:nth-child(3) {
+      background: var(--gold);
+    }
+
+    .footer-cta .decorative-dots span:nth-child(4) {
+      background: var(--rose-dark);
+    }
+
+    .footer-cta .decorative-dots span:nth-child(5) {
+      background: var(--tea-dark);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: .02em;
+      background: transparent;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    @media(max-width:980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 48px
+      }
+
+      .hero-card {
+        min-height: 360px
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr
+      }
+
+      .voices {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .lens-row {
+        grid-template-columns: 1fr
+      }
+
+      .section-title {
+        display: block
+      }
+
+      .section-title p {
+        margin-top: 12px
+      }
+    }
+
+    @media(max-width:640px) {
+      .page {
+        width: min(100% - 24px, 1180px)
+      }
+
+      .hero-card {
+        display: none
+      }
+
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      .theme {
+        padding: 20px;
+        border-radius: 24px
+      }
+
+      .theme-head {
+        grid-template-columns: 1fr
+      }
+
+      .voices {
+        grid-template-columns: 1fr
+      }
+
+      .footer-cta {
+        padding: 56px 20px 36px
+      }
+    }
+
+    /* nav compact overrides */
+    .nav {
+      padding: .55rem 1rem;
+    }
+
+    .nav-links {
+      gap: 1.1rem;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+    }
+
+    .logo {
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">生命書寫成果展</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li>
+          <a href="#">生命書寫</a>
+          <ul class="dropdown">
+            <li><a href="life-images.html">生命圖像展覽</a></li>
+            <li><a href="life-video.html">生命故事影片</a></li>
+            <li><a href="life-story.html">生命故事1000字</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">佳作分享</a>
+          <ul class="dropdown">
+            <li><a href="life-imagetop.html">生命圖像</a></li>
+            <li><a href="resume.html">創作履歷表</a></li>
+            <li><a href="memories.html">那些年我們一起的回憶</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">課程資訊</a>
+          <ul class="dropdown">
+            <li><a href="outline.html">課程大綱</a></li>
+            <li><a href="journal.html">工作日誌</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">課程團隊</a></li>
+        <li><a href="feedback.html">課程回饋</a></li>
+        <li><a href="rec.html">復原力研究</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <section class="page hero" id="top">
+      <div>
+        <span class="eyebrow">生命書寫與復原力研究</span>
+        <h1>生命書寫復原力</h1>
+        <p class="hero-subtitle">學生的深度訪談回饋、從十個主題看見生命書寫如何影響自我探索、情緒整理、人際理解與復原力。</p>
+        <div class="hero-quote">當學生開始書寫自己，故事不只是回憶，也成為理解與修復的開始。</div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="note n1"><strong>看見自己</strong>從生活片段裡重新理解成長軌跡。</div>
+        <div class="note n2"><strong>整理情緒</strong>把難以說出口的感受先安放下來。</div>
+        <div class="note n3"><strong>回到未來</strong>在回望中找到下一步的方向。</div>
+        <svg class="line-art" viewBox="0 0 520 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 150C74 92 134 112 181 78C225 46 251 35 303 72C360 113 404 75 506 20" stroke="#4C7180"
+            stroke-width="3" stroke-linecap="round" />
+          <circle cx="12" cy="150" r="7" fill="#D7B46A" />
+          <circle cx="181" cy="78" r="7" fill="#D7B46A" />
+          <circle cx="303" cy="72" r="7" fill="#D7B46A" />
+          <circle cx="506" cy="20" r="7" fill="#D7B46A" />
+        </svg>
+      </div>
+    </section>
+
+
+    <nav class="toc" aria-label="十個主題導覽">
+      <div class="page toc-inner">
+        <a href="#t1">初次走進課程</a><a href="#t2">從陌生到投入</a><a href="#t3">重新理解自己</a><a href="#t4">情緒被看見</a><a
+          href="#t5">重新理解他人</a><a href="#t6">面對困難</a><a href="#t7">真正有作用</a><a href="#t8">我變了嗎</a><a
+          href="#t9">未來會書寫嗎</a><a href="#t10">留下什麼</a>
+      </div>
+    </nav>
+
+    <section class="page section" id="themes">
+      <div class="section-title">
+        <h2>十個主題</h2>
+      </div>
+
+      <article class="theme" id="t1">
+        <div class="theme-head">
+          <div class="num">01</div>
+          <div>
+            <h3>初次走進生命書寫課</h3>
+            <p class="question">原題：我如何看待這門課程？</p>
+          </div>
+        </div>
+        <div class="insight">多數學生都提到，這門課打破了他們對「中文課」的既定想像。課程不再只是課文、考試或文言文，而是從閱讀與書寫出發，進入自我理解、生涯思考與生命經驗整理。</div>
+        <div class="lens-row">
+          <div class="lens"><b>不像傳統國文</b><span>學生普遍感受到課程形式與過去經驗不同。</span></div>
+          <div class="lens"><b>更貼近自己</b><span>書寫、圖像與影片讓學生回到自身故事。</span></div>
+          <div class="lens"><b>兼具療癒與探索</b><span>手作與生命書寫帶來放鬆、回顧與理解。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>這門課不像以前的中文課，比較像是在探討自己，也讓我重新看見過去的經驗。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>一開始以為會很枯燥，後來發現它更像是一門療癒心靈的課。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我印象最深的是透過影片和照片回顧以前的自己，感覺很有趣。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>這門課不只是國文，也談生涯、生命教育和心理學，比想像中更綜合。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t2">
+        <div class="theme-head">
+          <div class="num">02</div>
+          <div>
+            <h3>從陌生到願意投入</h3>
+            <p class="question">原題：一開始接觸生命書寫的感受是什麼？</p>
+          </div>
+        </div>
+        <div class="insight">學生一開始的反應差異很大：有人本來就有書寫習慣，有人原本想敷衍，也有人擔心無聊。但多數人在真正開始回想與書寫後，逐漸發現「原來自己有很多可以寫」。</div>
+        <div class="lens-row">
+          <div class="lens"><b>需要引導</b><span>心智圖、圖像與課堂鋪陳降低書寫門檻。</span></div>
+          <div class="lens"><b>從小事開始</b><span>日常片段也能被故事化。</span></div>
+          <div class="lens"><b>書寫需要安全感</b><span>能否自在書寫，與隱私感和是否被評價有關。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>原本只想找一件小事寫一寫，但真的回想後，才發現那件事情其實沒有那麼簡單。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>一開始不知道要寫什麼，後來翻以前的作文和日記，才慢慢想起來。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>因為前面有心智圖和圖像活動，後來寫一千字反而沒有想像中困難。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>對我來說，它像是把平常會講的故事寫出來，所以不太排斥。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t3">
+        <div class="theme-head">
+          <div class="num">03</div>
+          <div>
+            <h3>我開始重新理解自己</h3>
+            <p class="question">原題：在書寫過程中，我對自己有什麼新的發現？</p>
+          </div>
+        </div>
+        <div class="insight">生命書寫讓學生重新定位自己的成長軌跡。有些人看見個性形成的原因，有些人釐清家庭壓力與人際距離，有些人則確認自己的興趣、敏感度與創作方向。</div>
+        <div class="lens-row">
+          <div class="lens"><b>看見成長軌跡</b><span>過去事件不只是回憶，也解釋了現在的自己。</span></div>
+          <div class="lens"><b>釐清模糊感受</b><span>原本說不出的壓力，透過書寫變得具體。</span></div>
+          <div class="lens"><b>確認核心自我</b><span>興趣、價值與生命方向在回顧中浮現。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>寫下來後，我才知道自己為什麼會想保持距離，原來那是一種長期累積的壓力。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我發現自己其實一直在往前，只是平常沒有意識到。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>透過回顧，我重新理解以前的人和事，也看見自己看事情的角度改變了。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我更確定自己喜歡創作，這不是突然出現的，而是很早就存在的核心自我。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t4">
+        <div class="theme-head">
+          <div class="num">04</div>
+          <div>
+            <h3>情緒被看見之後</h3>
+            <p class="question">原題：生命書寫對我的情緒管理有什麼影響？</p>
+          </div>
+        </div>
+        <div class="insight">多數學生將書寫視為「整理」而非單純抒發。書寫可能讓情緒短暫浮現，但也讓學生有機會看見情緒來源，將原本混在一起的感受安放下來。</div>
+        <div class="lens-row">
+          <div class="lens"><b>寫出來就鬆動</b><span>文字成為情緒出口。</span></div>
+          <div class="lens"><b>從抒發到理解</b><span>學生開始看懂情緒背後的原因。</span></div>
+          <div class="lens"><b>方法不只一種</b><span>有人靠書寫，也有人靠聊天、GPT、運動或創作。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>寫完之後再回頭看，反而會有比較釋懷的感覺。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>書寫比較像是用第三人稱檢視以前的自己，而不是重新陷在情緒裡。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>只要把事情寫下來，情緒就像被整理過，原本很大的感覺會慢慢降下來。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我不一定靠書寫，有時候會找人說、跟 AI 聊，或用創作把感受放進角色裡。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t5">
+        <div class="theme-head">
+          <div class="num">05</div>
+          <div>
+            <h3>我如何重新理解他人</h3>
+            <p class="question">原題：對人際關係的理解有什麼改變？</p>
+          </div>
+        </div>
+        <div class="insight">書寫不一定直接改變關係，但常常改變學生觀看關係的方式。有些學生更理解家人，有些學生重新辨認不健康關係，也有人學會區分「可以說」與「可以寫」的界線。</div>
+        <div class="lens-row">
+          <div class="lens"><b>關係重新命名</b><span>把模糊的人際感受轉為清楚理解。</span></div>
+          <div class="lens"><b>邊界感出現</b><span>學生開始知道哪些內容可以分享、哪些需要保留。</span></div>
+          <div class="lens"><b>共感支持</b><span>聽見別人的故事後，發現自己並不孤單。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我更理解那段關係，也知道有些人不適合再聯繫。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我開始覺得有距離反而比較好，用訊息溝通會比面對面衝突穩定。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>透過書寫，我更理解家人的辛苦，也更敢表達自己的需求。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>聽到別人的故事時，會發現原來不是只有我有這種感受。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t6">
+        <div class="theme-head">
+          <div class="num">06</div>
+          <div>
+            <h3>面對困難的方法改變了嗎？</h3>
+            <p class="question">原題：面對壓力與挫折時，我的改變是什麼？</p>
+          </div>
+        </div>
+        <div class="insight">學生的復原力變化不一定表現為「變得更快樂」，而是更能看懂自己的狀態、更容易釋懷，或多了一種安放壓力的方法。</div>
+        <div class="lens-row">
+          <div class="lens"><b>看淡與放下</b><span>有些學生能從反覆壓力中拉開距離。</span></div>
+          <div class="lens"><b>自我觀察</b><span>寫下來後比較能理解自己為什麼難過。</span></div>
+          <div class="lens"><b>不急著恢復</b><span>重要的不只是快速復原，而是看懂當下狀態。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>以前會一直記著，現在比較能覺得事情過了就過了。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>遇到不開心時，我多了一個方法：把事情寫下來，再回頭看原因。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我不一定要馬上恢復，有時候先待在那個狀態裡，反而比較能想通。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我學會不要把別人的負面情緒全部接收進來。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t7">
+        <div class="theme-head">
+          <div class="num">07</div>
+          <div>
+            <h3>哪些課程真正產生作用？</h3>
+            <p class="question">原題：課程中最有幫助與較無感的部分？</p>
+          </div>
+        </div>
+        <div class="insight">學生對課程活動的感受高度分化。整體而言，生命書寫、生命圖像與手作活動較容易產生投入；公開影片、AI 詩作或高度抽象的主題，則可能引發尷尬、距離感或無感。</div>
+        <div class="lens-row">
+          <div class="lens"><b>最有感</b><span>生命書寫、生命圖像、手作活動。</span></div>
+          <div class="lens"><b>需要調整</b><span>公開展示與錄音、影片需注意隱私與尷尬感。</span></div>
+          <div class="lens"><b>媒介差異</b><span>多樂學生對圖像、創作、實作常更有感。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>生命圖像很有趣，因為可以用畫的方式表達自己。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>最有幫助的是書寫本身，它真的讓我整理自己的經驗。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>手作活動讓人很放鬆，也不像傳統課程那麼有壓力。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>有些 AI 或朗讀活動比較尷尬，因為感覺不夠真實或太公開。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t8">
+        <div class="theme-head">
+          <div class="num">08</div>
+          <div>
+            <h3>我覺得自己變了嗎？</h3>
+            <p class="question">原題：我覺得自己有什麼變化？</p>
+          </div>
+        </div>
+        <div class="insight">學生對「變化」的理解並不一致。有些人感覺自己明顯變穩定，有些人認為變化主要來自長大與生活經驗，也有人說不出具體改變，但能感覺想法正在移動。</div>
+        <div class="lens-row">
+          <div class="lens"><b>情緒更穩</b><span>能察覺情緒、調整狀態。</span></div>
+          <div class="lens"><b>視角更柔軟</b><span>更能理解他人，也更能接受不完美。</span></div>
+          <div class="lens"><b>變化難以命名</b><span>不一定能明說，但能感覺自己正在改變。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我比較能意識到自己的情緒，也能慢慢穩定自己。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我變得比較不尖銳，開始理解別人為什麼會不懂。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我最大的改變是比較看得開，不再一直把事情壓在心裡。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我覺得自己有變，但比較像想法上的變化，很難用一句話說清楚。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t9">
+        <div class="theme-head">
+          <div class="num">09</div>
+          <div>
+            <h3>書寫會成為未來的方法嗎？</h3>
+            <p class="question">原題：未來我會不會繼續使用生命書寫？</p>
+          </div>
+        </div>
+        <div class="insight">有些學生願意持續書寫，有些人只會在重大事件或情緒波動時記錄；也有人明確表示不會直接生命書寫，而會改用聊天、創作、寫歌或角色設計等方式延續自我表達。</div>
+        <div class="lens-row">
+          <div class="lens"><b>持續書寫</b><span>適合已有書寫習慣的人。</span></div>
+          <div class="lens"><b>需要條件</b><span>需要時間、安全感、外在推力或重大事件。</span></div>
+          <div class="lens"><b>轉化媒介</b><span>有人把生命書寫轉為創作、歌曲或角色故事。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我會繼續寫，但可能是半年回顧一次，而不是每天寫日記。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>如果是作業我會寫，但沒有外在推力的話，我可能不會主動寫。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我不會直接寫生命書寫，但會把想法放進歌曲、角色或故事裡。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>當我還沒準備好跟別人說時，可以先寫下來，讓事情有地方安放。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="theme" id="t10">
+        <div class="theme-head">
+          <div class="num">10</div>
+          <div>
+            <h3>這門課留下了什麼？</h3>
+            <p class="question">原題：這門課對我最大的收穫是什麼？</p>
+          </div>
+        </div>
+        <div class="insight">學生的收穫並不相同，但都指向一件事：生命書寫讓「過去」不只是過去，而是可以被重新理解、重新安放，甚至成為未來行動的基礎。</div>
+        <div class="lens-row">
+          <div class="lens"><b>理解來時路</b><span>看見自己如何走到現在。</span></div>
+          <div class="lens"><b>相信故事價值</b><span>每個人的生命經驗都可以成為作品。</span></div>
+          <div class="lens"><b>面向未來</b><span>從回顧中找到方向、界線與下一步。</span></div>
+        </div>
+        <div class="voices">
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>記錄自己的人生其實很有意義，讓我知道自己怎麼走到現在。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>我理解了自己為什麼想保持距離，也找到比較適合的相處方式。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>寫作不一定要很有文采，每個人寫下自己的經驗，就是自己的作品。</p>
+          </div>
+          <div class="voice"><span class="tag">匿名回應</span>
+            <p>生命書寫讓我真正把自己攤開來看，包含那些原本沒有說出口的部分。</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="footer-cta">
+      <div class="page">
+        <h2>當故事被說出來，<br>復原也開始發生。</h2>
+        <p>生命書寫並不只是把過去記錄下來，而是讓學生有機會重新理解自己、安放情緒、辨認關係，並在回望中找到繼續前行的方法。</p>
+        <div class="decorative-dots" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 生命故事成果展 ・ 中文閱讀與表達課程</p>
+    <p>指導老師：駱育萱</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const nav = document.querySelector('.nav');
+      const toc = document.querySelector('.toc');
+      if (!nav) return;
+
+      let lastY = 0;
+      let hidden = false;
+      const navH = nav.offsetHeight;
+
+      // smooth transition
+      nav.style.transition = 'transform .35s cubic-bezier(.4,0,.2,1)';
+      if (toc) toc.style.transition = 'top .35s cubic-bezier(.4,0,.2,1)';
+
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        // always show near top
+        if (y < 80) {
+          if (hidden) { show(); }
+          lastY = y;
+          return;
+        }
+        if (y > lastY + 8 && !hidden) { hide(); }
+        else if (y < lastY - 8 && hidden) { show(); }
+        lastY = y;
+      }, { passive: true });
+
+      function hide() {
+        hidden = true;
+        nav.style.transform = 'translateY(-100%)';
+        if (toc) toc.style.top = '0px';
+      }
+      function show() {
+        hidden = false;
+        nav.style.transform = 'translateY(0)';
+        if (toc) toc.style.top = navH + 'px';
+      }
+    })();
+  </script>
+</body>
+
+</html>

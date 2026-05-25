@@ -7,7 +7,7 @@
     backdrop-filter: blur(10px);
     padding: 1rem 1rem;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-content {
@@ -62,11 +62,11 @@
     position: relative;
 }
 
-.nav-links > li > a {
+.nav-links>li>a {
     padding-right: 1.5em;
 }
 
-.nav-links > li:hover > a::after {
+.nav-links>li:hover>a::after {
     transform: translateY(-50%) scale(0.6) rotate(180deg);
 }
 
@@ -81,7 +81,7 @@
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 0.8rem 0;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     min-width: 200px;
     opacity: 0;
     visibility: hidden;
@@ -145,20 +145,25 @@
 /* === 平板裝置調整（iPad 等）=== */
 @media (min-width: 769px) and (max-width: 1024px) {
     .nav-links {
-        gap: 1rem; /* 減少項目間距 */
+        gap: 1rem;
+        /* 減少項目間距 */
     }
-    
+
     .nav-links a {
-        font-size: 0.9rem; /* 稍微縮小字體 */
-        white-space: nowrap; /* 確保不換行 */
+        font-size: 0.9rem;
+        /* 稍微縮小字體 */
+        white-space: nowrap;
+        /* 確保不換行 */
     }
-    
+
     .logo {
-        font-size: 18px; /* 稍微縮小 logo */
+        font-size: 18px;
+        /* 稍微縮小 logo */
     }
-    
+
     .nav {
-        padding: 0.8rem 1rem; /* 減少上下內距 */
+        padding: 0.8rem 1rem;
+        /* 減少上下內距 */
     }
 }
 
@@ -191,7 +196,7 @@
         left: 0;
     }
 
-    .nav-links > li {
+    .nav-links>li {
         width: 100%;
     }
 
@@ -216,7 +221,7 @@
     }
 
     /* 沒有下拉選單的項目 */
-    .nav-links > li:not(:has(.dropdown)) > a:active {
+    .nav-links>li:not(:has(.dropdown))>a:active {
         color: #8b6f47;
         background: rgba(160, 130, 109, 0.08);
     }
@@ -241,7 +246,7 @@
         left: auto;
     }
 
-    .nav-links > li.active .dropdown {
+    .nav-links>li.active .dropdown {
         display: block;
     }
 
@@ -263,7 +268,7 @@
     }
 
     /* 手機版父選單項目樣式 */
-    .nav-links > li > a {
+    .nav-links>li>a {
         font-weight: 500;
         border-bottom: 1px solid rgba(160, 130, 109, 0.1);
         padding: 15px 25px;
@@ -273,13 +278,13 @@
     }
 
     /* 有下拉選單的父項目樣式 */
-    .nav-links > li:has(.dropdown) > a {
+    .nav-links>li:has(.dropdown)>a {
         position: relative;
         padding-right: 3rem;
     }
 
     /* 有下拉選單的項目 - 箭頭 */
-    .nav-links > li:has(.dropdown) > a::after {
+    .nav-links>li:has(.dropdown)>a::after {
         content: '▼';
         position: absolute;
         right: 1.5rem;
@@ -289,18 +294,18 @@
         color: #a0826d;
     }
 
-    .nav-links > li:has(.dropdown) > a:active {
+    .nav-links>li:has(.dropdown)>a:active {
         background: rgba(160, 130, 109, 0.08);
     }
 
     /* 當下拉選單展開時，父項目的樣式 */
-    .nav-links > li.active > a {
+    .nav-links>li.active>a {
         background: rgba(160, 130, 109, 0.1);
         color: #8b6f47;
         font-weight: 600;
     }
 
-    .nav-links > li.active > a::after {
+    .nav-links>li.active>a::after {
         transform: translateY(-50%);
         color: #8b6f47;
     }
