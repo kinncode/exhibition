@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生命故事成果展 - 首頁</title>
+    <title>生命書寫成果展 - 首頁</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="daily/journal.css">
     <script src="js/main.js"></script>
 </head>
+
 <body>
-  <nav class="nav">
-    <div class="nav-content">
-      <div class="logo">生命書寫成果展</div>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">生命書寫成果展</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">首頁</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">首頁</a></li>
 
-        <li>
-          <a href="#">生命書寫</a>
-          <ul class="dropdown">
-            <li><a href="life-images.html">生命圖像展覽</a></li>
-            <li><a href="life-video.html">生命故事影片</a></li>
-            <li><a href="life-story.html">生命故事1000字</a></li>
-          </ul>
-        </li>
+                <li>
+                    <a href="#">生命書寫</a>
+                    <ul class="dropdown">
+                        <li><a href="life-images.html">生命圖像展覽</a></li>
+                        <li><a href="life-story.html#videos">生命故事影片</a></li>
+                        <li><a href="life-story.html#stories">生命故事1000字</a></li>
+                    </ul>
+                </li>
 
-        <li>
-          <a href="#">佳作分享</a>
-          <ul class="dropdown">
-            <li><a href="life-imagetop.html">生命圖像</a></li>
-            <li><a href="resume.html">創作履歷表</a></li>
-            <li><a href="memories.html">那些年的氣味</a></li>
-          </ul>
-        </li>
+                <li>
+                    <a href="#">佳作分享</a>
+                    <ul class="dropdown">
+                        <li><a href="life-imagetop.html">生命圖像</a></li>
+                        <li><a href="resume.html">創作履歷表</a></li>
+                        <li><a href="memories.html">那些年的氣味</a></li>
+                    </ul>
+                </li>
 
-        <li>
-          <a href="#">課程資訊</a>
-          <ul class="dropdown">
-            <li><a href="outline.html">課程大綱</a></li>
-            <li><a href="journal.html">工作日誌</a></li>
-          </ul>
-        </li>
-        <li><a href="team.html">課程團隊</a></li>
-        <li><a href="feedback.html">課程回饋</a></li>
-        <li><a href="rec.html">復原力研究</a></li>
-      </ul>
-    </div>
-  </nav>
+                <li>
+                    <a href="#">課程資訊</a>
+                    <ul class="dropdown">
+                        <li><a href="outline.html">課程大綱</a></li>
+                        <li><a href="journal.html">工作日誌</a></li>
+                    </ul>
+                </li>
+                <li><a href="team.html">課程團隊</a></li>
+                <li><a href="feedback.html">課程回饋</a></li>
+                <li><a href="rec.html">復原力研究</a></li>
+            </ul>
+        </div>
+    </nav>
     <main>
         <div class="container">
             <div class="page-header">
@@ -78,7 +80,7 @@
                         <button id="prevWeek">←</button>
                         <div class="week-selector-wrapper">
                             <select id="weekSelect" class="week-select">
-                                </select>
+                            </select>
                         </div>
                         <button id="nextWeek">→</button>
                     </div>
@@ -96,7 +98,7 @@
             </div>
 
             <div class="journal-content" id="journalContent">
-                </div>
+            </div>
         </div>
     </main>
 
@@ -105,8 +107,8 @@
         <p>指導老師:駱育萱</p>
     </footer>
     <script src="daily/journal.js"></script>
-    
-   <script>        
+
+    <script>
         // State
         let currentClass = 'class1';
         let currentWeek = 2;
@@ -186,7 +188,7 @@
         });
 
         // Functions
-        
+
         // 新增：統一更新週次介面 (同步下拉選單與按鈕)
         function updateWeekUI() {
             weekSelect.value = currentWeek; // 讓下拉選單顯示當前週次
@@ -218,7 +220,7 @@
             }
 
             const data = journalData[currentClass][currentWeek];
-            
+
             let html = '';
             if (data.title) {
                 html += `
@@ -234,7 +236,7 @@
                         <h2 class="section-title">一、課程照片</h2>
                         <div class="photo-gallery">
                 `;
-                
+
                 data.photos.forEach((photo, index) => {
                     html += `
                         <div class="photo-item">
@@ -245,7 +247,7 @@
                         </div>
                     `;
                 });
-                
+
                 html += `
                         </div>
                     </div>
@@ -299,7 +301,7 @@
         updateFontSize();
         renderJournal();
     </script>
-    
+
     <style>
         /* 新增週次選單樣式 */
         .week-select {
@@ -321,7 +323,8 @@
         }
 
         /* 調整按鈕寬度，讓排版更好看 */
-        #prevWeek, #nextWeek {
+        #prevWeek,
+        #nextWeek {
             min-width: 40px;
             padding: 0.5rem;
         }
@@ -335,7 +338,7 @@
             border-radius: 8px;
             margin-bottom: 0.5rem;
         }
-        
+
         .photo-placeholder {
             width: 100%;
             height: 200px;
@@ -383,12 +386,14 @@
             font-weight: 600;
             color: #7a6a5a;
         }
+
         /* 新增週次標題樣式 */
         .journal-header-section {
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #e0d5ce; /* 底部加一條裝飾線 */
+            border-bottom: 2px solid #e0d5ce;
+            /* 底部加一條裝飾線 */
         }
 
         .weekly-main-title {
@@ -414,6 +419,5 @@
         }
     </style>
 </body>
+
 </html>
-
-

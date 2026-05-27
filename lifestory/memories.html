@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/main.js"></script>
-    <title>那些年我們一起的回憶 - 生命故事成果展</title>
+    <title>那些年我們一起的回憶 - 生命書寫成果展</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +16,7 @@
 
         body {
             font-family: 'Noto Serif TC', 'Noto Sans TC', 'Microsoft JhengHei', serif;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(160, 130, 109, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(139, 111, 71, 0.05) 0%, transparent 50%),
                 linear-gradient(135deg, #faf8f5 0%, #f5e6d3 100%);
@@ -24,7 +25,7 @@
             min-height: 100vh;
             letter-spacing: 0.3px;
         }
-        
+
         main {
             padding-top: 100px;
             padding-bottom: 4rem;
@@ -43,8 +44,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .page-header h1 {
@@ -96,10 +104,10 @@
             box-shadow: 0 2px 8px rgba(139, 111, 71, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            
+
             /* 新增：針對 iOS 的硬體加速與防止閃爍 */
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
@@ -359,7 +367,7 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.8rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             }
 
             .lightbox-counter {
@@ -368,7 +376,7 @@
                 transform: none;
                 font-size: 0.85rem;
                 padding: 0.4rem 0.8rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             }
 
             .lightbox-prev,
@@ -376,7 +384,7 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.3rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             }
 
             .lightbox-prev {
@@ -403,6 +411,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-content">
@@ -418,8 +427,8 @@
                     <a href="#">生命書寫</a>
                     <ul class="dropdown">
                         <li><a href="life-images.html">生命圖像展覽</a></li>
-                        <li><a href="life-video.html">生命故事影片</a></li>
-                        <li><a href="life-story.html">生命故事1000字</a></li>
+                        <li><a href="life-story.html#videos">生命故事影片</a></li>
+                        <li><a href="life-story.html#stories">生命故事1000字</a></li>
                     </ul>
                 </li>
                 <li>
@@ -497,43 +506,43 @@
                 {
                     title: "國中回憶",
                     author: "第四組",
-                    
+
                     image: "img/me/A (1).jpg"
                 },
                 {
                     title: "國小回憶",
                     author: "第十四組",
-                    
+
                     image: "img/me/A (2).jpg"
                 },
                 {
                     title: "高中回憶",
                     author: "第十三組",
-                     
+
                     image: "img/me/A (3).jpg"
                 },
                 {
                     title: "高中回憶",
                     author: "第一組",
-                    
+
                     image: "img/me/A (4).jpg"
                 },
                 {
                     title: "高中回憶",
                     author: "第二和第三組",
-                
+
                     image: "img/me/A (5).jpg"
                 },
                 {
                     title: "高中回憶",
                     author: "第五組",
-                    
+
                     image: "img/me/A (6).jpg"
                 },
                 {
                     title: "視覺回憶",
                     author: "第六組",
-                
+
                     image: "img/me/A (7).jpg"
                 },
                 {
@@ -571,85 +580,85 @@
                 {
                     title: "國小回憶",
                     author: "第四組",
-                    
+
                     image: "img/me/B (1).jpg"
                 },
                 {
                     title: "國小回憶",
                     author: "第十四組",
-                
+
                     image: "img/me/B (2).jpg"
                 },
                 {
                     title: "視覺的回憶",
                     author: "第五組",
-                        
+
                     image: "img/me/B (3).jpg"
                 },
                 {
                     title: "視覺的回憶",
                     author: "第十五組",
-                    
+
                     image: "img/me/B (4).jpg"
                 },
                 {
                     title: "聽覺的回憶",
                     author: "第六組",
-                    
+
                     image: "img/me/B (5).jpg"
                 },
-              {
+                {
                     title: "國中的回憶",
                     author: "第九組",
-                        
+
                     image: "img/me/B (6).jpg"
                 },
                 {
                     title: "聽覺的回憶",
                     author: "第七組",
-                    
+
                     image: "img/me/B (7).jpg"
                 },
                 {
                     title: "高中的回憶",
                     author: "第八組",
-                        
+
                     image: "img/me/B (8).jpg"
                 },
                 {
                     title: "那些年我們一起的童年的回憶",
                     author: "第十二組",
-                    
+
                     image: "img/me/B (9).jpg"
                 },
                 {
                     title: "高中的回憶",
                     author: "第十組",
-                    
+
                     image: "img/me/B (10).jpg"
                 },
                 {
                     title: "視覺的回憶",
                     author: "第二組",
-                        
+
                     image: "img/me/B (11).jpg"
                 },
                 {
                     title: "聽覺的回憶",
                     author: "第十三組",
-                        
+
                     image: "img/me/B (12).jpg"
                 },
                 {
                     title: "高中的回憶",
                     author: "第一組",
-                    
+
                     image: "img/me/B (13).jpg"
                 },
                 {
                     title: "國中的回",
                     author: "第三組",
-                    
+
                     image: "img/me/B (14).jpg"
                 }
             ],
@@ -657,395 +666,396 @@
                 {
                     title: "視覺的回憶",
                     author: "第四組，第八組",
-                        
+
                     image: "img/me/C (1).jpg"
                 },
                 {
                     title: "視覺的回憶",
                     author: "第二組，第五組",
-                
+
                     image: "img/me/C (2).jpg"
                 },
                 {
                     title: "高中的回憶",
                     author: "第一組",
-                        
-                   image: "img/me/C (3).jpg"
+
+                    image: "img/me/C (3).jpg"
                 },
                 {
                     title: "聽覺的回憶",
                     author: "第七組",
-                    
+
                     image: "img/me/C (4).jpg"
                 },
                 {
                     title: "高中的回憶",
                     author: "第三組",
-                        
+
                     image: "img/me/C (5).jpg"
                 }
             ]
         };
-// 當前狀態
-let currentClass = '';
-let currentIndex = 0;
+        // 當前狀態
+        let currentClass = '';
+        let currentIndex = 0;
 
-// 圖片預載入快取
-const imageCache = new Map();
+        // 圖片預載入快取
+        const imageCache = new Map();
 
-// 優化的圖片預載入函數
-function preloadImage(src, forceDecode = false) {
-    return new Promise((resolve, reject) => {
-        if (imageCache.has(src)) {
-            resolve(imageCache.get(src));
-            return;
+        // 優化的圖片預載入函數
+        function preloadImage(src, forceDecode = false) {
+            return new Promise((resolve, reject) => {
+                if (imageCache.has(src)) {
+                    resolve(imageCache.get(src));
+                    return;
+                }
+
+                const img = new Image();
+
+                img.onload = () => {
+                    // iOS 優化：只有在大圖模式(Lightbox)才強制解碼
+                    // 列表模式下讓瀏覽器自己處理，避免卡頓
+                    if (forceDecode && 'decode' in img) {
+                        img.decode()
+                            .then(() => {
+                                imageCache.set(src, img);
+                                resolve(img);
+                            })
+                            .catch(() => {
+                                // 解碼失敗仍視為載入成功
+                                imageCache.set(src, img);
+                                resolve(img);
+                            });
+                    } else {
+                        imageCache.set(src, img);
+                        resolve(img);
+                    }
+                };
+
+                img.onerror = reject;
+                img.src = src;
+            });
         }
 
-        const img = new Image();
-        
-        img.onload = () => {
-            // iOS 優化：只有在大圖模式(Lightbox)才強制解碼
-            // 列表模式下讓瀏覽器自己處理，避免卡頓
-            if (forceDecode && 'decode' in img) {
-                img.decode()
-                    .then(() => {
-                        imageCache.set(src, img);
-                        resolve(img);
-                    })
-                    .catch(() => {
-                        // 解碼失敗仍視為載入成功
-                        imageCache.set(src, img);
-                        resolve(img);
-                    });
-            } else {
-                imageCache.set(src, img);
-                resolve(img);
+        // 批次預載入圖片（限制並發數量）
+        async function preloadImagesInBatches(images, batchSize = 3) {
+            const results = [];
+            for (let i = 0; i < images.length; i += batchSize) {
+                const batch = images.slice(i, i + batchSize);
+                const batchResults = await Promise.allSettled(
+                    batch.map(img => preloadImage(img))
+                );
+                results.push(...batchResults);
             }
-        };
-        
-        img.onerror = reject;
-        img.src = src;
-    });
-}
+            return results;
+        }
 
-// 批次預載入圖片（限制並發數量）
-async function preloadImagesInBatches(images, batchSize = 3) {
-    const results = [];
-    for (let i = 0; i < images.length; i += batchSize) {
-        const batch = images.slice(i, i + batchSize);
-        const batchResults = await Promise.allSettled(
-            batch.map(img => preloadImage(img))
-        );
-        results.push(...batchResults);
-    }
-    return results;
-}
+        // 修改 setupLazyLoading
+        // 簡化觀察器邏輯
+        function setupLazyLoading() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '100px', // 增加預載距離，讓使用者滑動時感覺更順
+                threshold: 0.1
+            };
 
-// 修改 setupLazyLoading
-// 簡化觀察器邏輯
-function setupLazyLoading() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '100px', // 增加預載距離，讓使用者滑動時感覺更順
-        threshold: 0.1
-    };
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.dataset.src;
 
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                const src = img.dataset.src;
-                
-                if (src) {
-                    // 直接設定 src，不經過 Promise 鏈
-                    img.src = src;
-                    img.onload = () => {
-                        img.style.opacity = '1';
-                        img.classList.add('loaded');
-                    };
-                    // 移除 data-src 避免重複處理
-                    img.removeAttribute('data-src');
-                }
-                observer.unobserve(img);
+                        if (src) {
+                            // 直接設定 src，不經過 Promise 鏈
+                            img.src = src;
+                            img.onload = () => {
+                                img.style.opacity = '1';
+                                img.classList.add('loaded');
+                            };
+                            // 移除 data-src 避免重複處理
+                            img.removeAttribute('data-src');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            }, observerOptions);
+
+            return imageObserver;
+        }
+
+        // 渲染畫廊（優化版）
+        function renderGallery(classId, works) {
+            const gallery = document.getElementById(classId + 'Gallery');
+
+            if (!works || works.length === 0) {
+                gallery.innerHTML = '<p style="text-align: center; color: #666;">暫無作品</p>';
+                return;
             }
-        });
-    }, observerOptions);
 
-    return imageObserver;
-}
+            // 使用 DocumentFragment 提升性能
+            const fragment = document.createDocumentFragment();
 
-// 渲染畫廊（優化版）
-function renderGallery(classId, works) {
-    const gallery = document.getElementById(classId + 'Gallery');
-    
-    if (!works || works.length === 0) {
-        gallery.innerHTML = '<p style="text-align: center; color: #666;">暫無作品</p>';
-        return;
-    }
-    
-    // 使用 DocumentFragment 提升性能
-const fragment = document.createDocumentFragment();
-    
-    works.forEach((work, index) => {
-        const card = document.createElement('div');
-        card.className = 'work-card';
-        // 加入 iOS 硬體加速樣式
-        card.style.transform = "translateZ(0)"; 
-        card.onclick = () => openLightbox(classId, index);
-        
-        // 圖片處理邏輯優化
-        let imageHtml = '';
-        if (work.image) {
-            // 使用 data-src 但不依賴複雜的 JS 預載
-            // 加上 decoding="async" 讓瀏覽器非同步解碼
-            imageHtml = `
+            works.forEach((work, index) => {
+                const card = document.createElement('div');
+                card.className = 'work-card';
+                // 加入 iOS 硬體加速樣式
+                card.style.transform = "translateZ(0)";
+                card.onclick = () => openLightbox(classId, index);
+
+                // 圖片處理邏輯優化
+                let imageHtml = '';
+                if (work.image) {
+                    // 使用 data-src 但不依賴複雜的 JS 預載
+                    // 加上 decoding="async" 讓瀏覽器非同步解碼
+                    imageHtml = `
                 <img class="work-image lazy-img" 
                      data-src="${work.image}" 
                      alt="${work.title}"
                      decoding="async" 
                      style="opacity: 0; transition: opacity 0.5s ease-in;">
             `;
-        } else {
-            imageHtml = '<div class="work-image-placeholder">🖼️</div>';
-        }
+                } else {
+                    imageHtml = '<div class="work-image-placeholder">🖼️</div>';
+                }
 
-        card.innerHTML = `
+                card.innerHTML = `
             ${imageHtml}
             <div class="work-info">
                 <h3 class="work-title">${work.title}</h3>
                 <p class="work-author">👤 ${work.author}</p>
             </div>
         `;
-        
-        fragment.appendChild(card);
-    });
-    
-gallery.appendChild(fragment);
-    
-    // 重新啟動觀察器
-    const images = gallery.querySelectorAll('.lazy-img');
-    const observer = setupLazyLoading();
-    images.forEach(img => observer.observe(img));
-}
 
-// 初始化
-document.addEventListener('DOMContentLoaded', () => {
-    renderGallery('class1', worksData.class1);
-    renderGallery('class2', worksData.class2);
-    renderGallery('class3', worksData.class3);
-    
-    // 預載入第一個班級的前幾張圖片
-    if (worksData.class1 && worksData.class1.length > 0) {
-        const firstImages = worksData.class1
-            .slice(0, 3)
-            .map(work => work.image)
-            .filter(Boolean);
-        preloadImagesInBatches(firstImages, 2);
-    }
-});
+                fragment.appendChild(card);
+            });
 
-// Lightbox 元素
-const lightbox = document.getElementById('lightbox');
-const closeLightbox = document.getElementById('closeLightbox');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const lightboxImage = document.getElementById('lightboxImage');
-const imageContainer = document.getElementById('imageContainer');
+            gallery.appendChild(fragment);
 
-// 圖片縮放功能
-let isZoomed = false;
-
-lightboxImage.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleZoom();
-});
-
-function toggleZoom() {
-    isZoomed = !isZoomed;
-    if (isZoomed) {
-        lightboxImage.classList.add('zoomed');
-        lightboxImage.style.transform = 'scale(2)';
-        imageContainer.style.overflow = 'auto';
-    } else {
-        lightboxImage.classList.remove('zoomed');
-        lightboxImage.style.transform = 'scale(1)';
-        imageContainer.style.overflow = 'hidden';
-    }
-}
-
-function resetZoom() {
-    isZoomed = false;
-    lightboxImage.classList.remove('zoomed');
-    lightboxImage.style.transform = 'scale(1)';
-    imageContainer.style.overflow = 'hidden';
-}
-
-// 觸控手勢支援
-let touchStartX = 0;
-let touchEndX = 0;
-let touchStartDistance = 0;
-
-lightbox.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 2) {
-        // 雙指縮放
-        touchStartDistance = Math.hypot(
-            e.touches[0].clientX - e.touches[1].clientX,
-            e.touches[0].clientY - e.touches[1].clientY
-        );
-    } else if (e.touches.length === 1) {
-        // 單指滑動
-        touchStartX = e.touches[0].clientX;
-    }
-}, { passive: true });
-
-lightbox.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 2 && touchStartDistance > 0) {
-        // 雙指縮放
-        const currentDistance = Math.hypot(
-            e.touches[0].clientX - e.touches[1].clientX,
-            e.touches[0].clientY - e.touches[1].clientY
-        );
-        const scaleChange = currentDistance / touchStartDistance;
-        
-        if (scaleChange > 1.2 && !isZoomed) {
-            toggleZoom();
-        } else if (scaleChange < 0.8 && isZoomed) {
-            toggleZoom();
+            // 重新啟動觀察器
+            const images = gallery.querySelectorAll('.lazy-img');
+            const observer = setupLazyLoading();
+            images.forEach(img => observer.observe(img));
         }
-    }
-}, { passive: true });
 
-lightbox.addEventListener('touchend', (e) => {
-    if (e.changedTouches.length === 1) {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-    }
-    touchStartDistance = 0;
-}, { passive: true });
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGallery('class1', worksData.class1);
+            renderGallery('class2', worksData.class2);
+            renderGallery('class3', worksData.class3);
 
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-
-    if (Math.abs(diff) > swipeThreshold && !isZoomed) {
-        if (diff > 0) {
-            showNext();
-        } else {
-            showPrevious();
-        }
-    }
-}
-
-function openLightbox(classId, index) {
-    currentClass = classId;
-    currentIndex = index;
-    resetZoom();
-    showWork();
-    lightbox.classList.add('active');
-    
-    // 預載入相鄰圖片
-    preloadAdjacentImages();
-}
-
-function showWork() {
-    const works = worksData[currentClass];
-    const work = works[currentIndex];
-    
-    resetZoom();
-    
-    if (work.image) {
-        lightboxImage.style.opacity = '0';
-        // Lightbox 需要高品質體驗，所以這裡開啟強制解碼
-        preloadImage(work.image, true).then((img) => {
-            lightboxImage.src = work.image;
-            lightboxImage.style.opacity = '1';
-        }).catch(() => {
-            lightboxImage.src = '';
+            // 預載入第一個班級的前幾張圖片
+            if (worksData.class1 && worksData.class1.length > 0) {
+                const firstImages = worksData.class1
+                    .slice(0, 3)
+                    .map(work => work.image)
+                    .filter(Boolean);
+                preloadImagesInBatches(firstImages, 2);
+            }
         });
-    } else {
-        lightboxImage.src = '';
-    }
-    
-    document.getElementById('lightboxTitle').textContent = work.title;
-    document.getElementById('lightboxAuthor').textContent = '作者: ' + work.author;
-    document.getElementById('lightboxDescription').textContent = work.description || '';
-    document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${works.length}`;
-    
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === works.length - 1;
-}
 
-// 預載入相鄰圖片
-function preloadAdjacentImages() {
-    const works = worksData[currentClass];
-    const imagesToPreload = [];
-    
-    // 預載入前一張
-    if (currentIndex > 0 && works[currentIndex - 1].image) {
-        imagesToPreload.push(works[currentIndex - 1].image);
-    }
-    
-    // 預載入下一張
-    if (currentIndex < works.length - 1 && works[currentIndex + 1].image) {
-        imagesToPreload.push(works[currentIndex + 1].image);
-    }
-    
-    // 批次預載入
-    if (imagesToPreload.length > 0) {
-        preloadImagesInBatches(imagesToPreload, 2);
-    }
-}
+        // Lightbox 元素
+        const lightbox = document.getElementById('lightbox');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const imageContainer = document.getElementById('imageContainer');
 
-function showPrevious() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        showWork();
-        preloadAdjacentImages();
-    }
-}
+        // 圖片縮放功能
+        let isZoomed = false;
 
-function showNext() {
-    const works = worksData[currentClass];
-    if (currentIndex < works.length - 1) {
-        currentIndex++;
-        showWork();
-        preloadAdjacentImages();
-    }
-}
+        lightboxImage.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleZoom();
+        });
 
-// 事件監聽
-closeLightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
+        function toggleZoom() {
+            isZoomed = !isZoomed;
+            if (isZoomed) {
+                lightboxImage.classList.add('zoomed');
+                lightboxImage.style.transform = 'scale(2)';
+                imageContainer.style.overflow = 'auto';
+            } else {
+                lightboxImage.classList.remove('zoomed');
+                lightboxImage.style.transform = 'scale(1)';
+                imageContainer.style.overflow = 'hidden';
+            }
+        }
 
-prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrevious();
-});
+        function resetZoom() {
+            isZoomed = false;
+            lightboxImage.classList.remove('zoomed');
+            lightboxImage.style.transform = 'scale(1)';
+            imageContainer.style.overflow = 'hidden';
+        }
 
-nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNext();
-});
+        // 觸控手勢支援
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartDistance = 0;
 
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
+        lightbox.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                // 雙指縮放
+                touchStartDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+            } else if (e.touches.length === 1) {
+                // 單指滑動
+                touchStartX = e.touches[0].clientX;
+            }
+        }, { passive: true });
 
-// 鍵盤導航
-document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    
-    if (e.key === 'Escape') {
-        lightbox.classList.remove('active');
-    } else if (e.key === 'ArrowLeft') {
-        showPrevious();
-    } else if (e.key === 'ArrowRight') {
-        showNext();
-    }
-});
+        lightbox.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2 && touchStartDistance > 0) {
+                // 雙指縮放
+                const currentDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                const scaleChange = currentDistance / touchStartDistance;
+
+                if (scaleChange > 1.2 && !isZoomed) {
+                    toggleZoom();
+                } else if (scaleChange < 0.8 && isZoomed) {
+                    toggleZoom();
+                }
+            }
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (e.changedTouches.length === 1) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+            }
+            touchStartDistance = 0;
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold && !isZoomed) {
+                if (diff > 0) {
+                    showNext();
+                } else {
+                    showPrevious();
+                }
+            }
+        }
+
+        function openLightbox(classId, index) {
+            currentClass = classId;
+            currentIndex = index;
+            resetZoom();
+            showWork();
+            lightbox.classList.add('active');
+
+            // 預載入相鄰圖片
+            preloadAdjacentImages();
+        }
+
+        function showWork() {
+            const works = worksData[currentClass];
+            const work = works[currentIndex];
+
+            resetZoom();
+
+            if (work.image) {
+                lightboxImage.style.opacity = '0';
+                // Lightbox 需要高品質體驗，所以這裡開啟強制解碼
+                preloadImage(work.image, true).then((img) => {
+                    lightboxImage.src = work.image;
+                    lightboxImage.style.opacity = '1';
+                }).catch(() => {
+                    lightboxImage.src = '';
+                });
+            } else {
+                lightboxImage.src = '';
+            }
+
+            document.getElementById('lightboxTitle').textContent = work.title;
+            document.getElementById('lightboxAuthor').textContent = '作者: ' + work.author;
+            document.getElementById('lightboxDescription').textContent = work.description || '';
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${works.length}`;
+
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === works.length - 1;
+        }
+
+        // 預載入相鄰圖片
+        function preloadAdjacentImages() {
+            const works = worksData[currentClass];
+            const imagesToPreload = [];
+
+            // 預載入前一張
+            if (currentIndex > 0 && works[currentIndex - 1].image) {
+                imagesToPreload.push(works[currentIndex - 1].image);
+            }
+
+            // 預載入下一張
+            if (currentIndex < works.length - 1 && works[currentIndex + 1].image) {
+                imagesToPreload.push(works[currentIndex + 1].image);
+            }
+
+            // 批次預載入
+            if (imagesToPreload.length > 0) {
+                preloadImagesInBatches(imagesToPreload, 2);
+            }
+        }
+
+        function showPrevious() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showWork();
+                preloadAdjacentImages();
+            }
+        }
+
+        function showNext() {
+            const works = worksData[currentClass];
+            if (currentIndex < works.length - 1) {
+                currentIndex++;
+                showWork();
+                preloadAdjacentImages();
+            }
+        }
+
+        // 事件監聽
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrevious();
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNext();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // 鍵盤導航
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                showPrevious();
+            } else if (e.key === 'ArrowRight') {
+                showNext();
+            }
+        });
     </script>
 </body>
+
 </html>

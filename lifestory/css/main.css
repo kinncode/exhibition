@@ -392,7 +392,7 @@ h2 {
 /* === 快速連結區 === */
 .quick-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
 }
@@ -531,8 +531,39 @@ footer p {
     transform: translateY(0);
 }
 
+/* === 課程介紹網格與復原力樣式 === */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.info-box.resilience-box {
+    background: linear-gradient(135deg, rgba(221, 235, 240, 0.7) 0%, rgba(221, 232, 212, 0.7) 100%);
+    border: 2px solid rgba(76, 113, 128, 0.25);
+    box-shadow: 0 10px 30px rgba(76, 113, 128, 0.15);
+    transition: all 0.3s ease;
+}
+
+.info-box.resilience-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(76, 113, 128, 0.25);
+    border-color: rgba(76, 113, 128, 0.5);
+}
+
+.info-box.resilience-box h3 {
+    color: #4c7180;
+}
+
+.info-box.resilience-box .more-link {
+    color: #4c7180;
+}
+
 /* === 響應式設計 === */
 @media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
     .hero h1 {
         font-size: 2.5rem;
     }

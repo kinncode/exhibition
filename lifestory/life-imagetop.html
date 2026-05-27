@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生命圖像佳作 - 生命故事成果展</title>
+    <title>生命圖像佳作 - 生命書寫成果展</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/main.js"></script>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-content">
@@ -26,8 +28,8 @@
                     <a href="#">生命書寫</a>
                     <ul class="dropdown">
                         <li><a href="life-images.html">生命圖像展覽</a></li>
-                        <li><a href="life-video.html">生命故事影片</a></li>
-                        <li><a href="life-story.html">生命故事1000字</a></li>
+                        <li><a href="life-story.html#videos">生命故事影片</a></li>
+                        <li><a href="life-story.html#stories">生命故事1000字</a></li>
                     </ul>
                 </li>
 
@@ -56,645 +58,650 @@
 
 
     <style>
-      /* 活動照片輪播樣式 */
-      .activity-carousel-section {
-          margin-top: 70px;
-          padding: 2rem 0;
-          background: linear-gradient(135deg, rgba(245, 230, 211, 0.3) 0%, rgba(232, 212, 184, 0.3) 100%);
-      }
+        /* 活動照片輪播樣式 */
+        .activity-carousel-section {
+            margin-top: 70px;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, rgba(245, 230, 211, 0.3) 0%, rgba(232, 212, 184, 0.3) 100%);
+        }
 
-      .carousel-container {
-          position: relative;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 2rem;
-      }
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-      .carousel-wrapper {
-          position: relative;
-          overflow: hidden;
-          border-radius: 20px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-          background: rgba(255, 255, 255, 0.9);
-      }
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
 
-      .carousel-track {
-          display: flex;
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-          will-change: transform;
-      }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
 
-      .carousel-slide {
-          min-width: 100%;
-          position: relative;
-          aspect-ratio: 16 / 9;
-          overflow: hidden;
-      }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
 
-      .carousel-slide img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-      }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-      .slide-caption {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-          color: #fff;
-          padding: 2rem 2rem 1.5rem;
-          font-size: 1.2rem;
-          text-align: center;
-          transform: translateY(100%);
-          transition: transform 0.3s ease;
-      }
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: #fff;
+            padding: 2rem 2rem 1.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
 
-      .carousel-slide:hover .slide-caption {
-          transform: translateY(0);
-      }
+        .carousel-slide:hover .slide-caption {
+            transform: translateY(0);
+        }
 
-      .carousel-btn {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.9);
-          border: none;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          font-size: 24px;
-          color: #6b5d4f;
-          cursor: pointer;
-          z-index: 10;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            color: #6b5d4f;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-      .carousel-btn:hover {
-          background: rgba(160, 130, 109, 0.9);
-          color: #fff;
-          transform: translateY(-50%) scale(1.1);
-      }
+        .carousel-btn:hover {
+            background: rgba(160, 130, 109, 0.9);
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
 
-      .carousel-prev {
-          left: 20px;
-      }
+        .carousel-prev {
+            left: 20px;
+        }
 
-      .carousel-next {
-          right: 20px;
-      }
+        .carousel-next {
+            right: 20px;
+        }
 
-      .carousel-dots {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          margin-top: 1.5rem;
-      }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
 
-      .carousel-dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: rgba(160, 130, 109, 0.3);
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          padding: 0;
-      }
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(160, 130, 109, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
 
-      .carousel-dot.active {
-          background: #a0826d;
-          transform: scale(1.2);
-      }
+        .carousel-dot.active {
+            background: #a0826d;
+            transform: scale(1.2);
+        }
 
-      .carousel-dot:hover {
-          background: rgba(160, 130, 109, 0.6);
-      }
+        .carousel-dot:hover {
+            background: rgba(160, 130, 109, 0.6);
+        }
 
-      /* 手機版輪播調整 */
-      @media (max-width: 768px) {
-          .activity-carousel-section {
-              margin-top: 60px;
-              padding: 1rem 0;
-          }
+        /* 手機版輪播調整 */
+        @media (max-width: 768px) {
+            .activity-carousel-section {
+                margin-top: 60px;
+                padding: 1rem 0;
+            }
 
-          .carousel-container {
-              padding: 0 1rem;
-          }
+            .carousel-container {
+                padding: 0 1rem;
+            }
 
-          .carousel-btn {
-              width: 40px;
-              height: 40px;
-              font-size: 20px;
-          }
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
 
-          .carousel-prev {
-              left: 10px;
-          }
+            .carousel-prev {
+                left: 10px;
+            }
 
-          .carousel-next {
-              right: 10px;
-          }
+            .carousel-next {
+                right: 10px;
+            }
 
-          .slide-caption {
-              padding: 1.5rem 1rem 1rem;
-              font-size: 1rem;
-          }
+            .slide-caption {
+                padding: 1.5rem 1rem 1rem;
+                font-size: 1rem;
+            }
 
-          .carousel-dots {
-              margin-top: 1rem;
-          }
+            .carousel-dots {
+                margin-top: 1rem;
+            }
 
-          .carousel-dot {
-              width: 10px;
-              height: 10px;
-          }
-      }
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
 
-      /* 班級區塊 */
-      .class-section {
-          margin-bottom: 4rem;
-      }
-  
-      .class-title {
-          text-align: center;
-          font-size: 2rem;
-          font-weight: bold;
-          color: #2c3e50;
-          margin-bottom: 2rem;
-          position: relative;
-          padding-bottom: 0.5rem;
-      }
-  
-      .class-title::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 3px;
-          background: linear-gradient(90deg, #3498db, #2ecc71);
-          border-radius: 2px;
-      }
-  
-      /* 排名展示區 */
-      .ranking-gallery {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: stretch;
-          gap: 2rem;
-          flex-wrap: nowrap;
-          margin: 0 auto;
-          max-width: 1200px;
-          padding: 2rem 1rem;
-          align-content: stretch;
-          flex-direction: row;
-      }
-      /* 作品卡片 */
-      .work-card {
-          position: relative;
-          width: 320px;
-          overflow: hidden;
-          border-radius: 20px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-          background-color: #f5f5f5;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-  
-      .work-card img {
-          width: 100%;
-          height: auto;
-          display: block;
-          transition: transform 0.4s ease;
-      }
-  
-      /* 名次徽章 */
-      .rank-badge {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          padding: 8px 16px;
-          border-radius: 25px;
-          font-weight: bold;
-          font-size: 0.95rem;
-          color: #fff;
-          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(5px);
-          z-index: 1;
-      }
-  
-      .gold { 
-          background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffb300 100%);
-      }
-  
-      .silver { 
-          background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 50%, #9e9e9e 100%);
-      }
-  
-      .bronze { 
-          background: linear-gradient(135deg, #f4a460 0%, #cd7f32 50%, #8b5a2b 100%);
-      }
-  
-      /* 名次大小與位置差異 - 頒獎台效果 */
-      .first {
-          width: 380px;
-          transform: scale(1);
-          z-index: 3;
-          order: 2;
-      }
-  
-      .second {
-          width: 320px;
-          transform: translateY(30px);
-          z-index: 2;
-          order: 1;
-      }
-  
-      .third {
-          width: 320px;
-          transform: translateY(30px);
-          z-index: 2;
-          order: 3;
-      }
-  
-      /* 滑鼠互動效果 */
-      .work-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      }
-  
-      .work-card:hover img {
-          transform: scale(1.05);
-      }
-  
-      .first:hover {
-          transform: translateY(-10px);
-      }
-  
-      .second:hover,
-      .third:hover {
-          transform: translateY(20px);
-      }
-  
-      /* 平板設備 */
-      @media (max-width: 900px) {
-          .ranking-gallery {
-              gap: 1.5rem;
-          }
-  
-          .work-card {
-              width: 280px;
-          }
-  
-          .first {
-              width: 320px;
-          }
-  
-          .second,
-          .third {
-              width: 280px;
-              transform: translateY(20px);
-          }
-  
-          .class-title {
-              font-size: 1.6rem;
-          }
-      }
-  
-      /* 手機版 - 垂直排列 */
-      @media (max-width: 600px) {
-          .ranking-gallery {
-              flex-direction: column;
-              align-items: center;
-              gap: 2rem;
-              padding: 1rem;
-          }
-  
-          .work-card {
-              width: 90%;
-              max-width: 400px;
-          }
-  
-          /* 取消位移，垂直排列 */
-          .first,
-          .second,
-          .third {
-              transform: none;
-              order: initial;
-              width: 90%;
-          }
-  
-          /* 第一名稍大 */
-          .first {
-              width: 95%;
-              max-width: 450px;
-          }
-  
-          /* hover 效果簡化 */
-          .work-card:hover,
-          .first:hover,
-          .second:hover,
-          .third:hover {
-              transform: translateY(-5px);
-              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-          }
-  
-          .class-title {
-              font-size: 1.5rem;
-          }
-  
-          .rank-badge {
-              font-size: 0.9rem;
-              padding: 7px 14px;
-              top: 12px;
-              right: 12px;
-          }
-  
-          .class-section {
-              margin-bottom: 3rem;
-          }
-      }
-  
-      /* 小手機 */
-      @media (max-width: 400px) {
-          .work-card {
-              width: 95%;
-              max-width: 350px;
-          }
-  
-          .first {
-              width: 95%;
-              max-width: 380px;
-          }
-  
-          .rank-badge {
-              font-size: 0.85rem;
-              padding: 6px 12px;
-          }
-  
-          .class-title {
-              font-size: 1.3rem;
-          }
-      }
+        /* 班級區塊 */
+        .class-section {
+            margin-bottom: 4rem;
+        }
 
-      /* 圖片燈箱樣式 */
-      .work-card {
-          cursor: pointer;
-      }
+        .class-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
 
-      .work-card img {
-          cursor: zoom-in;
-      }
+        .class-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
 
-      .lightbox {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.95);
-          z-index: 10000;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-      }
+        /* 排名展示區 */
+        .ranking-gallery {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: stretch;
+            gap: 2rem;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 2rem 1rem;
+            align-content: stretch;
+            flex-direction: row;
+        }
 
-      .lightbox.active {
-          display: flex;
-          opacity: 1;
-      }
+        /* 作品卡片 */
+        .work-card {
+            position: relative;
+            width: 320px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            background-color: #f5f5f5;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-      .lightbox-content {
-          position: relative;
-          max-width: 90%;
-          max-height: 90%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
+        .work-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
 
-      .lightbox-img {
-          max-width: 100%;
-          max-height: 90vh;
-          object-fit: contain;
-          border-radius: 8px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-          animation: zoomIn 0.3s ease;
-      }
+        /* 名次徽章 */
+        .rank-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+        }
 
-      @keyframes zoomIn {
-          from {
-              transform: scale(0.8);
-              opacity: 0;
-          }
-          to {
-              transform: scale(1);
-              opacity: 1;
-          }
-      }
+        .gold {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffb300 100%);
+        }
 
-      .lightbox-close {
-          position: absolute;
-          top: 20px;
-          right: 30px;
-          font-size: 40px;
-          color: #fff;
-          cursor: pointer;
-          background: rgba(0, 0, 0, 0.5);
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s ease;
-          z-index: 10001;
-      }
+        .silver {
+            background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 50%, #9e9e9e 100%);
+        }
 
-      .lightbox-close:hover {
-          background: rgba(255, 255, 255, 0.2);
-          transform: rotate(90deg);
-      }
+        .bronze {
+            background: linear-gradient(135deg, #f4a460 0%, #cd7f32 50%, #8b5a2b 100%);
+        }
 
-      .lightbox-nav {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(0, 0, 0, 0.5);
-          color: #fff;
-          border: none;
-          font-size: 30px;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s ease;
-          z-index: 10001;
-      }
+        /* 名次大小與位置差異 - 頒獎台效果 */
+        .first {
+            width: 380px;
+            transform: scale(1);
+            z-index: 3;
+            order: 2;
+        }
 
-      .lightbox-nav:hover {
-          background: rgba(255, 255, 255, 0.2);
-      }
+        .second {
+            width: 320px;
+            transform: translateY(30px);
+            z-index: 2;
+            order: 1;
+        }
 
-      .lightbox-prev {
-          left: 30px;
-      }
+        .third {
+            width: 320px;
+            transform: translateY(30px);
+            z-index: 2;
+            order: 3;
+        }
 
-      .lightbox-next {
-          right: 30px;
-      }
+        /* 滑鼠互動效果 */
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
 
-      .lightbox-info {
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          color: #fff;
-          text-align: center;
-          background: rgba(0, 0, 0, 0.7);
-          padding: 10px 20px;
-          border-radius: 20px;
-          font-size: 14px;
-      }
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
 
-      /* 手機版燈箱調整 */
-      @media (max-width: 768px) {
-          .lightbox-close {
-              top: 10px;
-              right: 15px;
-              width: 40px;
-              height: 40px;
-              font-size: 30px;
-          }
+        .first:hover {
+            transform: translateY(-10px);
+        }
 
-          .lightbox-nav {
-              width: 40px;
-              height: 40px;
-              font-size: 24px;
-          }
+        .second:hover,
+        .third:hover {
+            transform: translateY(20px);
+        }
 
-          .lightbox-prev {
-              left: 15px;
-          }
+        /* 平板設備 */
+        @media (max-width: 900px) {
+            .ranking-gallery {
+                gap: 1.5rem;
+            }
 
-          .lightbox-next {
-              right: 15px;
-          }
+            .work-card {
+                width: 280px;
+            }
 
-          .lightbox-info {
-              bottom: 10px;
-              font-size: 12px;
-              padding: 8px 15px;
-          }
-      }
-      /* 手機設備 */
-@media (max-width: 600px) {
-    .ranking-gallery {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 1rem;
-    }
+            .first {
+                width: 320px;
+            }
 
-    .work-card {
-        width: 90%;
-        max-width: 400px;
-    }
-    .first, .second, .third {
-        width: auto;
-        max-width: 700px;
-        transform: none;
-        order: unset;
-    }
+            .second,
+            .third {
+                width: 280px;
+                transform: translateY(20px);
+            }
 
-    .class-title {
-        font-size: 1.4rem;
-    }
+            .class-title {
+                font-size: 1.6rem;
+            }
+        }
 
-    .rank-badge {
-        font-size: 0.85rem;
-        padding: 6px 12px;
-    }
-}
+        /* 手機版 - 垂直排列 */
+        @media (max-width: 600px) {
+            .ranking-gallery {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 1rem;
+            }
 
-  </style>
+            .work-card {
+                width: 90%;
+                max-width: 400px;
+            }
+
+            /* 取消位移，垂直排列 */
+            .first,
+            .second,
+            .third {
+                transform: none;
+                order: initial;
+                width: 90%;
+            }
+
+            /* 第一名稍大 */
+            .first {
+                width: 95%;
+                max-width: 450px;
+            }
+
+            /* hover 效果簡化 */
+            .work-card:hover,
+            .first:hover,
+            .second:hover,
+            .third:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .class-title {
+                font-size: 1.5rem;
+            }
+
+            .rank-badge {
+                font-size: 0.9rem;
+                padding: 7px 14px;
+                top: 12px;
+                right: 12px;
+            }
+
+            .class-section {
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* 小手機 */
+        @media (max-width: 400px) {
+            .work-card {
+                width: 95%;
+                max-width: 350px;
+            }
+
+            .first {
+                width: 95%;
+                max-width: 380px;
+            }
+
+            .rank-badge {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+
+            .class-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* 圖片燈箱樣式 */
+        .work-card {
+            cursor: pointer;
+        }
+
+        .work-card img {
+            cursor: zoom-in;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* 手機版燈箱調整 */
+        @media (max-width: 768px) {
+            .lightbox-close {
+                top: 10px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            .lightbox-prev {
+                left: 15px;
+            }
+
+            .lightbox-next {
+                right: 15px;
+            }
+
+            .lightbox-info {
+                bottom: 10px;
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+        }
+
+        /* 手機設備 */
+        @media (max-width: 600px) {
+            .ranking-gallery {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .work-card {
+                width: 90%;
+                max-width: 400px;
+            }
+
+            .first,
+            .second,
+            .third {
+                width: auto;
+                max-width: 700px;
+                transform: none;
+                order: unset;
+            }
+
+            .class-title {
+                font-size: 1.4rem;
+            }
+
+            .rank-badge {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
     <div class="container" style="padding-top: 8rem;">
         <h2 style="text-align: center;">生命圖像</h2>
         <p style="text-align: center; margin-bottom: 3rem;">投票最高的作品!!! 快來看看吧!!!</p>
         <!-- 在這裡添加具體的履歷表作品 -->
-  <!-- 多樂一甲 -->
-  <section class="class-section">
-    <h3 class="class-title">多樂一甲</h3>
-    <div class="ranking-gallery">
-      <div class="work-card second">
-        <img src="img/life1/E1.jpg" alt="多樂一甲 第二名">
-        <div class="rank-badge silver">🥈 第二名</div>
-      </div>
-      <div class="work-card first">
-        <img src="img/life1/7.jpg" alt="多樂一甲 第一名">
-        <div class="rank-badge gold">🥇 第一名</div>
-      </div>
-      <div class="work-card third">
-        <img src="img/life1/9.jpg" alt="多樂一甲 第三名">
-        <div class="rank-badge bronze">🥉 第三名</div>
-      </div>
-    </div>
-  </section>
+        <!-- 多樂一甲 -->
+        <section class="class-section">
+            <h3 class="class-title">多樂一甲</h3>
+            <div class="ranking-gallery">
+                <div class="work-card second">
+                    <img src="img/life1/E1.jpg" alt="多樂一甲 第二名">
+                    <div class="rank-badge silver">🥈 第二名</div>
+                </div>
+                <div class="work-card first">
+                    <img src="img/life1/7.jpg" alt="多樂一甲 第一名">
+                    <div class="rank-badge gold">🥇 第一名</div>
+                </div>
+                <div class="work-card third">
+                    <img src="img/life1/9.jpg" alt="多樂一甲 第三名">
+                    <div class="rank-badge bronze">🥉 第三名</div>
+                </div>
+            </div>
+        </section>
 
-  <!-- 電子一乙 -->
-  <section class="class-section">
-    <h3 class="class-title">電子一乙</h3>
-    <div class="ranking-gallery">
-      <div class="work-card second">
-        <img src="img/life1/11.jpg" alt="電子一乙 第二名">
-        <div class="rank-badge silver">🥈 第二名</div>
-      </div>
-      <div class="work-card first">
-        <img src="img/life1/14.jpg" alt="電子一乙 第一名">
-        <div class="rank-badge gold">🥇 第一名</div>
-      </div>
-      <div class="work-card third">
-        <img src="img/life1/15.jpg" alt="電子一乙 第三名">
-        <div class="rank-badge bronze">🥉 第三名</div>
-      </div>
-    </div>
-  </section>
+        <!-- 電子一乙 -->
+        <section class="class-section">
+            <h3 class="class-title">電子一乙</h3>
+            <div class="ranking-gallery">
+                <div class="work-card second">
+                    <img src="img/life1/11.jpg" alt="電子一乙 第二名">
+                    <div class="rank-badge silver">🥈 第二名</div>
+                </div>
+                <div class="work-card first">
+                    <img src="img/life1/14.jpg" alt="電子一乙 第一名">
+                    <div class="rank-badge gold">🥇 第一名</div>
+                </div>
+                <div class="work-card third">
+                    <img src="img/life1/15.jpg" alt="電子一乙 第三名">
+                    <div class="rank-badge bronze">🥉 第三名</div>
+                </div>
+            </div>
+        </section>
 
-  <!-- 流音一乙 -->
-  <section class="class-section">
-    <h3 class="class-title">流音一乙</h3>
-    <div class="ranking-gallery">
-      <div class="work-card second">
-        <img src="img/life1/E3.jpg" alt="流音一乙 第二名">
-        <div class="rank-badge silver">🥈 第二名</div>
-      </div>
-      <div class="work-card first">
-        <img src="img/life1/11A.jpg" alt="流音一乙 第一名">
-        <div class="rank-badge gold">🥇 第一名</div>
-      </div>
-      <div class="work-card third">
-        <img src="img/life1/E2.jpg" alt="流音一乙 第三名">
-        <div class="rank-badge bronze">🥉 第三名</div>
-      </div>
-    </div>
-  </section>
+        <!-- 流音一乙 -->
+        <section class="class-section">
+            <h3 class="class-title">流音一乙</h3>
+            <div class="ranking-gallery">
+                <div class="work-card second">
+                    <img src="img/life1/E3.jpg" alt="流音一乙 第二名">
+                    <div class="rank-badge silver">🥈 第二名</div>
+                </div>
+                <div class="work-card first">
+                    <img src="img/life1/11A.jpg" alt="流音一乙 第一名">
+                    <div class="rank-badge gold">🥇 第一名</div>
+                </div>
+                <div class="work-card third">
+                    <img src="img/life1/E2.jpg" alt="流音一乙 第三名">
+                    <div class="rank-badge bronze">🥉 第三名</div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!--南臺科技大學通識教育中心 圖片燈箱 -->
@@ -708,21 +715,21 @@
         <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
     </div>
 
-<footer>
-      <p>© 2025 生命故事成果展 | 中文閱讀與表達課程 </p>
-      <p>指導老師：駱育萱</p>
-</footer>
+    <footer>
+        <p>© 2025 生命書寫成果展 | 中文閱讀與表達課程 </p>
+        <p>指導老師：駱育萱</p>
+    </footer>
 
     <script>
         // 活動照片輪播功能
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 輪播初始化
             const carouselTrack = document.getElementById('carousel-track');
             const carouselPrev = document.getElementById('carousel-prev');
             const carouselNext = document.getElementById('carousel-next');
             const carouselDots = document.getElementById('carousel-dots');
             const slides = document.querySelectorAll('.carousel-slide');
-            
+
             if (slides.length === 0) return;
 
             let currentIndex = 0;
@@ -743,7 +750,7 @@
             // 更新輪播位置
             function updateCarousel() {
                 carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
+
                 // 更新指示器
                 const dots = carouselDots.querySelectorAll('.carousel-dot');
                 dots.forEach((dot, index) => {
@@ -808,12 +815,12 @@
             let touchStartX = 0;
             let touchEndX = 0;
 
-            carouselWrapper.addEventListener('touchstart', function(e) {
+            carouselWrapper.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
                 pauseAutoPlay();
             }, { passive: true });
 
-            carouselWrapper.addEventListener('touchend', function(e) {
+            carouselWrapper.addEventListener('touchend', function (e) {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
                 startAutoPlay();
@@ -822,7 +829,7 @@
             function handleSwipe() {
                 const swipeThreshold = 50;
                 const diff = touchStartX - touchEndX;
-                
+
                 if (Math.abs(diff) > swipeThreshold) {
                     if (diff > 0) {
                         nextSlide();
@@ -834,7 +841,7 @@
         });
 
         // 圖片燈箱功能
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxInfo = document.getElementById('lightbox-info');
@@ -854,7 +861,7 @@
                 };
             });
 
-            
+
             let currentIndex = 0;
 
             // 打開燈箱
@@ -877,7 +884,7 @@
                 lightboxImg.src = current.src;
                 lightboxImg.alt = current.alt;
                 lightboxInfo.textContent = current.info || current.alt;
-                
+
                 // 更新導航按鈕顯示
                 lightboxPrev.style.display = images.length > 1 ? 'flex' : 'none';
                 lightboxNext.style.display = images.length > 1 ? 'flex' : 'none';
@@ -897,7 +904,7 @@
 
             // 為每個作品卡片添加點擊事件
             workCards.forEach((card, index) => {
-                card.addEventListener('click', function(e) {
+                card.addEventListener('click', function (e) {
                     // 如果點擊的是徽章，不觸發燈箱
                     if (e.target.classList.contains('rank-badge')) {
                         return;
@@ -910,28 +917,28 @@
             lightboxClose.addEventListener('click', closeLightbox);
 
             // 點擊背景關閉
-            lightbox.addEventListener('click', function(e) {
+            lightbox.addEventListener('click', function (e) {
                 if (e.target === lightbox) {
                     closeLightbox();
                 }
             });
 
             // 導航按鈕
-            lightboxPrev.addEventListener('click', function(e) {
+            lightboxPrev.addEventListener('click', function (e) {
                 e.stopPropagation();
                 showPrev();
             });
 
-            lightboxNext.addEventListener('click', function(e) {
+            lightboxNext.addEventListener('click', function (e) {
                 e.stopPropagation();
                 showNext();
             });
 
             // 鍵盤操作
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (!lightbox.classList.contains('active')) return;
 
-                switch(e.key) {
+                switch (e.key) {
                     case 'Escape':
                         closeLightbox();
                         break;
@@ -946,4 +953,5 @@
         });
     </script>
 </body>
+
 </html>
