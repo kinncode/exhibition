@@ -3,7 +3,7 @@
 const lifeImageData = [
     // 範例資料 - 您可以根據實際情況修改
     { id: 1, image: 'img/life1/1.jpg', description: '我的生命就像是未完待續的經典漫畫，經典的開局，經典的故事，經典的平凡，但即使是沒有色彩只是黑白的灰階的生命圖，也阻止不了你看見我生動的靈魂。', 
-    class: 'class1', studentId: '4b4k0057', studentName: '陳安柔' ,isVertical: true},
+    class: 'class1', studentId: '4b4k0057', studentName: '陳妍臻' ,isVertical: true},
     { id: 2, image: 'img/life1/2.jpg', description: '我的生命就像我親手攤開了我的布，裡面有許多充滿回憶的物品。有陪我十幾年的米奇玩偶，它灰灰的看起來很舊，還有小睡袍，麻麻都會幫我穿，還有國小到高中養的倉鼠。', 
     class: 'class1', studentId: '4B4K0190', studentName: '林玥妡' ,isVertical: true},
     { id: 3, image: 'img/life1/3.jpg', description: '我覺得我的生命彷彿像一個章魚哥，外表看起來冷靜、有點厭世，總是默默把情緒藏起來。我認為人生就是在現實與理想之間來回拉扯，一邊被生活推著走，一邊又想守住內心真正想要的東西。', class: 'class1', studentId: '4B4K0053', studentName: '林軒妤' },
